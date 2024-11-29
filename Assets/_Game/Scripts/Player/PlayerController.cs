@@ -11,6 +11,7 @@ namespace ZombieShooter
         public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
         public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
         public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
+        public static readonly int HashAnimatorReload = Animator.StringToHash("Reload");
 
         [SerializeField] private GameObject modelContainer;
         [SerializeField] private Animator animator;
@@ -157,11 +158,16 @@ namespace ZombieShooter
                 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    animator.SetBool(HashAnimatorFire, true);
+                    animator.SetTrigger(HashAnimatorFire);
                 }
                 else if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
-                    animator.SetBool(HashAnimatorFire, false);
+                    // animator.SetBool(HashAnimatorFire, false);
+                }
+
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    animator.SetTrigger(HashAnimatorReload);
                 }
             }
         }
