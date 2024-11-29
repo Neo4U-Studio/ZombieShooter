@@ -15,5 +15,8 @@ namespace AudioPlayer
         SFX_ZS_JUMP,
         SFX_ZS_LAND,
         SFX_ZS_SHOT,
+
+        SFX_ZS_ITEM_MEDKIT = 250,
+        SFX_ZS_ITEM_AMMO,
     }
 }

@@ -27,3 +27,9 @@ MonoBehaviour:
   - name: SFX_ZS_SHOT
     Id: 203
     Data: {fileID: 11400000, guid: 3121a07cb3ded1548b76977558d8e62d, type: 2}
+  - name: SFX_ZS_ITEM_MEDKIT
+    Id: 250
+    Data: {fileID: 11400000, guid: 175687763f5c08b4087dd49d36475db3, type: 2}
+  - name: SFX_ZS_ITEM_AMMO
+    Id: 251
+    Data: {fileID: 11400000, guid: 04818a3e15cd79047b6dc5014da5622f, type: 2}

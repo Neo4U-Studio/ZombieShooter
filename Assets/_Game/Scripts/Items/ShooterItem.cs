@@ -13,11 +13,17 @@ namespace ZombieShooter
             set
             {
                 consumed = value;
+                if (value)
+                {
+                    PlayItemConsumeSound();
+                }
                 ToggleItem(!value);
             }
         }
 
         private bool consumed = false;
+
+        protected virtual eItemType GetItemType() { return eItemType.Empty; }
 
         private void Awake() {
             this.tag = Utilities.ITEM_TAG;
@@ -30,6 +36,9 @@ namespace ZombieShooter
             this.gameObject.SetActive(toggle);
         }
 
-        protected virtual eItemType GetItemType() { return eItemType.Empty; }
+        public virtual void PlayItemConsumeSound()
+        { 
+            // Init in subclass
+        }
     }
 }
