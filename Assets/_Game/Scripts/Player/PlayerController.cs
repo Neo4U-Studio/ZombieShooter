@@ -10,6 +10,7 @@ namespace ZombieShooter
         public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
         public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
         public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
+        public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
 
         [SerializeField] private GameObject modelContainer;
         [SerializeField] private Animator animator;
@@ -44,7 +45,7 @@ namespace ZombieShooter
             UpdateGravity();
             UpdateMovement();
             UpdateCamera();
-            UpdateAiming();
+            UpdateAnimation();
         }
 
         private bool IsGrounded()
@@ -145,15 +146,23 @@ namespace ZombieShooter
             }
         }
 
-        private void UpdateAiming()
+        private void UpdateAnimation()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (animator)
             {
-                animator?.SetBool(HashAnimatorAim, true);
-            }
-            else if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                animator?.SetBool(HashAnimatorAim, false);
+                if (Input.GetKeyDown(KeyCode.T))
+                {
+                    animator.SetBool(HashAnimatorAim, !animator.GetBool(HashAnimatorAim));
+                }
+                
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    animator.SetBool(HashAnimatorFire, true);
+                }
+                else if (Input.GetKeyUp(KeyCode.Mouse0))
+                {
+                    animator.SetBool(HashAnimatorFire, false);
+                }
             }
         }
 #endregion
