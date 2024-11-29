@@ -21,14 +21,19 @@ namespace ZombieShooter
         private Vector3 velocity;
         private bool isGrounded;
 
+        private bool activeLockCursor;
+        private bool isCursorLocked = false;
+
 
         private void Start() {
-            // Cursor.lockState = CursorLockMode.Locked;
+            isCursorLocked = true;
+            ToggleCursorLock(true);
         }
 
         private void Update()
         {
             isGrounded = IsGrounded();
+            UpdateLockCursor();
             HandleGravity();
             UpdateMovement();
             UpdateCamera();
@@ -44,7 +49,7 @@ namespace ZombieShooter
             // Jump
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
-                Debug.Log("-- Press space");
+                // Debug.Log("-- Press space");
                 // mRigidbody?.AddForce(Vector3.up * jumpForce);
                 velocity.y = Mathf.Sqrt(jumpForce * -2.0f * gravity);
             }
@@ -65,7 +70,7 @@ namespace ZombieShooter
         private void UpdateCamera()
         {
             // Camera
-            if (playerCam)
+            if (playerCam && isCursorLocked)
             {
                 float mouseX = Input.GetAxis("Mouse X") * mouseXSensitivity;
                 float mouseY = Input.GetAxis("Mouse Y") * mouseYSensitivity;
@@ -92,5 +97,42 @@ namespace ZombieShooter
             }
             return false;
         }
+
+        public void ToggleCursorLock(bool toggle)
+        {
+            activeLockCursor = toggle;
+            if (!activeLockCursor)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            UpdateLockCursor();
+        }
+
+        private void UpdateLockCursor()
+        {
+            if (activeLockCursor)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftAlt))
+                {
+                    isCursorLocked = false;
+                }
+                else if (Input.GetKeyUp(KeyCode.LeftAlt))
+                {
+                    isCursorLocked = true;
+                }
+
+                if (isCursorLocked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+                else
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+            }
+        } 
     }
 }
