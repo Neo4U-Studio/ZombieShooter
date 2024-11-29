@@ -12,6 +12,7 @@ public enum SoundType
     COMMON = 0,
     MUSIC,
     SFX,
+    ZOMBIE_SHOOTER,
 }
 
 namespace AudioPlayer

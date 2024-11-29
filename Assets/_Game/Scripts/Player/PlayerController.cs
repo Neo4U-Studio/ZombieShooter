@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using AudioPlayer;
 
 namespace ZombieShooter
 {
@@ -13,22 +14,34 @@ namespace ZombieShooter
         public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
         public static readonly int HashAnimatorReload = Animator.StringToHash("Reload");
 
+#if UNITY_EDITOR
+        public GameHeader headerEditor = new GameHeader() { header = "Components" };
+#endif
+
         [SerializeField] private GameObject modelContainer;
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
         [SerializeField] private CinemachineVirtualCamera playerCam;
 
+#if UNITY_EDITOR
+        public GameHeader headerEditor1 = new GameHeader() { header = "Params" };
+#endif
         [SerializeField] private float speed = 10f;
         [SerializeField] private float jumpForce = 2f;
         [SerializeField] private float mouseXSensitivity = 5f;
         [SerializeField] private float mouseYSensitivity = 5f;
         [SerializeField] private float maxYAngle = 80f;
         [SerializeField] private float gravity = -30f;
+
+        public bool IsPlaying;
         
         private float xCamRotation = 0f; // Vertical rotation of the camera
         private float yCamRotation = 0f; // Horizontal rotation of the camera
         private Vector3 velocity;
+
         private bool isGrounded;
+        private bool isRunning = false;
+        private bool isShooting = false;
 
         private bool activeLockCursor;
         private bool isCursorLocked = false;
@@ -36,20 +49,29 @@ namespace ZombieShooter
         private float moveLR = 0f; // move left, right
         private float moveFB = 0f; // move forward, back
 
-
-        private void Start() {
+        public void Initialize()
+        {
+            IsPlaying = false;
             isCursorLocked = true;
+            isGrounded = false;
+            isRunning = false;
+            isShooting = false;
+            ResetAudioTimer();
             ToggleCursorLock(true);
         }
 
         private void Update()
         {
-            isGrounded = IsGrounded();
-            UpdateLockCursor();
-            UpdateGravity();
-            UpdateMovement();
-            UpdateCamera();
-            UpdateAnimation();
+            if (IsPlaying)
+            {
+                CheckOnGround();
+                UpdateLockCursor();
+                UpdateGravity();
+                UpdateMovement();
+                UpdateCamera();
+                UpdateAnimation();
+                UpdateSoundLoop();
+            }
         }
 
         private bool IsGrounded()
@@ -76,6 +98,23 @@ namespace ZombieShooter
         }
 
 #region Player Physic/Input
+        private void CheckOnGround()
+        {
+            var newCheck = IsGrounded();
+            if (isGrounded != newCheck)
+            {
+                isGrounded = newCheck;
+                if (isGrounded)
+                {
+                    PlayLandSound();
+                }
+                else
+                {
+                    PlayJumpSound();
+                }
+            }
+        }
+
         private void UpdateGravity()
         {
             if (isGrounded && velocity.y < 0f)
@@ -161,11 +200,11 @@ namespace ZombieShooter
                 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    animator.SetBool(HashAnimatorFire, true);
+                    ToggleShooting(true);
                 }
                 else if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
-                    animator.SetBool(HashAnimatorFire, false);
+                    ToggleShooting(false);
                 }
 
                 if (Input.GetKeyDown(KeyCode.R))
@@ -175,14 +214,111 @@ namespace ZombieShooter
 
                 if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
                 {
-                    animator.SetBool(HashAnimatorRun, true);
+                    ToggleRunning(true);
                 }
                 else
                 {
-                    animator.SetBool(HashAnimatorRun, false);
+                    ToggleRunning(false);
                 }
             }
         }
+
+        private void ToggleShooting(bool toggle)
+        {
+            isShooting = toggle;
+            animator.SetBool(HashAnimatorFire, toggle);
+            if (!toggle)
+            {
+                ResetShotTimer();
+            }
+        }
+
+        private void ToggleRunning(bool toggle)
+        {
+            isRunning = toggle;
+            animator.SetBool(HashAnimatorRun, toggle);
+            if (!toggle)
+            {
+                ResetFootStepTimer();
+            }
+        }
+#endregion
+
+#region Audio
+#if UNITY_EDITOR
+        public GameHeader headerEditor2 = new GameHeader() { header = "Audio" };
+#endif
+        [SerializeField] private float timeBetweenFootStep = 0.5f;
+        [SerializeField] private float timeBetweenShot = 0.5f;
+
+        private float currentTimeBetweenFootStep;
+        private float currentTimeBetweenShot;
+
+        private void PlayJumpSound()
+        {
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_JUMP);
+        }
+
+        private void PlayLandSound()
+        {
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_LAND);
+        }
+
+        private void PlayFootStepSound()
+        {
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_FOOTSTEP);
+        }
+
+        private void PlayShotSound()
+        {
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_SHOT);
+        }
+
+        private void ResetAudioTimer()
+        {
+            ResetFootStepTimer();
+            ResetShotTimer();
+        }
+
+        private void ResetFootStepTimer()
+        {
+            currentTimeBetweenFootStep = timeBetweenFootStep;
+        }
+
+        private void ResetShotTimer()
+        {
+            currentTimeBetweenShot = timeBetweenShot;
+        }
+
+        private void UpdateSoundLoop()
+        {
+            if (isShooting)
+            {
+                if (currentTimeBetweenShot <= 0)
+                {
+                    ResetShotTimer();
+                    PlayShotSound();
+                }
+                else
+                {
+                    currentTimeBetweenShot -= Time.deltaTime;
+                }
+            }
+
+            if (isRunning && isGrounded)
+            {
+                if (currentTimeBetweenFootStep <= 0)
+                {
+                    ResetFootStepTimer();
+                    PlayFootStepSound();
+                }
+                else
+                {
+                    currentTimeBetweenFootStep -= Time.deltaTime;
+                }
+            }
+        }
+
 #endregion
     }
 }

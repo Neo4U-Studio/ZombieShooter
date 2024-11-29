@@ -9,5 +9,11 @@ namespace AudioPlayer
     public enum SoundID
     {
         NONE = 0,
+
+        // Shooting Game
+        SFX_ZS_FOOTSTEP = 200,
+        SFX_ZS_JUMP,
+        SFX_ZS_LAND,
+        SFX_ZS_SHOT,
     }
 }

@@ -19,3 +19,5 @@ MonoBehaviour:
     Path: SoundMaps/Music Sound Map
   - Type: 2
     Path: SoundMaps/Sfx Sound Map
+  - Type: 3
+    Path: SoundMaps/ZombieShooter Sound Map
