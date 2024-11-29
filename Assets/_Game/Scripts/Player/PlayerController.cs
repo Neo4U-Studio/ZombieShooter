@@ -223,6 +223,18 @@ namespace ZombieShooter
             }
         }
 
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            if (hit.gameObject.CompareTag(Utilities.ITEM_TAG))
+            {
+                if (hit.gameObject.TryGetComponent<ShooterItem>(out var item))
+                {
+                    CheckItemEffect(item);
+                    item.Consumed = true;
+                }
+            }
+        }
+
         private void ToggleShooting(bool toggle)
         {
             isShooting = toggle;
@@ -244,7 +256,24 @@ namespace ZombieShooter
         }
 #endregion
 
+#region Item
+        private void CheckItemEffect(ShooterItem item)
+        {
+            switch (item.Type)
+            {
+                case eItemType.MedKit:
+                    var medKit = item as MedKitItem;
+                break;
+                case eItemType.Ammo_Normal:
+                    var ammo = item as AmmoItem;
+                break;
+            }
+        }
+
+#endregion
+
 #region Audio
+
 #if UNITY_EDITOR
         public GameHeader headerEditor2 = new GameHeader() { header = "Audio" };
 #endif

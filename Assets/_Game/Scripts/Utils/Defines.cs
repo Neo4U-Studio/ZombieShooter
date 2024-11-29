@@ -8,6 +8,10 @@ namespace ZombieShooter
 {
     public static class Utilities
     {
+        public static string GROUND_TAG = "Ground";
+        public static string PLAYER_TAG = "Player";
+        public static string ITEM_TAG = "Item";
+
         public static IEnumerator DelayAction(float delayTime = 1f, Action onComplete = null)
         {
             yield return DelayUtils.Wait(delayTime);
@@ -22,7 +26,7 @@ namespace ZombieShooter
     }
 
 #if UNITY_EDITOR
-    [System.Serializable]
+    [Serializable]
     public class GameHeader
     {
         public string header;
@@ -42,4 +46,13 @@ namespace ZombieShooter
         }
     }
 #endif
+
+    [Serializable]
+    public enum eItemType
+    {
+        Empty = 0,
+        MedKit,
+        Ammo_Normal = 10,
+    }
+
 }
