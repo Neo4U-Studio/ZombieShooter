@@ -7,7 +7,14 @@ namespace ZombieShooter
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private CharacterController charController;        [SerializeField] private CinemachineVirtualCamera playerCam;
+        public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
+        public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
+        public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
+
+        [SerializeField] private GameObject modelContainer;
+        [SerializeField] private Animator animator;
+        [SerializeField] private CharacterController charController;
+        [SerializeField] private CinemachineVirtualCamera playerCam;
 
         [SerializeField] private float speed = 10f;
         [SerializeField] private float jumpForce = 2f;
@@ -34,12 +41,37 @@ namespace ZombieShooter
         {
             isGrounded = IsGrounded();
             UpdateLockCursor();
-            HandleGravity();
+            UpdateGravity();
             UpdateMovement();
             UpdateCamera();
+            UpdateAiming();
         }
 
-        private void HandleGravity()
+        private bool IsGrounded()
+        {
+            if (charController)
+            {
+                if (Physics.SphereCast(this.transform.position, charController.radius, Vector3.down, out var hitInfo, (charController.height / 2f) - charController.radius + 0.1f))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void ToggleCursorLock(bool toggle)
+        {
+            activeLockCursor = toggle;
+            if (!activeLockCursor)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            UpdateLockCursor();
+        }
+
+#region Player Physic/Input
+        private void UpdateGravity()
         {
             if (isGrounded && velocity.y < 0f)
             {
@@ -82,31 +114,9 @@ namespace ZombieShooter
 
                 playerCam.transform.rotation = Quaternion.Euler(xCamRotation, yCamRotation, 0f);
                 this.transform.rotation = Quaternion.Euler(0f, yCamRotation, 0f);
+                modelContainer.transform.rotation = Quaternion.Euler(xCamRotation, yCamRotation, 0f);
                 playerCam.transform.position = this.transform.position;
             }
-        }
-
-        private bool IsGrounded()
-        {
-            if (charController)
-            {
-                if (Physics.SphereCast(this.transform.position, charController.radius, Vector3.down, out var hitInfo, (charController.height / 2f) - charController.radius + 0.1f))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public void ToggleCursorLock(bool toggle)
-        {
-            activeLockCursor = toggle;
-            if (!activeLockCursor)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            UpdateLockCursor();
         }
 
         private void UpdateLockCursor()
@@ -133,6 +143,19 @@ namespace ZombieShooter
                     Cursor.visible = true;
                 }
             }
-        } 
+        }
+
+        private void UpdateAiming()
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                animator?.SetBool(HashAnimatorAim, true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                animator?.SetBool(HashAnimatorAim, false);
+            }
+        }
+#endregion
     }
 }
