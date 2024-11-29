@@ -342,7 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3334136219685349559}
   m_Layer: 0
-  m_Name: Steve_FPCharacter
+  m_Name: PlayerModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
