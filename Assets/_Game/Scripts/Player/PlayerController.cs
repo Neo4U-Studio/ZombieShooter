@@ -7,7 +7,7 @@ namespace ZombieShooter
 {
     public class PlayerController : MonoBehaviour
     {
-        public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
+        // public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
         public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
         public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
         public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
@@ -32,6 +32,9 @@ namespace ZombieShooter
 
         private bool activeLockCursor;
         private bool isCursorLocked = false;
+
+        private float moveLR = 0f; // move left, right
+        private float moveFB = 0f; // move forward, back
 
 
         private void Start() {
@@ -94,10 +97,10 @@ namespace ZombieShooter
 
         private void UpdateMovement()
         {
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
+            moveLR = Input.GetAxis("Horizontal");
+            moveFB = Input.GetAxis("Vertical");
 
-            Vector3 move = this.transform.right * x + this.transform.forward * z;
+            Vector3 move = this.transform.right * moveLR + this.transform.forward * moveFB;
             charController.Move(move * speed * Time.deltaTime);
         }
 
@@ -158,16 +161,25 @@ namespace ZombieShooter
                 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
-                    animator.SetTrigger(HashAnimatorFire);
+                    animator.SetBool(HashAnimatorFire, true);
                 }
                 else if (Input.GetKeyUp(KeyCode.Mouse0))
                 {
-                    // animator.SetBool(HashAnimatorFire, false);
+                    animator.SetBool(HashAnimatorFire, false);
                 }
 
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     animator.SetTrigger(HashAnimatorReload);
+                }
+
+                if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
+                {
+                    animator.SetBool(HashAnimatorRun, true);
+                }
+                else
+                {
+                    animator.SetBool(HashAnimatorRun, false);
                 }
             }
         }
