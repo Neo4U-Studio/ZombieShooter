@@ -1,40 +1,53 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
-using AudioPlayer;
 
 namespace ZombieShooter
 {
     public class ZombieController : MonoBehaviour
     {
-        // public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
         public static readonly int HashAnimatorWalk = Animator.StringToHash("Walk");
         public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
         public static readonly int HashAnimatorAttack = Animator.StringToHash("Attack");
-        public static readonly int HashAnimatorDeath = Animator.StringToHash("Death");
+        public static readonly int HashAnimatorDeath = Animator.StringToHash("Dead");
 
-        [SerializeField] private Animator animator;
+        Animator anim;
 
-        private void Awake() {
-            if (!animator)
-            {
-                animator = this.GetComponent<Animator>();
-            }
-        }
-
-        private void Update() {
-            UpdateBehaviour();
-        }
-
-        private void UpdateBehaviour()
+        // Start is called before the first frame update
+        void Start()
         {
-            
-            if (Input.GetKeyDown(KeyCode.W))
+            anim = this.GetComponent<Animator>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKey(KeyCode.W))
             {
-                Debug.Log("-- Press W");
-                animator?.SetBool(HashAnimatorWalk, !animator.GetBool(HashAnimatorWalk));
+                anim.SetBool(HashAnimatorWalk, true);
             }
+            else
+                anim.SetBool(HashAnimatorWalk, false);
+
+            if (Input.GetKey(KeyCode.R))
+            {
+                anim.SetBool(HashAnimatorRun, true);
+            }
+            else
+                anim.SetBool(HashAnimatorRun, false);
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                anim.SetBool(HashAnimatorAttack, true);
+            }
+            else
+                anim.SetBool(HashAnimatorAttack, false);
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                anim.SetBool(HashAnimatorDeath, true);
+            }
+
         }
     }
 }
