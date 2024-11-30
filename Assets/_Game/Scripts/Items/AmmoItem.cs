@@ -11,7 +11,7 @@ namespace ZombieShooter
         protected override eItemType GetItemType() { return eItemType.Ammo_Normal; }
 
         public override void PlayItemConsumeSound()
-        { 
+        {
             SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_ITEM_AMMO);
         }
     }

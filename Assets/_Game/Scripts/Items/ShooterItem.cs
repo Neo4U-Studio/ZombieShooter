@@ -15,11 +15,12 @@ namespace ZombieShooter
             set
             {
                 consumed = value;
+                ToggleItem(!value);
                 if (value)
                 {
                     PlayItemConsumeSound();
                 }
-                ToggleItem(!value);
+                
             }
         }
 

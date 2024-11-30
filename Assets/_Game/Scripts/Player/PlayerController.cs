@@ -239,10 +239,10 @@ namespace ZombieShooter
         {
             if (hit.gameObject.CompareTag(Utilities.ITEM_TAG))
             {
-                if (hit.gameObject.TryGetComponent<ShooterItem>(out var item))
+                if (hit.gameObject.TryGetComponent<ShooterItem>(out var item) && !item.Consumed)
                 {
-                    CheckItemEffect(item);
                     item.Consumed = true;
+                    CheckItemEffect(item);
                 }
             }
         }
