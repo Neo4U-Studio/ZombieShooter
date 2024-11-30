@@ -81,7 +81,7 @@ namespace ZombieShooter
                 UpdateGravity();
                 UpdateMovement();
                 UpdateCamera();
-                UpdateAnimation();
+                UpdateBehaviour();
                 UpdateSoundLoop();
             }
         }
@@ -107,6 +107,28 @@ namespace ZombieShooter
                 Cursor.visible = true;
             }
             UpdateLockCursor();
+        }
+
+        private void ToggleShooting(bool toggle)
+        {
+            if (toggle && inventory.Ammo <= 0) return; // block shooting if out of ammo
+
+            isShooting = toggle;
+            animator?.SetBool(HashAnimatorFire, toggle);
+            if (!toggle)
+            {
+                ResetShotTimer();
+            }
+        }
+
+        private void ToggleRunning(bool toggle)
+        {
+            isRunning = toggle;
+            animator?.SetBool(HashAnimatorRun, toggle);
+            if (!toggle)
+            {
+                ResetFootStepTimer();
+            }
         }
 
 #region Player Physic/Input
@@ -201,37 +223,42 @@ namespace ZombieShooter
             }
         }
 
-        private void UpdateAnimation()
+        private void UpdateBehaviour()
         {
-            if (animator)
+            // Aiming
+            if (Input.GetKeyDown(KeyCode.T))
             {
-                if (Input.GetKeyDown(KeyCode.T))
-                {
-                    animator.SetBool(HashAnimatorAim, !animator.GetBool(HashAnimatorAim));
-                }
-                
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    ToggleShooting(true);
-                }
-                else if (Input.GetKeyUp(KeyCode.Mouse0))
-                {
-                    ToggleShooting(false);
-                }
+                animator?.SetBool(HashAnimatorAim, !animator.GetBool(HashAnimatorAim));
+            }
+            
+            // Shooting
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                ToggleShooting(true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                ToggleShooting(false);
+            }
+            if (isShooting && inventory.Ammo <= 0)
+            {
+                ToggleShooting(false);
+            }
 
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    animator.SetTrigger(HashAnimatorReload);
-                }
+            // Reload
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                animator?.SetTrigger(HashAnimatorReload);
+            }
 
-                if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
-                {
-                    ToggleRunning(true);
-                }
-                else
-                {
-                    ToggleRunning(false);
-                }
+            // Running
+            if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
+            {
+                ToggleRunning(true);
+            }
+            else
+            {
+                ToggleRunning(false);
             }
         }
 
@@ -246,24 +273,15 @@ namespace ZombieShooter
                 }
             }
         }
+#endregion
 
-        private void ToggleShooting(bool toggle)
+#region Handle Behaviour
+        private void HandleShot()
         {
-            isShooting = toggle;
-            animator.SetBool(HashAnimatorFire, toggle);
-            if (!toggle)
+            if (inventory.Ammo > 0)
             {
-                ResetShotTimer();
-            }
-        }
-
-        private void ToggleRunning(bool toggle)
-        {
-            isRunning = toggle;
-            animator.SetBool(HashAnimatorRun, toggle);
-            if (!toggle)
-            {
-                ResetFootStepTimer();
+                PlayShotSound();
+                inventory.ConsumeAmmo();
             }
         }
 #endregion
@@ -339,7 +357,7 @@ namespace ZombieShooter
                 if (currentTimeBetweenShot <= 0)
                 {
                     ResetShotTimer();
-                    PlayShotSound();
+                    HandleShot();
                 }
                 else
                 {

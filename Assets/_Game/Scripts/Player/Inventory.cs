@@ -28,6 +28,17 @@ namespace ZombieShooter
             Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
         }
 
+        public void DecreaseAmmo(int value)
+        {
+            Ammo -= value;
+            Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
+        }
+
+        public void ConsumeAmmo()
+        {
+            DecreaseAmmo(1);
+        }
+
         public void IncreaseHealth(int value)
         {
             Health += value;
