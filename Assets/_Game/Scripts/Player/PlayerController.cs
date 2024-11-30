@@ -60,6 +60,8 @@ namespace ZombieShooter
         private float moveLR = 0f; // move left, right
         private float moveFB = 0f; // move forward, back
 
+        private float reloadCountdown = 0f;
+
         public void Initialize()
         {
             IsPlaying = false;
@@ -68,6 +70,7 @@ namespace ZombieShooter
             isRunning = false;
             isShooting = false;
             inventory.Initialize(config);
+            FillAmmo();
             ResetAudioTimer();
             ToggleCursorLock(true);
         }
@@ -86,51 +89,6 @@ namespace ZombieShooter
             }
         }
 
-        private bool IsGrounded()
-        {
-            if (charController)
-            {
-                if (Physics.SphereCast(this.transform.position, charController.radius, Vector3.down, out var hitInfo, (charController.height / 2f) - charController.radius + 0.1f))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public void ToggleCursorLock(bool toggle)
-        {
-            activeLockCursor = toggle;
-            if (!activeLockCursor)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            UpdateLockCursor();
-        }
-
-        private void ToggleShooting(bool toggle)
-        {
-            if (toggle && inventory.Ammo <= 0) return; // block shooting if out of ammo
-
-            isShooting = toggle;
-            animator?.SetBool(HashAnimatorFire, toggle);
-            if (!toggle)
-            {
-                ResetShotTimer();
-            }
-        }
-
-        private void ToggleRunning(bool toggle)
-        {
-            isRunning = toggle;
-            animator?.SetBool(HashAnimatorRun, toggle);
-            if (!toggle)
-            {
-                ResetFootStepTimer();
-            }
-        }
-
 #region Player Physic/Input
         private void CheckOnGround()
         {
@@ -140,11 +98,11 @@ namespace ZombieShooter
                 isGrounded = newCheck;
                 if (isGrounded)
                 {
-                    PlayLandSound();
+                    PlaySound(SoundID.SFX_ZS_PLAYER_LAND);
                 }
                 else
                 {
-                    PlayJumpSound();
+                    PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
                 }
             }
         }
@@ -240,16 +198,24 @@ namespace ZombieShooter
             {
                 ToggleShooting(false);
             }
-            if (isShooting && inventory.Ammo <= 0)
+            if (isShooting && !IsShootingAvailable())
             {
                 ToggleShooting(false);
             }
 
             // Reload
-            if (Input.GetKeyDown(KeyCode.R))
+            if (reloadCountdown > 0f)
             {
-                animator?.SetTrigger(HashAnimatorReload);
+                reloadCountdown -= Time.deltaTime;
             }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    HandleReload();
+                }
+            }
+            
 
             // Running
             if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
@@ -278,18 +244,89 @@ namespace ZombieShooter
 #region Handle Behaviour
         private void HandleShot()
         {
-            if (inventory.Ammo > 0)
+            if (IsShootingAvailable())
             {
-                PlayShotSound();
-                inventory.ConsumeAmmo();
+                PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
+                currentAmmo--;
             }
         }
 
         private void HandleDeath()
         {
-            PlayDeathSound();
+            PlaySound(SoundID.SFX_ZS_PLAYER_DEATH);
             IsPlaying = false;
             ZombieShooterManager.ON_END_GAME?.Invoke();
+        }
+
+        int currentAmmo = 0;
+        private void HandleReload()
+        {
+            if (inventory.TryFillAmmoClip(ref currentAmmo, config.AmmoClip))
+            {
+                reloadCountdown = config.ReloadTime;
+                animator?.SetTrigger(HashAnimatorReload);
+                PlaySound(SoundID.SFX_ZS_PLAYER_RELOAD);
+            }
+        }
+
+        private void FillAmmo()
+        {
+            currentAmmo = config.AmmoClip;
+        }
+
+        private bool IsGrounded()
+        {
+            if (charController)
+            {
+                if (Physics.SphereCast(this.transform.position, charController.radius, Vector3.down, out var hitInfo, (charController.height / 2f) - charController.radius + 0.1f))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool IsShootingAvailable()
+        {
+            return currentAmmo > 0 && !IsReloading();
+        }
+
+        private bool IsReloading()
+        {
+            return reloadCountdown > 0f;
+        }
+
+        public void ToggleCursorLock(bool toggle)
+        {
+            activeLockCursor = toggle;
+            if (!activeLockCursor)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            UpdateLockCursor();
+        }
+
+        private void ToggleShooting(bool toggle)
+        {
+            if (toggle && !IsShootingAvailable()) return; // block shooting if out of ammo
+
+            isShooting = toggle;
+            animator?.SetBool(HashAnimatorFire, toggle);
+            if (!toggle)
+            {
+                ResetShotTimer();
+            }
+        }
+
+        private void ToggleRunning(bool toggle)
+        {
+            isRunning = toggle;
+            animator?.SetBool(HashAnimatorRun, toggle);
+            if (!toggle)
+            {
+                ResetFootStepTimer();
+            }
         }
 #endregion
 
@@ -321,29 +358,9 @@ namespace ZombieShooter
         private float currentTimeBetweenFootStep;
         private float currentTimeBetweenShot;
 
-        private void PlayJumpSound()
+        private void PlaySound(SoundID id)
         {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
-        }
-
-        private void PlayLandSound()
-        {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_LAND);
-        }
-
-        private void PlayFootStepSound()
-        {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_FOOTSTEP);
-        }
-
-        private void PlayShotSound()
-        {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
-        }
-
-        private void PlayDeathSound()
-        {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_DEATH);
+            SoundManager.Instance?.PlaySound(id);
         }
 
         private void ResetAudioTimer()
@@ -382,7 +399,7 @@ namespace ZombieShooter
                 if (currentTimeBetweenFootStep <= 0)
                 {
                     ResetFootStepTimer();
-                    PlayFootStepSound();
+                    PlaySound(SoundID.SFX_ZS_PLAYER_FOOTSTEP);
                 }
                 else
                 {

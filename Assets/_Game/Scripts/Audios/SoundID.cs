@@ -16,6 +16,7 @@ namespace AudioPlayer
         SFX_ZS_PLAYER_LAND,
         SFX_ZS_PLAYER_SHOT,
         SFX_ZS_PLAYER_DEATH,
+        SFX_ZS_PLAYER_RELOAD,
 
         SFX_ZS_ITEM_MEDKIT = 250,
         SFX_ZS_ITEM_AMMO,

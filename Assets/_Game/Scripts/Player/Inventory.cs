@@ -39,6 +39,31 @@ namespace ZombieShooter
             DecreaseAmmo(1);
         }
 
+        public bool TryFillAmmoClip(ref int currentAmmo, int ammoClip)
+        {
+            if (currentAmmo >= ammoClip)
+            {
+                return false;
+            }
+            else if (Ammo <= 0)
+            {
+                return false;
+            }
+            else
+            {
+                int amount = ammoClip - currentAmmo;
+                amount = Mathf.Clamp(amount, 0, Ammo);
+                DecreaseAmmo(amount);
+                currentAmmo += amount;
+                return true;
+            }
+        }
+
+        public void FillAmmo()
+        {
+            Ammo = maxAmmo;
+        }
+
         public void IncreaseHealth(int value)
         {
             Health += value;
