@@ -284,6 +284,13 @@ namespace ZombieShooter
                 inventory.ConsumeAmmo();
             }
         }
+
+        private void HandleDeath()
+        {
+            PlayDeathSound();
+            IsPlaying = false;
+            ZombieShooterManager.ON_END_GAME?.Invoke();
+        }
 #endregion
 
 #region Item
@@ -316,22 +323,27 @@ namespace ZombieShooter
 
         private void PlayJumpSound()
         {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_JUMP);
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
         }
 
         private void PlayLandSound()
         {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_LAND);
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_LAND);
         }
 
         private void PlayFootStepSound()
         {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_FOOTSTEP);
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_FOOTSTEP);
         }
 
         private void PlayShotSound()
         {
-            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_SHOT);
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
+        }
+
+        private void PlayDeathSound()
+        {
+            SoundManager.Instance?.PlaySound(SoundID.SFX_ZS_PLAYER_DEATH);
         }
 
         private void ResetAudioTimer()

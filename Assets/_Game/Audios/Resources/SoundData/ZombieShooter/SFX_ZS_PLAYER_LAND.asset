@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6b868b6ada597f4195137651713a00c, type: 3}
-  m_Name: SFX_ZS_FOOTSTEP
+  m_Name: SFX_ZS_PLAYER_LAND
   m_EditorClassIdentifier: 
-  Id: 200
+  Id: 202
   Clips:
-  - {fileID: 8300000, guid: 41cabf8e1b2bf41979caa467071a7c7b, type: 3}
-  - {fileID: 8300000, guid: 53dcb87c0d58147c6a32f226285470b7, type: 3}
-  - {fileID: 8300000, guid: 4deee5c4efdfb413f865fc2f740f7308, type: 3}
-  - {fileID: 8300000, guid: 3be44f8ee8a88445d9d23221fabacd32, type: 3}
+  - {fileID: 8300000, guid: 4684cd292999946fbb09865cdec50596, type: 3}
   IsLoop: 0
   IsPitch: 0
   IsAlone: 0

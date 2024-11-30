@@ -15,18 +15,21 @@ MonoBehaviour:
   soundType: 3
   path: SoundData/ZombieShooter
   SoundMappingList:
-  - name: SFX_ZS_FOOTSTEP
+  - name: SFX_ZS_PLAYER_FOOTSTEP
     Id: 200
     Data: {fileID: 11400000, guid: 23f31aa1dd8d2d140b79d73cad8cb26b, type: 2}
-  - name: SFX_ZS_JUMP
+  - name: SFX_ZS_PLAYER_JUMP
     Id: 201
     Data: {fileID: 11400000, guid: 644ce777f0b119e4597de8824430cedd, type: 2}
-  - name: SFX_ZS_LAND
+  - name: SFX_ZS_PLAYER_LAND
     Id: 202
     Data: {fileID: 11400000, guid: 1ee177741a62aef48acdbe3f4a4db670, type: 2}
-  - name: SFX_ZS_SHOT
+  - name: SFX_ZS_PLAYER_SHOT
     Id: 203
     Data: {fileID: 11400000, guid: 3121a07cb3ded1548b76977558d8e62d, type: 2}
+  - name: SFX_ZS_PLAYER_DEATH
+    Id: 204
+    Data: {fileID: 11400000, guid: 01753a1fd984f2f498ad3ba475d5458a, type: 2}
   - name: SFX_ZS_ITEM_MEDKIT
     Id: 250
     Data: {fileID: 11400000, guid: 175687763f5c08b4087dd49d36475db3, type: 2}

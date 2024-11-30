@@ -44,5 +44,11 @@ namespace ZombieShooter
             Health += value;
             Health = Mathf.Clamp(Health, 0, maxHealth);
         }
+
+        public void DecreaseHealth(int value)
+        {
+            Health -= value;
+            Health = Mathf.Clamp(Health, 0, maxHealth);
+        }
     }
 }

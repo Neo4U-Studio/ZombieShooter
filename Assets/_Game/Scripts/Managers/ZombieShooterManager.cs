@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using AudioPlayer;
@@ -17,6 +18,7 @@ namespace ZombieShooter
         }
 
         public static ZombieShooterManager Instance;
+        public static Action ON_END_GAME;
 
         [SerializeField] PlayerController playerControl;
 
@@ -50,6 +52,7 @@ namespace ZombieShooter
 
         private void Initialize()
         {
+            RegisterEvent();
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
             playerControl.Initialize();
             EnterState(eGameState.ReadToStart);
@@ -64,6 +67,26 @@ namespace ZombieShooter
         {
             playerControl.IsPlaying = true;
             EnterState(eGameState.Playing);
+        }
+
+        public void EndGame()
+        {
+            EnterState(eGameState.End);
+        }
+
+        private void OnEndGame()
+        {
+            UnregisterEvent();
+        }
+
+        private void RegisterEvent()
+        {
+            ON_END_GAME += EndGame;
+        }
+
+        private void UnregisterEvent()
+        {
+            ON_END_GAME -= EndGame;
         }
 
 #region Game State
@@ -86,7 +109,7 @@ namespace ZombieShooter
                     // Do nothing
                 break;
                 case eGameState.End:
-                    // Do nothing
+                    OnEndGame();
                 break;
             }
         }
