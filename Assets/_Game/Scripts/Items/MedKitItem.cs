@@ -7,6 +7,7 @@ namespace ZombieShooter
 {
     public class MedKitItem : ShooterItem
     {
+        public int Value => Mathf.FloorToInt(this.value);
         protected override eItemType GetItemType() { return eItemType.MedKit; }
 
         public override void PlayItemConsumeSound()

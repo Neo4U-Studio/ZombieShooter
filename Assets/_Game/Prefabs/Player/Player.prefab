@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 7456081924929926788}
   - component: {fileID: 5255522110770961177}
   - component: {fileID: 7240231795236859624}
+  - component: {fileID: 3581277808838033192}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -154,16 +155,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5053e7cd7d7fb1d4ca4ac12fbfe13312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headerEditor:
+    header: Components
   modelContainer: {fileID: 2640704757369721698}
   animator: {fileID: 4933874636724087652}
   charController: {fileID: 7240231795236859624}
   playerCam: {fileID: 0}
-  speed: 10
-  jumpForce: 2
+  inventory: {fileID: 3581277808838033192}
+  headerEditor1:
+    header: Configs
+  config: {fileID: 11400000, guid: af11c5b16ddb3d74d8c6c3713bb27ef9, type: 2}
+  headerEditor2:
+    header: Params
   mouseXSensitivity: 5
   mouseYSensitivity: 5
   maxYAngle: 80
-  gravity: -30
+  headerEditor3:
+    header: Audio
+  timeBetweenFootStep: 0.5
+  timeBetweenShot: 0.5
+  IsPlaying: 0
 --- !u!143 &7240231795236859624
 CharacterController:
   m_ObjectHideFlags: 0
@@ -190,6 +201,18 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3581277808838033192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642972892113395569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f90881988ecf02c4ba71fda61644bf04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1835301220744805251
 PrefabInstance:
   m_ObjectHideFlags: 0

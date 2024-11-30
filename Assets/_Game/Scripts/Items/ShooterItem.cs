@@ -6,6 +6,8 @@ namespace ZombieShooter
 {
     public abstract class ShooterItem : MonoBehaviour
     {
+        [SerializeField] protected float value = 10;
+
         public eItemType Type => GetItemType();
         public bool Consumed
         {

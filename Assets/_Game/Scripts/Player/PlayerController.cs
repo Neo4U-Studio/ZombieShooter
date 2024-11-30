@@ -22,16 +22,27 @@ namespace ZombieShooter
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
         [SerializeField] private CinemachineVirtualCamera playerCam;
+        [SerializeField] private Inventory inventory;
 
 #if UNITY_EDITOR
-        public GameHeader headerEditor1 = new GameHeader() { header = "Params" };
+        public GameHeader headerEditor1 = new GameHeader() { header = "Configs" };
 #endif
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float jumpForce = 2f;
+        [SerializeField] private ShooterConfig config;
+
+#if UNITY_EDITOR
+        public GameHeader headerEditor2 = new GameHeader() { header = "Params" };
+#endif
+        
         [SerializeField] private float mouseXSensitivity = 5f;
         [SerializeField] private float mouseYSensitivity = 5f;
         [SerializeField] private float maxYAngle = 80f;
-        [SerializeField] private float gravity = -30f;
+
+#if UNITY_EDITOR
+        public GameHeader headerEditor3 = new GameHeader() { header = "Audio" };
+#endif
+        [SerializeField] private float timeBetweenFootStep = 0.5f;
+        [SerializeField] private float timeBetweenShot = 0.5f;
+        
 
         public bool IsPlaying;
         
@@ -56,6 +67,7 @@ namespace ZombieShooter
             isGrounded = false;
             isRunning = false;
             isShooting = false;
+            inventory.Initialize(config);
             ResetAudioTimer();
             ToggleCursorLock(true);
         }
@@ -127,10 +139,10 @@ namespace ZombieShooter
             {
                 // Debug.Log("-- Press space");
                 // mRigidbody?.AddForce(Vector3.up * jumpForce);
-                velocity.y = Mathf.Sqrt(jumpForce * -2.0f * gravity);
+                velocity.y = Mathf.Sqrt(config.JumpForce * -2.0f * config.Gravity);
             }
 
-            velocity.y += gravity * Time.deltaTime;
+            velocity.y += config.Gravity * Time.deltaTime;
             charController.Move(velocity * Time.deltaTime);
         }
 
@@ -140,7 +152,7 @@ namespace ZombieShooter
             moveFB = Input.GetAxis("Vertical");
 
             Vector3 move = this.transform.right * moveLR + this.transform.forward * moveFB;
-            charController.Move(move * speed * Time.deltaTime);
+            charController.Move(move * config.Speed * Time.deltaTime);
         }
 
         private void UpdateCamera()
@@ -263,9 +275,17 @@ namespace ZombieShooter
             {
                 case eItemType.MedKit:
                     var medKit = item as MedKitItem;
+                    if (medKit)
+                    {
+                        inventory.IncreaseHealth(medKit.Value);
+                    }
                 break;
                 case eItemType.Ammo_Normal:
                     var ammo = item as AmmoItem;
+                    if (ammo)
+                    {
+                        inventory.IncreaseAmmo(ammo.Value);
+                    }
                 break;
             }
         }
@@ -273,13 +293,6 @@ namespace ZombieShooter
 #endregion
 
 #region Audio
-
-#if UNITY_EDITOR
-        public GameHeader headerEditor2 = new GameHeader() { header = "Audio" };
-#endif
-        [SerializeField] private float timeBetweenFootStep = 0.5f;
-        [SerializeField] private float timeBetweenShot = 0.5f;
-
         private float currentTimeBetweenFootStep;
         private float currentTimeBetweenShot;
 
