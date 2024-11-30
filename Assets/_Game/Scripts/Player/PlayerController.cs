@@ -62,6 +62,9 @@ namespace ZombieShooter
 
         private float reloadCountdown = 0f;
 
+        private float timeBetweenOnGround = 0.3f;
+        private float roundSoundCountdown = 0f;
+
         public void Initialize()
         {
             IsPlaying = false;
@@ -96,14 +99,23 @@ namespace ZombieShooter
             if (isGrounded != newCheck)
             {
                 isGrounded = newCheck;
-                if (isGrounded)
+                if (isGrounded && roundSoundCountdown <= 0f)
                 {
+                    roundSoundCountdown = timeBetweenOnGround;
                     PlaySound(SoundID.SFX_ZS_PLAYER_LAND);
                 }
-                else
+            }
+
+            if (!isGrounded)
+            {
+                if (roundSoundCountdown > 0f)
                 {
-                    PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
+                    roundSoundCountdown -= Time.deltaTime;
                 }
+            }
+            else
+            {
+                roundSoundCountdown = timeBetweenOnGround;
             }
         }
 
@@ -118,7 +130,7 @@ namespace ZombieShooter
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
                 // Debug.Log("-- Press space");
-                // mRigidbody?.AddForce(Vector3.up * jumpForce);
+                PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
                 velocity.y = Mathf.Sqrt(config.JumpForce * -2.0f * config.Gravity);
             }
 
