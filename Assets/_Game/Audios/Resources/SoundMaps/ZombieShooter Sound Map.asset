@@ -30,9 +30,39 @@ MonoBehaviour:
   - name: SFX_ZS_PLAYER_DEATH
     Id: 204
     Data: {fileID: 11400000, guid: 01753a1fd984f2f498ad3ba475d5458a, type: 2}
+  - name: SFX_ZS_PLAYER_RELOAD
+    Id: 205
+    Data: {fileID: 11400000, guid: 83eb3ef1512883b4c9bb65069cf8b273, type: 2}
+  - name: SFX_ZS_PLAYER_EMPTY_AMMO
+    Id: 206
+    Data: {fileID: 11400000, guid: 609eafec785c3f346875e2cff78664c9, type: 2}
   - name: SFX_ZS_ITEM_MEDKIT
     Id: 250
     Data: {fileID: 11400000, guid: 175687763f5c08b4087dd49d36475db3, type: 2}
   - name: SFX_ZS_ITEM_AMMO
     Id: 251
     Data: {fileID: 11400000, guid: 04818a3e15cd79047b6dc5014da5622f, type: 2}
+  - name: SFX_ZS_ZOMBIE_SPLAT
+    Id: 300
+    Data: {fileID: 11400000, guid: d244e7bdae409fb40a36c3a2a027217c, type: 2}
+  - name: SFX_ZS_ZOMBIE_MOAN_1
+    Id: 301
+    Data: {fileID: 11400000, guid: b271974c52dd0924b8d2f655051545fd, type: 2}
+  - name: SFX_ZS_ZOMBIE_MOAN_2
+    Id: 302
+    Data: {fileID: 11400000, guid: b11d0a829af241647a096a3648cf79a1, type: 2}
+  - name: SFX_ZS_ENV_CRICKET
+    Id: 400
+    Data: {fileID: 11400000, guid: 403c570033e31154e9c227593c17f298, type: 2}
+  - name: SFX_ZS_ENV_WOLF
+    Id: 401
+    Data: {fileID: 11400000, guid: 4b5161525222b334ba4deeeb4a7be9f3, type: 2}
+  - name: SFX_ZS_ENV_WIND_LIGHT
+    Id: 402
+    Data: {fileID: 11400000, guid: 649790d2aa07e5c4683d06473a6b269c, type: 2}
+  - name: SFX_ZS_ENV_WIND_SPOOKY
+    Id: 403
+    Data: {fileID: 11400000, guid: 7971fc2b4efb1c546b9638c41665f33c, type: 2}
+  - name: SFX_ZS_ENV_WIND_HARD
+    Id: 404
+    Data: {fileID: 11400000, guid: 58196af67a7d593428ad9a68876f646e, type: 2}

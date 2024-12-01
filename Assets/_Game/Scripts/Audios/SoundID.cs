@@ -9,6 +9,8 @@ namespace AudioPlayer
     public enum SoundID
     {
         NONE = 0,
+        MUSIC_THEME_SCARY,
+        MUSIC_VICTORY,
 
         // Player
         SFX_ZS_PLAYER_FOOTSTEP = 200,
@@ -25,5 +27,14 @@ namespace AudioPlayer
 
         // Zombie
         SFX_ZS_ZOMBIE_SPLAT = 300,
+        SFX_ZS_ZOMBIE_MOAN_1,
+        SFX_ZS_ZOMBIE_MOAN_2,
+
+        // Environment
+        SFX_ZS_ENV_CRICKET = 400,
+        SFX_ZS_ENV_WOLF,
+        SFX_ZS_ENV_WIND_LIGHT,
+        SFX_ZS_ENV_WIND_SPOOKY,
+        SFX_ZS_ENV_WIND_HARD,
     }
 }

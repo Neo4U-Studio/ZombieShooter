@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6b868b6ada597f4195137651713a00c, type: 3}
-  m_Name: SFX_ZS_ZOMBIE_SPLAT
+  m_Name: SFX_ZS_ENV_WIND_SPOOKY
   m_EditorClassIdentifier: 
-  Id: 300
+  Id: 403
   Clips:
-  - {fileID: 8300000, guid: cde42acd57dd3ac469ca60e7df0614cf, type: 3}
-  - {fileID: 8300000, guid: e97415ac254cb82408d78cce0b84095f, type: 3}
-  - {fileID: 8300000, guid: 525db1fa3cf11864fbc348ca37fbcd6f, type: 3}
+  - {fileID: 8300000, guid: 7f338dbd137264ce19ad32f9e008c116, type: 3}
   IsLoop: 0
   IsPitch: 0
   IsAlone: 0

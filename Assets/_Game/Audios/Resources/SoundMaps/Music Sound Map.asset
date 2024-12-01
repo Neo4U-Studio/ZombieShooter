@@ -15,6 +15,9 @@ MonoBehaviour:
   soundType: 1
   path: SoundData/Music
   SoundMappingList:
-  - name: NONE
-    Id: 0
-    Data: {fileID: 11400000, guid: 9a34885714508c6498fc110dfaffeb4e, type: 2}
+  - name: MUSIC_THEME_SCARY
+    Id: 1
+    Data: {fileID: 11400000, guid: dfa70bc9a026fdc4bb132670f991d584, type: 2}
+  - name: MUSIC_VICTORY
+    Id: 2
+    Data: {fileID: 11400000, guid: 2ee140506831bc147bbbafe0ec2a841c, type: 2}
