@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 5663938682102339341}
+  - component: {fileID: 7758134260276149251}
   m_Layer: 10
   m_Name: Barrels01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -27,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100000}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09887135, y: -0.61763865, z: 0.07296238, w: 0.7768034}
+  m_LocalRotation: {x: 0.098872215, y: -0.61763984, z: 0.07295928, w: 0.7768026}
   m_LocalPosition: {x: 39.941956, y: 2.4670312, z: 65.89484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 14.053, y: -77.336006, z: -0.503}
+  m_LocalEulerAnglesHint: {x: 14.107, y: -77.041, z: -0.519}
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105,3 +106,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1423109, y: 1.4798838, z: 2.5304465}
   m_Center: {x: 0.042578343, y: 0.5937719, z: -0.1340025}
+--- !u!65 &7758134260276149251
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1423109, y: 1.4798838, z: 2.5304465}
+  m_Center: {x: 0.042578343, y: 0.59377235, z: -0.13394338}
