@@ -68,6 +68,8 @@ namespace ZombieShooter
         private float timeBetweenOnGround = 0.3f;
         private float roundSoundCountdown = 0f;
 
+        private float shotChargeTime = 0.1f;
+
         public void Initialize()
         {
             IsPlaying = false;
@@ -213,8 +215,9 @@ namespace ZombieShooter
             {
                 ToggleShooting(false);
             }
-            if (isShooting && !IsShootingAvailable())
+            if (isShooting && !IsShootingAvailable()) // Out of ammo
             {
+                PlaySound(SoundID.SFX_ZS_PLAYER_EMPTY_AMMO);
                 ToggleShooting(false);
             }
 
@@ -375,7 +378,11 @@ namespace ZombieShooter
 
         private void ToggleShooting(bool toggle)
         {
-            if (toggle && !IsShootingAvailable()) return; // block shooting if out of ammo
+            if (toggle && !IsShootingAvailable())
+            {
+                PlaySound(SoundID.SFX_ZS_PLAYER_EMPTY_AMMO);
+                return;
+            }
 
             isShooting = toggle;
             animator?.SetBool(HashAnimatorFire, toggle);
@@ -440,9 +447,16 @@ namespace ZombieShooter
             currentTimeBetweenFootStep = timeBetweenFootStep;
         }
 
-        private void ResetShotTimer()
+        private void ResetShotTimer(bool isFirstShot = true)
         {
-            currentTimeBetweenShot = timeBetweenShot;
+            if (isFirstShot)
+            {
+                currentTimeBetweenShot = shotChargeTime;
+            }
+            else
+            {
+                currentTimeBetweenShot = timeBetweenShot;
+            }
         }
 
         private void UpdateSoundLoop()
@@ -451,7 +465,7 @@ namespace ZombieShooter
             {
                 if (currentTimeBetweenShot <= 0)
                 {
-                    ResetShotTimer();
+                    ResetShotTimer(false);
                     HandleShot();
                 }
                 else
