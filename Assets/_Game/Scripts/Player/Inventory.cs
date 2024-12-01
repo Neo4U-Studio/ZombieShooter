@@ -26,12 +26,14 @@ namespace ZombieShooter
         {
             Ammo += value;
             Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
+            // Debug.Log("--Increase ammo " + Ammo);
         }
 
         public void DecreaseAmmo(int value)
         {
             Ammo -= value;
             Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
+            // Debug.Log("--Decrease ammo " + Ammo);
         }
 
         public void ConsumeAmmo()
@@ -68,12 +70,14 @@ namespace ZombieShooter
         {
             Health += value;
             Health = Mathf.Clamp(Health, 0, maxHealth);
+            // Debug.Log("--Increase health " + Health);
         }
 
         public void DecreaseHealth(int value)
         {
             Health -= value;
             Health = Mathf.Clamp(Health, 0, maxHealth);
+            // Debug.Log("--Decrease health " + Health);
         }
     }
 }

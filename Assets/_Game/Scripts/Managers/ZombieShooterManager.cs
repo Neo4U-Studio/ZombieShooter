@@ -77,7 +77,10 @@ namespace ZombieShooter
 
         private void OnEndGame()
         {
-            playerControl.HandleWin();
+            if (ZombieShooterStats.IsWin)
+            {
+                playerControl.HandleWin();
+            }
             UnregisterEvent();
         }
 

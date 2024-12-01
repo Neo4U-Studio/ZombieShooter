@@ -53,11 +53,13 @@ namespace ZombieShooter
                 GameOver = true;
                 IsWin = true;
             }
+            Debug.Log("-- Increase zombie kill " + NumberKilledZombie);
         }
 
         private void HandlePlayerDead()
         {
             GameOver = true;
+            Debug.Log("-- Player dead ");
         }
 #endregion
     }

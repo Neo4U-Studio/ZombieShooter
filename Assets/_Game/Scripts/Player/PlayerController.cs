@@ -13,7 +13,7 @@ namespace ZombieShooter
         public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
         public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
         public static readonly int HashAnimatorReload = Animator.StringToHash("Reload");
-        public static readonly int HashAnimatorDead = Animator.StringToHash("Dead");
+        public static readonly int HashAnimatorDead = Animator.StringToHash("Death");
         public static readonly int HashAnimatorDance = Animator.StringToHash("Dance");
 
 #if UNITY_EDITOR
@@ -47,7 +47,16 @@ namespace ZombieShooter
         [SerializeField] private float timeBetweenShot = 0.5f;
         
 
-        [HideInInspector] public bool IsPlaying;
+        private bool isPlaying;
+        public bool IsPlaying
+        {
+            get => isPlaying;
+            set
+            {
+                isPlaying = value;
+                ToggleCursorLock(value);
+            }
+        }
         
         private float xCamRotation = 0f; // Vertical rotation of the camera
         private float yCamRotation = 0f; // Horizontal rotation of the camera
@@ -83,7 +92,7 @@ namespace ZombieShooter
             inventory.Initialize(config);
             FillAmmo();
             ResetAudioTimer();
-            ToggleCursorLock(true);
+            // ToggleCursorLock(true);
         }
 
         private void Update()
@@ -304,6 +313,7 @@ namespace ZombieShooter
                 GameObject hitObj = hitInfo.collider.gameObject;
                 if (hitObj.CompareTag("Zombie"))
                 {
+                    ZombieShooterStats.ON_KILL_ZOMBIE?.Invoke();
                     if (Random.Range(0, 10) < 5)
                     {
                         var rdPrefab = hitObj.GetComponent<ZombieController>().ragdoll;
@@ -322,9 +332,12 @@ namespace ZombieShooter
 
         public void HandleZombieHit(float amount)
         {
+            if (inventory.Health <= 0) return;
+            PlaySound(SoundID.SFX_ZS_ZOMBIE_SPLAT);
             inventory.DecreaseHealth(Mathf.CeilToInt(amount));
             if (inventory.Health <= 0) // Dead
             {
+                IsPlaying = false;
                 Vector3 pos = new Vector3(this.transform.position.x,
                                             Terrain.activeTerrain.SampleHeight(this.transform.position),
                                             this.transform.position.z);
@@ -338,6 +351,7 @@ namespace ZombieShooter
 
         public void HandleWin()
         {
+            IsPlaying = false;
             CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
             Vector3 pos = new Vector3(this.transform.position.x,
                                         Terrain.activeTerrain.SampleHeight(this.transform.position),

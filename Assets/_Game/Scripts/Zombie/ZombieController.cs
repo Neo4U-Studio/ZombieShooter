@@ -8,7 +8,7 @@ namespace ZombieShooter
     public class ZombieController : MonoBehaviour
     {
         public GameObject target;
-        public AudioSource[] splats;
+        // public AudioSource[] splats;
         public float walkingSpeed;
         public float runningSpeed;
         public float damageAmount = 5;
@@ -61,23 +61,23 @@ namespace ZombieShooter
             state = STATE.DEAD;
         }
 
-        void PlaySplatAudio()
-        {
-            AudioSource audioSource = new AudioSource();
-            int n = Random.Range(1, splats.Length);
+        // void PlaySplatAudio()
+        // {
+        //     AudioSource audioSource = new AudioSource();
+        //     int n = Random.Range(1, splats.Length);
 
-            audioSource = splats[n];
-            audioSource.Play();
-            splats[n] = splats[0];
-            splats[0] = audioSource;
-        }
+        //     audioSource = splats[n];
+        //     audioSource.Play();
+        //     splats[n] = splats[0];
+        //     splats[0] = audioSource;
+        // }
 
         public void DamagePlayer()
         {
             if (target != null)
             {
                 target.GetComponent<PlayerController>().HandleZombieHit(damageAmount);
-                PlaySplatAudio();
+                // PlaySplatAudio();
             }
         }
 
