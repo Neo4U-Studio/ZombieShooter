@@ -8,6 +8,7 @@ public class ZombieController : MonoBehaviour
     public GameObject target;
     public float walkingSpeed;
     public float runningSpeed;
+    public GameObject ragdoll;
     Animator anim;
     NavMeshAgent agent;
 
@@ -23,10 +24,10 @@ public class ZombieController : MonoBehaviour
 
     void TurnOffTriggers()
     {
-        anim.SetBool("Walk", false);
-        anim.SetBool("Attack", false);
-        anim.SetBool("Run", false);
-        anim.SetBool("Dead", false);
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isAttacking", false);
+        anim.SetBool("isRunning", false);
+        anim.SetBool("isDead", false);
     }
 
     float DistanceToPlayer()
@@ -52,6 +53,22 @@ public class ZombieController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (Random.Range(0, 10) < 5)
+            {
+                GameObject rd = Instantiate(ragdoll, this.transform.position, this.transform.rotation);
+                rd.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 10000);
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                TurnOffTriggers();
+                anim.SetBool("isDead", true);
+                state = STATE.DEAD;
+            }
+            return;
+        }
         if (target == null)
         {
             target = GameObject.FindWithTag("Player");
@@ -75,7 +92,7 @@ public class ZombieController : MonoBehaviour
                     agent.stoppingDistance = 0;
                     TurnOffTriggers();
                     agent.speed = walkingSpeed;
-                    anim.SetBool("Walk", true);
+                    anim.SetBool("isWalking", true);
                 }
                 if (CanSeePlayer()) state = STATE.CHASE;
                 else if (Random.Range(0, 5000) < 5)
@@ -90,7 +107,7 @@ public class ZombieController : MonoBehaviour
                 agent.stoppingDistance = 5;
                 TurnOffTriggers();
                 agent.speed = runningSpeed;
-                anim.SetBool("Run", true);
+                anim.SetBool("isRunning", true);
 
                 if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
                 {
@@ -106,7 +123,7 @@ public class ZombieController : MonoBehaviour
                 break;
             case STATE.ATTACK:
                 TurnOffTriggers();
-                anim.SetBool("Attack", true);
+                anim.SetBool("isAttacking", true);
                 this.transform.LookAt(target.transform.position);
                 if (DistanceToPlayer() > agent.stoppingDistance + 2)
                     state = STATE.CHASE;
