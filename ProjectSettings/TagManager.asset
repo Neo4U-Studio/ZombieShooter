@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Item
   - Zombie
+  - Ragdoll
   layers:
   - Default
   - TransparentFX
