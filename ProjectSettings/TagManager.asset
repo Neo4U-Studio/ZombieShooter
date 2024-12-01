@@ -8,6 +8,8 @@ TagManager:
   - Item
   - Zombie
   - Ragdoll
+  - Home
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - Player
   - Zombie
-  - 
+  - SpawnPoint
   - 
   - 
   - 
