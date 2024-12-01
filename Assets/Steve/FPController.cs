@@ -55,7 +55,7 @@ public class FPController : MonoBehaviour
                                         this.transform.position.z);
             GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
             steve.GetComponent<Animator>().SetTrigger("Death");
-            GameStats.gameOver = true;
+            //GameStats.gameOver = true;
             Destroy(this.gameObject);
         }
     }
@@ -69,7 +69,7 @@ public class FPController : MonoBehaviour
                                         this.transform.position.z);
             GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
             steve.GetComponent<Animator>().SetTrigger("Dance");
-            GameStats.gameOver = true;
+            //GameStats.gameOver = true;
             Destroy(this.gameObject);
         }
     }

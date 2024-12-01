@@ -36,7 +36,7 @@ namespace ZombieShooter
 
         float DistanceToPlayer()
         {
-            if (GameStats.gameOver) return Mathf.Infinity;
+            if (ZombieShooterStats.GameOver) return Mathf.Infinity;
             return Vector3.Distance(target.transform.position, this.transform.position);
         }
 
@@ -85,7 +85,7 @@ namespace ZombieShooter
         // Update is called once per frame
         void Update()
         {
-            if (target == null && GameStats.gameOver == false)
+            if (target == null && ZombieShooterStats.GameOver == false)
             {
                 target = GameObject.FindWithTag("Player");
                 return;
@@ -119,7 +119,7 @@ namespace ZombieShooter
                     }
                     break;
                 case STATE.CHASE:
-                    if (GameStats.gameOver) { TurnOffTriggers(); state = STATE.WANDER; return; }
+                    if (ZombieShooterStats.GameOver) { TurnOffTriggers(); state = STATE.WANDER; return; }
                     agent.SetDestination(target.transform.position);
                     agent.stoppingDistance = 5;
                     TurnOffTriggers();
@@ -139,7 +139,7 @@ namespace ZombieShooter
 
                     break;
                 case STATE.ATTACK:
-                    if (GameStats.gameOver) { TurnOffTriggers(); state = STATE.WANDER; return; }
+                    if (ZombieShooterStats.GameOver) { TurnOffTriggers(); state = STATE.WANDER; return; }
                     TurnOffTriggers();
                     anim.SetBool("isAttacking", true);
                     this.transform.LookAt(target.transform.position);

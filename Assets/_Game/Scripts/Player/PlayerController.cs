@@ -20,10 +20,10 @@ namespace ZombieShooter
         public GameHeader headerEditor = new GameHeader() { header = "Components" };
 #endif
         [SerializeField] private GameObject modelContainer;
+        [SerializeField] private GameObject playerBack;
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
         [SerializeField] private Transform shotDirection;
-        [SerializeField] private CinemachineVirtualCamera playerCam;
         [SerializeField] private Inventory inventory;
         [SerializeField] private GameObject stevePrefab;
 
@@ -47,7 +47,7 @@ namespace ZombieShooter
         [SerializeField] private float timeBetweenShot = 0.5f;
         
 
-        public bool IsPlaying;
+        [HideInInspector] public bool IsPlaying;
         
         private float xCamRotation = 0f; // Vertical rotation of the camera
         private float yCamRotation = 0f; // Horizontal rotation of the camera
@@ -70,8 +70,11 @@ namespace ZombieShooter
 
         private float shotChargeTime = 0.1f;
 
+        private CinemachineVirtualCamera playerCam;
+
         public void Initialize()
         {
+            playerCam = CameraManager.Instance.GetVirtualCamera(eVirtualCamera.PLAYER);
             IsPlaying = false;
             isCursorLocked = true;
             isGrounded = false;
@@ -320,27 +323,38 @@ namespace ZombieShooter
         public void HandleZombieHit(float amount)
         {
             inventory.DecreaseHealth(Mathf.CeilToInt(amount));
-            if (inventory.Health <= 0)
+            if (inventory.Health <= 0) // Dead
             {
                 Vector3 pos = new Vector3(this.transform.position.x,
                                             Terrain.activeTerrain.SampleHeight(this.transform.position),
                                             this.transform.position.z);
-                GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+                GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation, this.transform);
                 steve.GetComponent<Animator>().SetTrigger(HashAnimatorDead);
-                GameStats.gameOver = true;
-                Destroy(this.gameObject);
+                modelContainer.gameObject.SetActive(false);
+                ActiveGameOverCamera();
+                ZombieShooterStats.ON_PLAYER_DEAD?.Invoke();
             }
         }
 
         public void HandleWin()
         {
+            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
             Vector3 pos = new Vector3(this.transform.position.x,
                                         Terrain.activeTerrain.SampleHeight(this.transform.position),
                                         this.transform.position.z);
-            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation, this.transform);
             steve.GetComponent<Animator>().SetTrigger(HashAnimatorDance);
-            GameStats.gameOver = true;
-            Destroy(this.gameObject);
+            modelContainer.gameObject.SetActive(false);
+            ActiveGameOverCamera();
+        }
+
+        private void ActiveGameOverCamera()
+        {
+            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER_GAMEOVER;
+            var gameOverCam = CameraManager.Instance.GetVirtualCamera(eVirtualCamera.PLAYER_GAMEOVER);
+            gameOverCam.Follow = this.playerBack.transform;
+            gameOverCam.LookAt = this.playerBack.transform;
+
         }
 
         private bool IsGrounded()

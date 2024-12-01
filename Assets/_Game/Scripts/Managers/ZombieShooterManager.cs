@@ -65,6 +65,7 @@ namespace ZombieShooter
 
         private void OnStartGame()
         {
+            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
             playerControl.IsPlaying = true;
             EnterState(eGameState.Playing);
         }
@@ -76,6 +77,7 @@ namespace ZombieShooter
 
         private void OnEndGame()
         {
+            playerControl.HandleWin();
             UnregisterEvent();
         }
 
@@ -125,7 +127,10 @@ namespace ZombieShooter
                     }
                 break;
                 case eGameState.Playing:
-                    // Do nothing
+                    if (ZombieShooterStats.GameOver)
+                    {
+                        EndGame();
+                    }
                 break;
             }
         }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1228504419793898200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6628671187289217074}
+  m_Layer: 0
+  m_Name: PlayerLookBack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6628671187289217074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228504419793898200}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2717154745917652121}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1322008786883968758
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +291,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7798741082227405168}
+  - {fileID: 6628671187289217074}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6242233039284463634
@@ -350,12 +382,13 @@ MonoBehaviour:
   headerEditor:
     header: Components
   modelContainer: {fileID: 2640704757369721698}
+  playerBack: {fileID: 1228504419793898200}
   animator: {fileID: 4933874636724087652}
   charController: {fileID: 7240231795236859624}
   shotDirection: {fileID: 3122762350812651991}
-  playerCam: {fileID: 0}
   inventory: {fileID: 3581277808838033192}
-  stevePrefab: {fileID: 0}
+  stevePrefab: {fileID: 67194648466962591, guid: 18780059112e1493685069e3f9a283f1,
+    type: 3}
   headerEditor1:
     header: Configs
   config: {fileID: 11400000, guid: af11c5b16ddb3d74d8c6c3713bb27ef9, type: 2}
