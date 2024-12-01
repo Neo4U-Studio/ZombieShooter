@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3300002}
   - component: {fileID: 2300002}
   - component: {fileID: 20500000}
-  - component: {fileID: 8083962942258644737}
+  - component: {fileID: 8610699552916130829}
   m_Layer: 10
   m_Name: Boulder02
   m_TagString: Untagged
@@ -27,14 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100002}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.086496346, y: -0.45905107, z: -0.110594206, w: -0.87724537}
+  m_LocalRotation: {x: 0.08649867, y: 0.45905238, z: 0.110591054, w: 0.87724483}
   m_LocalPosition: {x: 74.16513, y: -0.96548414, z: 16.814117}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.8790002, y: 55.647003, z: 15.89}
 --- !u!33 &3300002
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -54,12 +53,10 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -84,7 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!205 &20500000
 LODGroup:
   m_ObjectHideFlags: 0
@@ -104,7 +100,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2300002}
   m_Enabled: 1
---- !u!65 &8083962942258644737
+--- !u!65 &8610699552916130829
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,16 +108,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Size: {x: 3.4468822, y: 2.797818, z: 3.202374}
   m_Center: {x: -0.018395243, y: -0.0049003367, z: 0.00038909918}
