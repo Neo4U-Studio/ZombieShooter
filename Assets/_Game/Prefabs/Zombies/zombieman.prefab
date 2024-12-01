@@ -1776,6 +1776,7 @@ GameObject:
   - component: {fileID: 978496025}
   - component: {fileID: 639642755773048186}
   - component: {fileID: 153706530}
+  - component: {fileID: -371294075265463555}
   m_Layer: 8
   m_Name: zombieman
   m_TagString: Zombie
@@ -1834,10 +1835,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  splats:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   walkingSpeed: 1
   runningSpeed: 2
   damageAmount: 5
@@ -1900,6 +1897,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 10
+--- !u!114 &-371294075265463555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176861845160572960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac368de174224fb79a73bd432bdfde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 3102302379477504934, guid: 936cacc35ac884f8bb0806cb1f2ad408, type: 3}
 --- !u!1 &5215620285009353330
 GameObject:
   m_ObjectHideFlags: 0

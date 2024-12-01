@@ -4565,6 +4565,7 @@ GameObject:
   - component: {fileID: 906151853}
   - component: {fileID: 4252016810923731775}
   - component: {fileID: 1937584263}
+  - component: {fileID: 8700769850123295772}
   m_Layer: 8
   m_Name: jill
   m_TagString: Zombie
@@ -4623,10 +4624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  splats:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   walkingSpeed: 0.8
   runningSpeed: 1.6
   damageAmount: 3
@@ -4689,3 +4686,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 5
+--- !u!114 &8700769850123295772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9153167617879130721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac368de174224fb79a73bd432bdfde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 3102302379477504934, guid: 936cacc35ac884f8bb0806cb1f2ad408, type: 3}
