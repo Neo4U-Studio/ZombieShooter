@@ -13,6 +13,8 @@ namespace ZombieShooter
         public static readonly int HashAnimatorAim = Animator.StringToHash("Aim");
         public static readonly int HashAnimatorFire = Animator.StringToHash("Fire");
         public static readonly int HashAnimatorReload = Animator.StringToHash("Reload");
+        public static readonly int HashAnimatorDead = Animator.StringToHash("Dead");
+        public static readonly int HashAnimatorDance = Animator.StringToHash("Dance");
 
 #if UNITY_EDITOR
         public GameHeader headerEditor = new GameHeader() { header = "Components" };
@@ -23,6 +25,7 @@ namespace ZombieShooter
         [SerializeField] private Transform shotDirection;
         [SerializeField] private CinemachineVirtualCamera playerCam;
         [SerializeField] private Inventory inventory;
+        [SerializeField] private GameObject stevePrefab;
 
 #if UNITY_EDITOR
         public GameHeader headerEditor1 = new GameHeader() { header = "Configs" };
@@ -258,7 +261,7 @@ namespace ZombieShooter
         {
             if (IsShootingAvailable())
             {
-                HandleZombieHit();
+                HandleShootZombie();
                 PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
                 currentAmmo--;
             }
@@ -287,7 +290,7 @@ namespace ZombieShooter
             currentAmmo = config.AmmoClip;
         }
 
-        private void HandleZombieHit()
+        private void HandleShootZombie()
         {
             RaycastHit hitInfo;
             if (Physics.Raycast(shotDirection.position, shotDirection.forward, out hitInfo, 200))
@@ -309,6 +312,32 @@ namespace ZombieShooter
                     }
                 }
             }
+        }
+
+        public void HandleZombieHit(float amount)
+        {
+            inventory.DecreaseHealth(Mathf.CeilToInt(amount));
+            if (inventory.Health <= 0)
+            {
+                Vector3 pos = new Vector3(this.transform.position.x,
+                                            Terrain.activeTerrain.SampleHeight(this.transform.position),
+                                            this.transform.position.z);
+                GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+                steve.GetComponent<Animator>().SetTrigger(HashAnimatorDead);
+                GameStats.gameOver = true;
+                Destroy(this.gameObject);
+            }
+        }
+
+        public void HandleWin()
+        {
+            Vector3 pos = new Vector3(this.transform.position.x,
+                                        Terrain.activeTerrain.SampleHeight(this.transform.position),
+                                        this.transform.position.z);
+            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+            steve.GetComponent<Animator>().SetTrigger(HashAnimatorDance);
+            GameStats.gameOver = true;
+            Destroy(this.gameObject);
         }
 
         private bool IsGrounded()

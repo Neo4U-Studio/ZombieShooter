@@ -12,7 +12,7 @@ namespace ZombieShooter
         // Start is called before the first frame update
         void Start()
         {
-            if(this.gameObject.CompareTag("Ragdoll"))
+            if(this.gameObject.tag == "Ragdoll")
                 Invoke("StartSink", 5);
         }
 
