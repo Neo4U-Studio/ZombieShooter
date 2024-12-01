@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4408995624523820384}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,16 +23,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134625338549302564}
-  serializedVersion: 2
   m_LocalRotation: {x: 7.4989665e-15, y: 0.000000014885653, z: -0.000000059608524,
     w: 1}
   m_LocalPosition: {x: -0.033910997, y: 0.0000000011346415, z: 0.0000000037857855}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1215630632029363872}
   m_Father: {fileID: 6339635558619957147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 7.8562856, y: -6.85136, z: 97.84042}
 --- !u!1 &307904864596628774
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3715031628064860469}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,13 +55,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307904864596628774}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.032401, y: 0.074271, z: 0.099067}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430326902696399795
 GameObject:
@@ -73,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1533420847271028237}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,15 +85,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430326902696399795}
-  serializedVersion: 2
   m_LocalRotation: {x: -8.166566e-12, y: 0.000007104747, z: 0.00000714945, w: 1}
   m_LocalPosition: {x: -0.040113993, y: -0.023159822, z: 0.023159826}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7132912879029025929}
   m_Father: {fileID: 3670607724609216186}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.533634, y: -40.097847, z: -13.472764}
 --- !u!1 &727200569583713716
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75731784632566022}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightEyelidUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,13 +116,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727200569583713716}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.030694999, y: 0.078716, z: 0.118064}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &786533511630768960
 GameObject:
@@ -136,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2607358120567450751}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftEyelidLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,13 +146,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786533511630768960}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.030694999, y: 0.065933995, z: 0.115719}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847220386805012809
 GameObject:
@@ -167,7 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520698403755622427}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftLipLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,13 +176,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847220386805012809}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.009831, y: -0.006915, z: 0.077034}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &938792846329261274
 GameObject:
@@ -198,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4340078399624235224}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandThumb3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,16 +206,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938792846329261274}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000029799464, y: -0.000013280405, z: -0.000013354913,
     w: 1}
   m_LocalPosition: {x: 0.03945231, y: -0.022777805, z: 0.022777809}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2918400372736396379}
   m_Father: {fileID: 4590279450725359245}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 17.844866, y: 43.746468, z: 19.537773}
 --- !u!1 &1185872389774992969
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590279450725359245}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,16 +238,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185872389774992969}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000029802642, y: 0.0000011738479, z: 0.0000011589484,
     w: 1}
   m_LocalPosition: {x: 0.03518788, y: -0.020315731, z: 0.020315742}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4340078399624235224}
   m_Father: {fileID: 7870964311893849902}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.6977777, y: 13.556051, z: -0.8573615}
 --- !u!1 &1289714058177719968
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1565883691214161936}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,15 +270,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289714058177719968}
-  serializedVersion: 2
   m_LocalRotation: {x: 3.2083898e-16, y: -3.8758497e-12, z: -0.000000014901165, w: 1}
   m_LocalPosition: {x: -0.037132, y: -0.0000000021822435, z: 8.579972e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 500600317689232145}
   m_Father: {fileID: 6222431528862742157}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 7.856217, y: -6.8513174, z: 97.84041}
 --- !u!1 &1486757056063217285
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3279677964696130284}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,13 +301,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486757056063217285}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.024999999, y: 1.7015224e-11, z: 4.93762e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7770916595515132728}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1536401396261259713
 GameObject:
@@ -327,7 +317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6587592553141522020}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,16 +331,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536401396261259713}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000029802319, y: -0.000000029796038, z: 0.00000004470766,
     w: 1}
   m_LocalPosition: {x: 0.054013, y: -0.0000000016001669, z: 0.0000000010559478}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2870179710999479844}
   m_Father: {fileID: 8361501708612707256}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.309567, y: 6.8650904, z: -100.909485}
 --- !u!1 &1560606056317048227
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4464666079110706059}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightLipUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,13 +363,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560606056317048227}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.010558, y: 0.0053649996, z: 0.13611}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671262539423397096
 GameObject:
@@ -391,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3670607724609216186}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandThumb2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,16 +393,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671262539423397096}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000040009596, y: -0.0000017490489, z: -0.0000016988485,
     w: 1}
   m_LocalPosition: {x: -0.034965128, y: -0.020187123, z: 0.020187132}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1533420847271028237}
   m_Father: {fileID: 4909643692731815326}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 3.1014786, y: -22.858002, z: -2.8811042}
 --- !u!1 &1733911606010142086
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4585718281367354997}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,16 +425,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733911606010142086}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000014901161, y: 7.7756505e-24, z: 0.000000044703484,
     w: 1}
   m_LocalPosition: {x: 0.123231, y: -0.011130012, z: -0.017934998}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7028840598075670916}
   m_Father: {fileID: 2369729184188055786}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -66.40349, y: -84.59595, z: 48.444187}
 --- !u!1 &1745664089573143820
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2208012940847651218}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandRing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,16 +457,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745664089573143820}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000029802317, y: 0.000000029790682, z: -0.000000044711232,
     w: 1}
   m_LocalPosition: {x: -0.054452, y: -0.0000000014772601, z: 0.0000000011526621}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9176606122869667184}
   m_Father: {fileID: 9138288316123242400}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 9.111961, y: -6.552828, z: 108.61236}
 --- !u!1 &1816744181931444596
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6970080108535433752}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,16 +489,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816744181931444596}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00000002980232, y: -0.000000014905037, z: -0.000000014897282,
     w: 1}
   m_LocalPosition: {x: -0.098202504, y: -0.0021087117, z: -0.044184137}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9084828562396641365}
   m_Father: {fileID: 684575237402772114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 5.471538, y: -7.682802, z: 63.194386}
 --- !u!1 &1837261951421111653
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5775133998972401516}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,16 +521,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837261951421111653}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000014901161, y: -0.000000014901165, z: 2.0932277e-12,
     w: 1}
   m_LocalPosition: {x: 0.056167997, y: -0.000000003410912, z: -4.529203e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5953293534170591719}
   m_Father: {fileID: 3407220450270032000}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.309662, y: 6.8650584, z: -100.90943}
 --- !u!1 &1848038850856223382
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4395279244647877714}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:HeadTop_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,13 +553,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848038850856223382}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.998913e-15, y: 0.178866, z: 0.001231}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902440295445616306
 GameObject:
@@ -587,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5472696809038840590}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightFootToeBase_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,13 +583,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902440295445616306}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.000031999985, y: 1.5793623e-10, z: 0.110323995}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4634624662371196688}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1970440424813709367
 GameObject:
@@ -618,7 +599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634624662371196688}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,15 +613,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970440424813709367}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000008585629, y: 6.531061e-11, z: -2.581829e-15, w: 1}
   m_LocalPosition: {x: 0.001833, y: -0.121930994, z: 0.082823}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5472696809038840590}
   m_Father: {fileID: 7812153742124774437}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.7636507, y: -0.000028733335, z: -0.0000017620571}
 --- !u!1 &1980540843368513081
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 684575237402772114}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,11 +644,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980540843368513081}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00013017112, y: 0.000000044703476, z: -5.8163335e-12, w: 1}
   m_LocalPosition: {x: -0.278738, y: 4.5474734e-15, z: -0.0000000023089648}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5885942425721358329}
   - {fileID: 551123314507735102}
@@ -676,7 +654,8 @@ Transform:
   - {fileID: 9138288316123242400}
   - {fileID: 4909643692731815326}
   m_Father: {fileID: 2442326815474771485}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -66.14734, y: -34.637592, z: 0.535375}
 --- !u!1 &2146008014585250502
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7833012062947891058}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightNostril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,13 +679,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146008014585250502}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.013541, y: 0.028378999, z: 0.130276}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2179221542023480331
 GameObject:
@@ -717,7 +695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3168425155068065742}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,11 +709,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2179221542023480331}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0000702892, y: -0.000000044703473, z: 3.139649e-12, w: 1}
   m_LocalPosition: {x: 0.278738, y: -6.536993e-15, z: -0.0000000023089628}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4244017079023191278}
   - {fileID: 3407220450270032000}
@@ -743,7 +719,8 @@ Transform:
   - {fileID: 8361501708612707256}
   - {fileID: 7870964311893849902}
   m_Father: {fileID: 7028840598075670916}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -70.33811, y: 62.604492, z: -44.057594}
 --- !u!1 &2241186762494787978
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,7 +730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5637873248503457983}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftIOuterBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,13 +744,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2241186762494787978}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.044708, y: 0.082554, z: 0.117658995}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2411856157282086993
 GameObject:
@@ -784,7 +760,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5772809320079297262}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,15 +774,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2411856157282086993}
-  serializedVersion: 2
   m_LocalRotation: {x: 3.8774097e-26, y: -4.263257e-14, z: 6.82121e-13, w: 1}
   m_LocalPosition: {x: 2.9929246e-13, y: 0.16253999, z: -0.001656}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3422601513601819202}
   m_Father: {fileID: 8546155161511260966}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.456999, y: -0.8078866, z: 3.8738415}
 --- !u!1 &2438434249561957165
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3650561601769032272}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,16 +805,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2438434249561957165}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0002662167, y: 0.000000044565304, z: -0.0000000076444255,
     w: 1}
   m_LocalPosition: {x: -0.00006493492, y: -0.3914812, z: -0.019998498}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 407868915677929584}
   m_Father: {fileID: 8779635906187287703}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -8.247419, y: -1.077996, z: 3.15065}
 --- !u!1 &2487879834701823298
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3850914712524875647}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,13 +837,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2487879834701823298}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.032403, y: 0.074271, z: 0.099067}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2559806766092297268
 GameObject:
@@ -880,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6563590262045349173}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightCheek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,13 +867,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2559806766092297268}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.038425, y: 0.037369, z: 0.112813994}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2572400560983076320
 GameObject:
@@ -911,7 +883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7770916595515132728}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,15 +897,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2572400560983076320}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000008940696, y: -1.8716781e-19, z: -1.3322675e-15, w: 1}
   m_LocalPosition: {x: 0.02782, y: 1.8934543e-11, z: 5.494583e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3279677964696130284}
   m_Father: {fileID: 567907508556043486}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.9286804, y: 6.9917107, z: -89.48204}
 --- !u!1 &2645284466208846975
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6878996171218369091}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightLipCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -957,13 +928,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2645284466208846975}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.03141, y: 0.0036109998, z: 0.062659994}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2769421664343998915
 GameObject:
@@ -974,7 +944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7812153742124774437}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,16 +958,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2769421664343998915}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0002693273, y: 0.000000044445297, z: 0.000000004549313,
     w: 1}
   m_LocalPosition: {x: -0.000064930246, y: -0.39148208, z: -0.01998097}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4634624662371196688}
   m_Father: {fileID: 894547344279427473}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -16.228926, y: 2.3476782, z: -9.094547}
 --- !u!1 &2862151462520295726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4626861004866850036}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:TongueBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1021,13 +990,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2862151462520295726}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.795021e-17, y: -0.001699, z: 0.048172}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2892796192802801228
 GameObject:
@@ -1038,7 +1006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9084828562396641365}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1052,16 +1020,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2892796192802801228}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000029802319, y: -0.000000014897281, z: 0.000000014905039,
     w: 1}
   m_LocalPosition: {x: -0.036763, y: 0.0000000011884796, z: 0.000000001927658}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8850160757738212499}
   m_Father: {fileID: 6970080108535433752}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 9.134984, y: -2.4226878, z: 108.97619}
 --- !u!1 &2992421200973563073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1038,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8779635906187287703}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,16 +1052,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2992421200973563073}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0005195161, y: -0.000000044287546, z: -0.0000000024901652,
     w: 0.9999999}
   m_LocalPosition: {x: 0.0000649082, y: -0.41761863, z: -0.005765488}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3650561601769032272}
   m_Father: {fileID: 3166414523368529124}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 51.417324, y: 7.122214, z: 12.069433}
 --- !u!1 &3058114693248744734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2870927949782714779}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftLipCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1118,13 +1084,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3058114693248744734}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.03141, y: 0.00361, z: 0.062659994}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3140802554802731017
 GameObject:
@@ -1135,7 +1100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4244017079023191278}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,16 +1114,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3140802554802731017}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000014901163, y: 2.0932269e-12, z: 0.000000014901159,
     w: 1}
   m_LocalPosition: {x: 0.10577313, y: -0.0017504537, z: 0.02287372}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1269480970974954585}
   m_Father: {fileID: 3168425155068065742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 4.566174, y: 6.55506, z: -69.69091}
 --- !u!1 &3471748259498695905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2369729184188055786}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1182,16 +1146,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3471748259498695905}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000014901161, y: 4.2632564e-14, z: -0.000000044703256,
     w: 1}
   m_LocalPosition: {x: 0.061402, y: 0.10187, z: -0.037932}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4585718281367354997}
   m_Father: {fileID: 3422601513601819202}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 2.9848475, y: -11.16206, z: 9.201177}
 --- !u!1 &3574572988572701055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3109914452766134306}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftShoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,16 +1178,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3574572988572701055}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000044703484, y: 4.2632557e-14, z: -0.000000044703256,
     w: 1}
   m_LocalPosition: {x: -0.061442, y: 0.10187, z: -0.037932}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 429839560199072897}
   m_Father: {fileID: 3422601513601819202}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -14.63671, y: 2.9977317, z: -7.059682}
 --- !u!1 &3600280289877999977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8194281314448842336}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftNostril
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1248,13 +1210,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3600280289877999977}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.013541, y: 0.028381, z: 0.13027701}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3776067194124256508
 GameObject:
@@ -1265,7 +1226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8939821645571235498}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftLipUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1279,13 +1240,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3776067194124256508}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.010558, y: 0.005367, z: 0.136111}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3815343353186177993
 GameObject:
@@ -1296,7 +1256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3154154243523757876}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,18 +1270,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3815343353186177993}
-  serializedVersion: 2
   m_LocalRotation: {x: -1.01911384e-16, y: -0.000000001608247, z: 0.00000005040407,
     w: 1}
   m_LocalPosition: {x: -0.0000000032997527, y: 0.9637561, z: -0.00035474394}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3166414523368529124}
   - {fileID: 6093858499337578750}
   - {fileID: 8546155161511260966}
   m_Father: {fileID: 8182110007186639411}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 28.180763, y: 17.323334, z: 5.171521}
 --- !u!1 &3996931008216705122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,7 +1290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830813820176123570}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1345,11 +1304,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3996931008216705122}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2797773e-17, y: 0.001018, z: 0.053701}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 192150411600281161}
   - {fileID: 2870927949782714779}
@@ -1359,6 +1316,7 @@ Transform:
   - {fileID: 4626861004866850036}
   - {fileID: 4840199989976943374}
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4038340577104030804
 GameObject:
@@ -1369,7 +1327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8554073588789856321}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1383,13 +1341,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4038340577104030804}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.018, y: 0.0000000015785341, z: 0.0000000014144902}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 779135600103804326}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4094773361092600370
 GameObject:
@@ -1400,7 +1357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3874177016745711644}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandPinky4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1414,13 +1371,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4094773361092600370}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.024999999, y: 0.0000000015532617, z: -9.243055e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8850160757738212499}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4105592903222741901
 GameObject:
@@ -1431,7 +1387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551123314507735102}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1445,16 +1401,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4105592903222741901}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0000000149011585, y: -0.00000004469573, z: 0.000000029813958,
     w: 1}
   m_LocalPosition: {x: -0.10490753, y: 4.1607165e-10, z: 0.000000008500843}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6222431528862742157}
   m_Father: {fileID: 684575237402772114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 2.6584516, y: -5.4459667, z: 52.01318}
 --- !u!1 &4252444636027727426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7936698446302403990}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftEyelidUpper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1478,13 +1433,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4252444636027727426}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.030694999, y: 0.078718, z: 0.118064}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4275993672903199395
 GameObject:
@@ -1495,7 +1449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4909643692731815326}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1509,15 +1463,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4275993672903199395}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00005205644, y: 0.000045538898, z: -0.000044670443, w: 1}
   m_LocalPosition: {x: -0.024210142, y: -0.013949037, z: 0.023927223}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3670607724609216186}
   m_Father: {fileID: 684575237402772114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 1.3988321, y: -10.843441, z: -0.5191595}
 --- !u!1 &4302007169796594348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1527,7 +1480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3407220450270032000}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandMiddle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1541,16 +1494,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4302007169796594348}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000014901159, y: 0.000000044699302, z: -0.000000029808607,
     w: 1}
   m_LocalPosition: {x: 0.10779225, y: 2.1532798e-10, z: 0.000000008645373}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5775133998972401516}
   m_Father: {fileID: 3168425155068065742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 4.566225, y: 6.555001, z: -69.69081}
 --- !u!1 &4415006321869336425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1269480970974954585}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1574,16 +1526,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4415006321869336425}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000004470348, y: -0.000000014901158, z: 2.0945587e-12,
     w: 1}
   m_LocalPosition: {x: 0.053767998, y: 0.0000000015104337, z: 0.00000000422524}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 779135600103804326}
   m_Father: {fileID: 4244017079023191278}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.309651, y: 6.865069, z: -100.90943}
 --- !u!1 &4473392330148162606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3971973166475591337}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftCheek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1607,13 +1558,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4473392330148162606}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.038425, y: 0.037364, z: 0.11281499}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4604261550580085509
 GameObject:
@@ -1624,7 +1574,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8864925119261764674}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1638,11 +1588,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4604261550580085509}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 5.650639e-37, w: 1}
   m_LocalPosition: {x: 9.00234e-16, y: 0.040266, z: 0.0085849995}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4395279244647877714}
   - {fileID: 1830813820176123570}
@@ -1663,7 +1611,8 @@ Transform:
   - {fileID: 4464666079110706059}
   - {fileID: 7833012062947891058}
   m_Father: {fileID: 274760603606971783}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.376441, y: 0.80294925, z: -3.1511128}
 --- !u!1 &4720438943014797492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6093858499337578750}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1687,16 +1636,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4720438943014797492}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00025768162, y: 0.0000000017024662, z: -0.000000053219512,
     w: 1}
   m_LocalPosition: {x: 0.096338004, y: -0.032732964, z: 0.0000000011429422}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 894547344279427473}
   m_Father: {fileID: 3154154243523757876}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -59.26708, y: 26.295586, z: -3.71353}
 --- !u!1 &4824590244716403965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8546155161511260966}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1720,16 +1668,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4824590244716403965}
-  serializedVersion: 2
   m_LocalRotation: {x: 1.0190992e-16, y: 0.000000001608247, z: -0.000000050404978,
     w: 1}
   m_LocalPosition: {x: -0.000000034853144, y: 0.092263, z: 0.015771}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5772809320079297262}
   m_Father: {fileID: 3154154243523757876}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 8.133881, y: -0.5011419, z: 2.1349733}
 --- !u!1 &5071576416332928265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2714342956230274032}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandPinky1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,15 +1700,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5071576416332928265}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0000000745058, y: 2.094115e-12, z: 0.0000000149011585, w: 1}
   m_LocalPosition: {x: 0.09791011, y: -0.002135372, z: -0.043783117}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 567907508556043486}
   m_Father: {fileID: 3168425155068065742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 6.4604797, y: 6.971873, z: -85.6349}
 --- !u!1 &5176861845160572960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,10 +1719,13 @@ GameObject:
   - component: {fileID: 8182110007186639411}
   - component: {fileID: 4858005932450810756}
   - component: {fileID: 4858005932450810757}
-  - component: {fileID: 4952224636299575913}
-  - component: {fileID: 5241155744311104202}
-  - component: {fileID: 2297990385974863788}
-  m_Layer: 7
+  - component: {fileID: 978496025}
+  - component: {fileID: 639642755773048186}
+  - component: {fileID: 153706530}
+  - component: {fileID: 153706531}
+  - component: {fileID: 153706532}
+  - component: {fileID: 153706533}
+  m_Layer: 8
   m_Name: zombieman
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -1790,19 +1739,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5176861845160572960}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.3047647, y: -0.4097333, z: 1.9122086}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3154154243523757876}
   - {fileID: 8727568619207890829}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4858005932450810756
 Animator:
-  serializedVersion: 5
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1815,12 +1763,10 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4858005932450810757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,10 +1780,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  splats:
+  - {fileID: 153706533}
+  - {fileID: 153706532}
+  - {fileID: 153706531}
   walkingSpeed: 1
   runningSpeed: 2
+  damageAmount: 5
   ragdoll: {fileID: 5782305297640324356, guid: 036b001c520844bdc98d98145574aa4c, type: 3}
---- !u!195 &4952224636299575913
+--- !u!195 &978496025
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1847,11 +1798,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1859,7 +1810,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &5241155744311104202
+--- !u!136 &639642755773048186
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1867,22 +1818,13 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5176861845160572960}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.36
-  m_Height: 1.87
+  m_Radius: 0.5
+  m_Height: 1.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0.87, z: 0}
---- !u!114 &2297990385974863788
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &153706530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1891,10 +1833,298 @@ MonoBehaviour:
   m_GameObject: {fileID: 5176861845160572960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cdb593eed195c843b1e9c33467e5d85, type: 3}
+  m_Script: {fileID: 11500000, guid: d18e85197ccef4e4e956b3876a79b56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 5
+  delay: 10
+--- !u!82 &153706531
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176861845160572960}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 83e1e304a48de4f03bd076af602e1d20, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &153706532
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176861845160572960}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 462c16aa99ab54032a326d86d6bf9fce, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &153706533
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176861845160572960}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f863741e200be46dbbf7bec363942eaf, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5215620285009353330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +2134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6086080184641891736}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightLipLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,13 +2148,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5215620285009353330}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.009831, y: -0.006913, z: 0.077034}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5306563860098478935
 GameObject:
@@ -1935,7 +2164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7870964311893849902}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandThumb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1949,15 +2178,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5306563860098478935}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000028103921, y: -0.00002265739, z: 0.000026064263, w: 1}
   m_LocalPosition: {x: 0.025704324, y: -0.012447767, z: 0.02319228}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4590279450725359245}
   m_Father: {fileID: 3168425155068065742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 15.180469, y: 8.816596, z: 4.825789}
 --- !u!1 &5543102215194342103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +2195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7028840598075670916}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1981,16 +2209,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5543102215194342103}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000059604638, y: 0.000000004141816, z: -3.0589701e-15,
     w: 1}
   m_LocalPosition: {x: 0.27686998, y: -4.5474734e-15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3168425155068065742}
   m_Father: {fileID: 4585718281367354997}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -17.088346, y: -87.81882, z: 16.45878}
 --- !u!1 &5678233352584204978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,7 +2227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3422601513601819202}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2014,17 +2241,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5678233352584204978}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 5.650639e-37, w: 1}
   m_LocalPosition: {x: 6.617702e-14, y: 0.13639599, z: -0.012922999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3109914452766134306}
   - {fileID: 3505817329908092710}
   - {fileID: 2369729184188055786}
   m_Father: {fileID: 5772809320079297262}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.596404, y: -0.84446037, z: 3.8582234}
 --- !u!1 &5715905764317818636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,7 +2260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5036925587665894063}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightEyelidLower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,13 +2274,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5715905764317818636}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.030694999, y: 0.065937, z: 0.115719}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5861207520555211861
 GameObject:
@@ -2065,7 +2290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1215630632029363872}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandIndex4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2079,13 +2304,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5861207520555211861}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.018, y: 0.0000000027480365, z: 0.0000000025459415}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4408995624523820384}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5973098648291756672
 GameObject:
@@ -2096,7 +2320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7132912879029025929}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,13 +2334,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5973098648291756672}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.021227058, y: -0.01225545, z: 0.012255449}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1533420847271028237}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6085995357101064511
 GameObject:
@@ -2127,7 +2350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3326268150573561833}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2141,13 +2364,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6085995357101064511}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.019, y: 5.4492005e-10, z: -7.1945366e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5953293534170591719}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6109148602320217436
 GameObject:
@@ -2158,7 +2380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8361501708612707256}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,16 +2394,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6109148602320217436}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00000002980232, y: 0.000000029800228, z: -0.000000014905348,
     w: 1}
   m_LocalPosition: {x: 0.10391908, y: 0.0010482564, z: -0.023499057}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6587592553141522020}
   m_Father: {fileID: 3168425155068065742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 5.6957393, y: 6.869617, z: -79.30453}
 --- !u!1 &6116037633621956867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,7 +2412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2442326815474771485}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftForeArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2205,16 +2426,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6116037633621956867}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000059604638, y: -0.0000000041418176, z: -1.03060373e-22,
     w: 1}
   m_LocalPosition: {x: -0.27686998, y: 4.5474734e-15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 684575237402772114}
   m_Father: {fileID: 429839560199072897}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -14.771256, y: 58.99119, z: -8.387255}
 --- !u!1 &6261906227739849616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,7 +2444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2496674842208876060}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightIOuterBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2238,13 +2458,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6261906227739849616}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.044708, y: 0.082551, z: 0.11765999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6339774980266795905
 GameObject:
@@ -2255,7 +2474,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32989402470643463}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2269,13 +2488,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6339774980266795905}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.016, y: 5.196006e-10, z: 8.155316e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9176606122869667184}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6518700779690835163
 GameObject:
@@ -2286,7 +2504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779135600103804326}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandIndex3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2300,16 +2518,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6518700779690835163}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000029802326, y: 0.000000014905343, z: 0.000000029800233,
     w: 1}
   m_LocalPosition: {x: 0.033855, y: 9.510438e-10, z: 0.000000003669378}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8554073588789856321}
   m_Father: {fileID: 1269480970974954585}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.9286118, y: 6.991624, z: -89.48199}
 --- !u!1 &6647178593144390419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,7 +2536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3166414523368529124}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftUpLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2333,16 +2550,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6647178593144390419}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.0002532908, y: 0.0000000013388551, z: -0.00000004121176,
     w: 1}
   m_LocalPosition: {x: -0.09633798, y: -0.032733034, z: -0.0000000011429419}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8779635906187287703}
   m_Father: {fileID: 3154154243523757876}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -73.70264, y: -71.45035, z: 47.44999}
 --- !u!1 &6765753012718680017
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,7 +2568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8850160757738212499}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandPinky3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2366,16 +2582,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6765753012718680017}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000005960464, y: -0.000000029810074, z: -0.000000029794561,
     w: 1}
   m_LocalPosition: {x: -0.028113, y: 7.100851e-11, z: 6.3626515e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3874177016745711644}
   m_Father: {fileID: 9084828562396641365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 7.8578734, y: -6.851036, z: 97.85386}
 --- !u!1 &6798047608355148502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,7 +2600,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6339635558619957147}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandIndex2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,16 +2614,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6798047608355148502}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000010430812, y: 0.00000001490116, z: -3.8800673e-12,
     w: 1}
   m_LocalPosition: {x: -0.055493, y: 0.0000000018567619, z: 0.000000004541355}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4408995624523820384}
   m_Father: {fileID: 5885942425721358329}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 9.112004, y: -6.5529337, z: 108.61223}
 --- !u!1 &7161957211434941494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10070586973943953}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftFootToeBase_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2432,13 +2646,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7161957211434941494}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0000000032620715, y: -1.00672325e-10, z: 0.110323995}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 407868915677929584}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7250171864254601432
 GameObject:
@@ -2449,7 +2662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2870179710999479844}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2463,16 +2676,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7250171864254601432}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000059604638, y: 0.000000014890691, z: -0.000000074507895,
     w: 1}
   m_LocalPosition: {x: 0.033915997, y: 0.0000000020275441, z: 0.0000000026846039}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7940538973499519636}
   m_Father: {fileID: 6587592553141522020}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.9286456, y: 6.9917464, z: -89.481926}
 --- !u!1 &7317970530611447778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6222431528862742157}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandMiddle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2496,16 +2708,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7317970530611447778}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000001490116, y: 0.000000014901163, z: -3.8778477e-12,
     w: 1}
   m_LocalPosition: {x: -0.057921, y: -0.0000000034040113, z: -0.0000000021139983}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1565883691214161936}
   m_Father: {fileID: 551123314507735102}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 9.113818, y: -6.5523515, z: 108.62835}
 --- !u!1 &7354523109074571511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 192150411600281161}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:JawEND
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,13 +2740,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7354523109074571511}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.541205e-16, y: -0.011368999, z: 0.079183996}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7591729191983780016
 GameObject:
@@ -2546,7 +2756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5953293534170591719}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandMiddle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2560,16 +2770,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7591729191983780016}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000059604645, y: 0.0000000298086, z: 0.000000044699302,
     w: 1}
   m_LocalPosition: {x: 0.037364, y: -0.0000000022690019, z: 8.12243e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3326268150573561833}
   m_Father: {fileID: 5775133998972401516}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.928699, y: 6.9916406, z: -89.48205}
 --- !u!1 &7765894855956611859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2579,7 +2788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 894547344279427473}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,16 +2802,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7765894855956611859}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00052701746, y: -0.000000044524604, z: -0.0000000017448833,
     w: 0.9999999}
   m_LocalPosition: {x: 0.00006491292, y: -0.4176184, z: -0.005783745}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7812153742124774437}
   m_Father: {fileID: 6093858499337578750}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 52.77621, y: 0.4924965, z: -4.6972733}
 --- !u!1 &7822184559348443714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,7 +2820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500600317689232145}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandMiddle4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,13 +2834,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7822184559348443714}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.019, y: -5.5038357e-10, z: 4.3902698e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1565883691214161936}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7900542738607131634
 GameObject:
@@ -2643,7 +2850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9138288316123242400}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandRing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,16 +2864,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7900542738607131634}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000029802319, y: -0.000000029798443, z: 0.000000014908917,
     w: 1}
   m_LocalPosition: {x: -0.1024075, y: -0.00046628728, z: -0.02314136}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2208012940847651218}
   m_Father: {fileID: 684575237402772114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 3.4040046, y: -5.9545865, z: 59.48401}
 --- !u!1 &8009657001611431046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,7 +2882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407868915677929584}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftToeBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2690,15 +2896,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8009657001611431046}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000008585629, y: 1.1699985e-10, z: 9.3132246e-10, w: 1}
   m_LocalPosition: {x: 0.0018329973, y: -0.121930994, z: 0.08282301}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 10070586973943953}
   m_Father: {fileID: 3650561601769032272}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -2.713605, y: 0.00000039668464, z: -0.0000027790911}
 --- !u!1 &8112750694595213485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,7 +2913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 567907508556043486}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandPinky2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2722,16 +2927,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8112750694595213485}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.000000014901161, y: 0.000000029800228, z: -0.000000014905348,
     w: 1}
   m_LocalPosition: {x: 0.036528, y: 0.0000000011134801, z: 0.0000000018100644}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7770916595515132728}
   m_Father: {fileID: 2714342956230274032}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 8.309549, y: 6.8650703, z: -100.90932}
 --- !u!1 &8299877071491589946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,7 +2945,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2918400372736396379}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandThumb4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2755,13 +2959,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8299877071491589946}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.019995565, y: -0.011544446, z: 0.0115444455}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4340078399624235224}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8323808721721982043
 GameObject:
@@ -2772,7 +2975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5885942425721358329}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandIndex1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2786,15 +2989,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8323808721721982043}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.0000000745058, y: -3.878735e-12, z: -0.000000014901159, w: 1}
   m_LocalPosition: {x: -0.105147645, y: -0.0023076152, z: 0.022649068}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6339635558619957147}
   m_Father: {fileID: 684575237402772114}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.6599255, y: -5.447174, z: 52.029114}
 --- !u!1 &8769195573051729940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,7 +3006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4840199989976943374}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:TongueTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2818,13 +3020,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8769195573051729940}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.3040607e-16, y: -0.005835, z: 0.066098996}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1830813820176123570}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8872270540917688544
 GameObject:
@@ -2836,7 +3037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8727568619207890829}
   - component: {fileID: 3837714144107647622}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie_Geo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,13 +3051,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8872270540917688544}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8182110007186639411}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &3837714144107647622
 SkinnedMeshRenderer:
@@ -2869,12 +3069,10 @@ SkinnedMeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2997,7 +3195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9176606122869667184}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftHandRing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3011,16 +3209,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948735604410827737}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.00000005960464, y: -0.000000014897281, z: 0.000000014905034,
     w: 1}
   m_LocalPosition: {x: -0.037132, y: 0.0000000023124829, z: 0.0000000029992644}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 32989402470643463}
   m_Father: {fileID: 2208012940847651218}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 7.856387, y: -6.851152, z: 97.840355}
 --- !u!1 &8950882591905110070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5607098598671108136}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftInnerBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3044,13 +3241,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8950882591905110070}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.016267998, y: 0.080956, z: 0.13069999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8971283495714455023
 GameObject:
@@ -3061,7 +3257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3505817329908092710}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3075,15 +3271,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8971283495714455023}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 5.650639e-37, w: 1}
   m_LocalPosition: {x: 6.9922306e-14, y: 0.13877401, z: -0.043541998}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 274760603606971783}
   m_Father: {fileID: 3422601513601819202}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 2.37639, y: 0.80295193, z: -3.1511247}
 --- !u!1 &9057284810386664850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3093,7 +3288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429839560199072897}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3107,16 +3302,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9057284810386664850}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.000000044703484, y: 2.4507967e-22, z: 0.000000044703484,
     w: 1}
   m_LocalPosition: {x: -0.123191, y: -0.01112999, z: -0.017934998}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2442326815474771485}
   m_Father: {fileID: 3109914452766134306}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -10.11528, y: 59.21801, z: -45.16859}
 --- !u!1 &9099385397277341532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,7 +3320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940538973499519636}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightHandRing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3140,13 +3334,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9099385397277341532}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.016, y: -0.0000000014276839, z: 7.89635e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2870179710999479844}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9105122495267476457
 GameObject:
@@ -3157,7 +3350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274760603606971783}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:Neck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3171,15 +3364,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9105122495267476457}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 5.650639e-37, w: 1}
   m_LocalPosition: {x: 9.703015e-16, y: 0.0434, z: 0.009269}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8864925119261764674}
   m_Father: {fileID: 3505817329908092710}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 2.3763905, y: 0.8029573, z: -3.1511269}
 --- !u!1 &9137379685874179240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,7 +3381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953630638599618379}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Zombie:RightInnerBrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3203,11 +3395,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9137379685874179240}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.016267, y: 0.08095899, z: 0.13069999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8864925119261764674}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

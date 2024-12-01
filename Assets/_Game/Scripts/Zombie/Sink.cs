@@ -2,36 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sink : MonoBehaviour
+namespace ZombieShooter
 {
-    public float delay = 10;
-    float destroyHeight;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Sink : MonoBehaviour
     {
-        if(this.gameObject.CompareTag("Ragdoll"))
-            Invoke("StartSink", 5);
-    }
+        public float delay = 10;
+        float destroyHeight;
 
-    public void StartSink()
-    {
-        destroyHeight = Terrain.activeTerrain.SampleHeight(this.transform.position) - 5;
-        Collider[] colList = this.transform.GetComponentsInChildren<Collider>();
-        foreach (Collider c in colList)
+        // Start is called before the first frame update
+        void Start()
         {
-            Destroy(c);
+            if(this.gameObject.CompareTag("Ragdoll"))
+                Invoke("StartSink", 5);
         }
 
-        InvokeRepeating("SinkIntoGround", delay, 0.1f);
-    }
-
-    void SinkIntoGround()
-    {
-        this.transform.Translate(0, -0.001f, 0);
-        if (this.transform.position.y < destroyHeight)
+        public void StartSink()
         {
-            Destroy(this.gameObject);
+            destroyHeight = Terrain.activeTerrain.SampleHeight(this.transform.position) - 5;
+            Collider[] colList = this.transform.GetComponentsInChildren<Collider>();
+            foreach (Collider c in colList)
+            {
+                Destroy(c);
+            }
+
+            InvokeRepeating("SinkIntoGround", delay, 0.1f);
+        }
+
+        void SinkIntoGround()
+        {
+            this.transform.Translate(0, -0.001f, 0);
+            if (this.transform.position.y < destroyHeight)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }
