@@ -12,7 +12,7 @@ public class ZombieController : MonoBehaviour
     Animator anim;
     NavMeshAgent agent;
 
-    enum STATE { IDLE, WANDER, ATTACK, CHASE, DEAD };
+    public enum STATE { IDLE, WANDER, ATTACK, CHASE, DEAD };
     STATE state = STATE.IDLE;
 
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class ZombieController : MonoBehaviour
         agent = this.GetComponent<NavMeshAgent>();
     }
 
-    void TurnOffTriggers()
+    public void TurnOffTriggers()
     {
         anim.SetBool("isWalking", false);
         anim.SetBool("isAttacking", false);
@@ -50,25 +50,32 @@ public class ZombieController : MonoBehaviour
         return false;
     }
 
+    public void KillZombie()
+    {
+        TurnOffTriggers();
+        anim.SetBool("isDead", true);
+        state = STATE.DEAD;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (Random.Range(0, 10) < 5)
-            {
-                GameObject rd = Instantiate(ragdoll, this.transform.position, this.transform.rotation);
-                rd.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 10000);
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                TurnOffTriggers();
-                anim.SetBool("isDead", true);
-                state = STATE.DEAD;
-            }
-            return;
-        }
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     if (Random.Range(0, 10) < 5)
+        //     {
+        //         GameObject rd = Instantiate(ragdoll, this.transform.position, this.transform.rotation);
+        //         rd.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 10000);
+        //         Destroy(this.gameObject);
+        //     }
+        //     else
+        //     {
+        //         TurnOffTriggers();
+        //         anim.SetBool("isDead", true);
+        //         state = STATE.DEAD;
+        //     }
+        //     return;
+        // }
         if (target == null)
         {
             target = GameObject.FindWithTag("Player");

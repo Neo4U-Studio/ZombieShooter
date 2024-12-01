@@ -17,10 +17,10 @@ namespace ZombieShooter
 #if UNITY_EDITOR
         public GameHeader headerEditor = new GameHeader() { header = "Components" };
 #endif
-
         [SerializeField] private GameObject modelContainer;
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
+        [SerializeField] private Transform shotDirection;
         [SerializeField] private CinemachineVirtualCamera playerCam;
         [SerializeField] private Inventory inventory;
 
@@ -258,6 +258,7 @@ namespace ZombieShooter
         {
             if (IsShootingAvailable())
             {
+                HandleZombieHit();
                 PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
                 currentAmmo--;
             }
@@ -284,6 +285,30 @@ namespace ZombieShooter
         private void FillAmmo()
         {
             currentAmmo = config.AmmoClip;
+        }
+
+        private void HandleZombieHit()
+        {
+            RaycastHit hitInfo;
+            if (Physics.Raycast(shotDirection.position, shotDirection.forward, out hitInfo, 200))
+            {
+                GameObject hitObj = hitInfo.collider.gameObject;
+                if (hitObj.CompareTag("Zombie"))
+                {
+                    if (Random.Range(0, 10) < 5)
+                    {
+                        var rdPrefab = hitObj.GetComponent<ZombieController>().ragdoll;
+                        var newRD = Instantiate(rdPrefab, hitObj.transform.position, hitObj.transform.rotation);
+                        newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shotDirection.forward * 10000);
+                        Destroy(hitObj);
+                    }
+                    else
+                    {
+                        var zombie = hitObj.GetComponent<ZombieController>();
+                        zombie.KillZombie();
+                    }
+                }
+            }
         }
 
         private bool IsGrounded()
