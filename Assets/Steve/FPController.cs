@@ -5,6 +5,8 @@ using UnityEngine;
 public class FPController : MonoBehaviour
 {
     public GameObject cam;
+    public GameObject stevePrefab;
+    public Transform shotDirection;
     public Animator anim;
     public AudioSource[] footsteps;
     public AudioSource jump;
@@ -32,15 +34,45 @@ public class FPController : MonoBehaviour
     float z;
 
     //Inventory
-    int ammo = 0;
+    int ammo = 50;
     int maxAmmo = 50;
-    int health = 0;
+    int health = 100;
     int maxHealth = 100;
-    int ammoClip = 0;
+    int ammoClip = 10;
     int ammoClipMax = 10;
 
     bool playingWalking = false;
     bool previouslyGrounded = true;
+
+    public void TakeHit(float amount)
+    {
+        health = (int) Mathf.Clamp(health - amount, 0, maxHealth);
+        //Debug.Log("Health: " + health);
+        if (health <= 0)
+        {
+            Vector3 pos = new Vector3(this.transform.position.x,
+                                        Terrain.activeTerrain.SampleHeight(this.transform.position),
+                                        this.transform.position.z);
+            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+            steve.GetComponent<Animator>().SetTrigger("Death");
+            GameStats.gameOver = true;
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Home")
+        {
+            Vector3 pos = new Vector3(this.transform.position.x,
+                                        Terrain.activeTerrain.SampleHeight(this.transform.position),
+                                        this.transform.position.z);
+            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation);
+            steve.GetComponent<Animator>().SetTrigger("Dance");
+            GameStats.gameOver = true;
+            Destroy(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +85,33 @@ public class FPController : MonoBehaviour
         health = maxHealth;
     }
 
+    void ProcessZombieHit()
+    {
+        RaycastHit hitInfo;
+        if (Physics.Raycast(shotDirection.position, shotDirection.forward, out hitInfo, 200))
+        {
+            GameObject hitZombie = hitInfo.collider.gameObject;
+            if (hitZombie.tag == "Zombie")
+            {
+                if (Random.Range(0, 10) < 5)
+                {
+                    GameObject rdPrefab = hitZombie.GetComponent<ZombieController>().ragdoll;
+                    GameObject newRD = Instantiate(rdPrefab, hitZombie.transform.position, hitZombie.transform.rotation);
+                    newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shotDirection.forward * 10000);
+                    Destroy(hitZombie);
+                }
+                else
+                {
+                    hitZombie.GetComponent<ZombieController>().KillZombie();
+                }
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        Debug.DrawRay(shotDirection.transform.position, shotDirection.forward * 200, Color.red);
         if (Input.GetKeyDown(KeyCode.F))
             anim.SetBool("arm", !anim.GetBool("arm"));
 
@@ -64,13 +120,14 @@ public class FPController : MonoBehaviour
             if (ammoClip > 0)
             {
                 anim.SetTrigger("fire");
+                ProcessZombieHit();
                 ammoClip--;
             }
             else if (anim.GetBool("arm"))
                 triggerSound.Play();
 
 
-            Debug.Log("Ammo Left in Clip: " + ammoClip);
+            //Debug.Log("Ammo Left in Clip: " + ammoClip);
         }
 
         if (Input.GetKeyDown(KeyCode.R) && anim.GetBool("arm"))
@@ -81,8 +138,8 @@ public class FPController : MonoBehaviour
             int ammoAvailable = amountNeeded < ammo ? amountNeeded : ammo;
             ammo -= ammoAvailable;
             ammoClip += ammoAvailable;
-            Debug.Log("Ammo Left: " + ammo);
-            Debug.Log("Ammo in Clip: " + ammoClip);
+            //Debug.Log("Ammo Left: " + ammo);
+           //Debug.Log("Ammo in Clip: " + ammoClip);
         }
 
         if (Mathf.Abs(x) > 0 || Mathf.Abs(z) > 0)
@@ -184,7 +241,7 @@ public class FPController : MonoBehaviour
         if (col.gameObject.tag == "Ammo" && ammo < maxAmmo)
         {
             ammo = Mathf.Clamp(ammo + 10, 0, maxAmmo);
-            Debug.Log("Ammo: " + ammo);
+           //Debug.Log("Ammo: " + ammo);
             Destroy(col.gameObject);
             ammoPickup.Play();
 
@@ -192,14 +249,14 @@ public class FPController : MonoBehaviour
         else if (col.gameObject.tag == "MedKit" && health < maxHealth)
         {
             health = Mathf.Clamp(health + 25, 0, maxHealth);
-            Debug.Log("MedKit: " + health);
+           //Debug.Log("MedKit: " + health);
             Destroy(col.gameObject);
             healthPickup.Play();
         }
         else if (col.gameObject.tag == "Lava")
         {
             health = Mathf.Clamp(health - 50, 0, maxHealth);
-            Debug.Log("Health Level: " + health);
+           // Debug.Log("Health Level: " + health);
             if (health <= 0)
                 deathSound.Play();
         }
