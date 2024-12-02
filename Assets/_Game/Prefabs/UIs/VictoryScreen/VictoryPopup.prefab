@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 5092229138186708648}
   - component: {fileID: 127643052910347082}
   m_Layer: 5
-  m_Name: VictoryScreen
+  m_Name: VictoryPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
