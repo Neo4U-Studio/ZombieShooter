@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject managersContainerPrefab;
     [SerializeField] GameObject eventSystemPrefab;
+    [SerializeField] GameObject canvasPrefab;
+    [SerializeField] GameObject topPopupPrefab;
+    [SerializeField] Camera uiCamera;
 
     [SerializeField] ManagerConfig managerConfig;
 
@@ -16,6 +19,8 @@ public class GameManager : MonoBehaviour
 
     private GameObject managersContainer;
     private GameObject eventSystem;
+    private GameObject mainCanvas;
+    private GameObject topPopupCanvas;
 
     private void Awake()
     {
@@ -46,6 +51,14 @@ public class GameManager : MonoBehaviour
         eventSystem = Instantiate(eventSystemPrefab);
         DontDestroyOnLoad(eventSystem);
 
+        mainCanvas = Instantiate(canvasPrefab);
+        DontDestroyOnLoad(mainCanvas);
+
+        topPopupCanvas = Instantiate(this.topPopupPrefab);
+        DontDestroyOnLoad(topPopupCanvas);
+
+        UIManager.Instance.SetUICamera(this.uiCamera);
+
         CreateManagers();
 
 #if UNITY_STANDALONE
@@ -69,5 +82,10 @@ public class GameManager : MonoBehaviour
             GameObject newManager = Instantiate(this.managerConfig.managerList[i]);
             newManager.transform.parent = managersContainer.transform;
         }
+    }
+
+    public GameObject GetTopPopupCanvas()
+    {
+        return this.topPopupCanvas;
     }
 }
