@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 using AudioPlayer;
+using DG.Tweening;
 
 namespace ZombieShooter
 {
@@ -23,7 +24,7 @@ namespace ZombieShooter
         [SerializeField] private GameObject playerBack;
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
-        [SerializeField] private Transform shotDirection;
+        // [SerializeField] private Transform shotDirection;
         [SerializeField] private Inventory inventory;
         [SerializeField] private GameObject stevePrefab;
 
@@ -62,6 +63,7 @@ namespace ZombieShooter
         private float yCamRotation = 0f; // Horizontal rotation of the camera
         private Vector3 velocity;
 
+        private bool isReloading = false;
         private bool isGrounded;
         private bool isRunning = false;
         private bool isShooting = false;
@@ -72,23 +74,26 @@ namespace ZombieShooter
         private float moveLR = 0f; // move left, right
         private float moveFB = 0f; // move forward, back
 
-        private float reloadCountdown = 0f;
-
         private float timeBetweenOnGround = 0.3f;
         private float roundSoundCountdown = 0f;
 
         private float shotChargeTime = 0.1f;
 
+        int currentAmmo = 0;
+
         private CinemachineVirtualCamera playerCam;
+        private Camera mainCamera;
 
         public void Initialize()
         {
             playerCam = CameraManager.Instance.GetVirtualCamera(eVirtualCamera.PLAYER);
+            mainCamera = CameraManager.Instance.GetOverlayCamera(eOverlayCamera.MAIN);
             IsPlaying = false;
             isCursorLocked = true;
             isGrounded = false;
             isRunning = false;
             isShooting = false;
+            isReloading = false;
             inventory.Initialize(config);
             FillAmmo();
             ResetAudioTimer();
@@ -234,18 +239,13 @@ namespace ZombieShooter
             }
 
             // Reload
-            if (reloadCountdown > 0f)
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                reloadCountdown -= Time.deltaTime;
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.R))
+                if (!isReloading)
                 {
                     HandleReload();
                 }
             }
-            
 
             // Running
             if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
@@ -289,14 +289,18 @@ namespace ZombieShooter
             ZombieShooterManager.ON_END_GAME?.Invoke();
         }
 
-        int currentAmmo = 0;
         private void HandleReload()
         {
             if (inventory.TryFillAmmoClip(ref currentAmmo, config.AmmoClip))
             {
-                reloadCountdown = config.ReloadTime;
+                isReloading = true;
                 animator?.SetTrigger(HashAnimatorReload);
                 PlaySound(SoundID.SFX_ZS_PLAYER_RELOAD);
+                ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState(), 0.1f);
+                DOVirtual.DelayedCall(config.ReloadTime, () => {
+                    isReloading = false;
+                    ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
+                });
             }
         }
 
@@ -308,7 +312,9 @@ namespace ZombieShooter
         private void HandleShootZombie()
         {
             RaycastHit hitInfo;
-            if (Physics.Raycast(shotDirection.position, shotDirection.forward, out hitInfo, 200))
+            var shotPosition = mainCamera.ViewportToWorldPoint(Vector3.one * 0.5f);
+            var shotDirection = mainCamera.transform.forward;
+            if (Physics.Raycast(shotPosition, shotDirection, out hitInfo, 200))
             {
                 GameObject hitObj = hitInfo.collider.gameObject;
                 if (hitObj.CompareTag("Zombie"))
@@ -318,7 +324,7 @@ namespace ZombieShooter
                     {
                         var rdPrefab = hitObj.GetComponent<ZombieController>().ragdoll;
                         var newRD = Instantiate(rdPrefab, hitObj.transform.position, hitObj.transform.rotation);
-                        newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shotDirection.forward * 10000);
+                        newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shotDirection * 10000);
                         Destroy(hitObj);
                     }
                     else
@@ -385,12 +391,7 @@ namespace ZombieShooter
 
         private bool IsShootingAvailable()
         {
-            return currentAmmo > 0 && !IsReloading();
-        }
-
-        private bool IsReloading()
-        {
-            return reloadCountdown > 0f;
+            return currentAmmo > 0 && !isReloading;
         }
 
         public void ToggleCursorLock(bool toggle)
@@ -418,6 +419,7 @@ namespace ZombieShooter
             {
                 ResetShotTimer();
             }
+            ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
         }
 
         private void ToggleRunning(bool toggle)
@@ -428,6 +430,25 @@ namespace ZombieShooter
             {
                 ResetFootStepTimer();
             }
+            ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
+        }
+
+        private eCrosshairState GetCurrentCrosshairState()
+        {
+            if (isReloading)
+            {
+                return eCrosshairState.RELOAD;
+            }
+            else if (isShooting)
+            {
+                return eCrosshairState.SHOOT;
+            }
+            else if (isRunning)
+            {
+                return eCrosshairState.RUN;
+            }
+
+            return eCrosshairState.IDLE;
         }
 #endregion
 

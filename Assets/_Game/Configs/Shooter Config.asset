@@ -15,4 +15,7 @@ MonoBehaviour:
   Speed: 10
   JumpForce: 2
   Gravity: -30
+  ReloadTime: 3
   MaxAmmo: 50
+  MaxHealth: 100
+  AmmoClip: 10

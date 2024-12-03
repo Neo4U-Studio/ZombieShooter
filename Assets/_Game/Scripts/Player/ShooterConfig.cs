@@ -11,7 +11,7 @@ namespace ZombieShooter
         public float Speed = 10f;
         public float JumpForce = 2f;
         public float Gravity = -30f;
-        public float ReloadTime = 2.5f;
+        public float ReloadTime = 3f;
 
         // Inventory
         public int MaxAmmo = 50;

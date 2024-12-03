@@ -51,7 +51,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3122762350812651991
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +385,6 @@ MonoBehaviour:
   playerBack: {fileID: 1228504419793898200}
   animator: {fileID: 4933874636724087652}
   charController: {fileID: 7240231795236859624}
-  shotDirection: {fileID: 3122762350812651991}
   inventory: {fileID: 3581277808838033192}
   stevePrefab: {fileID: 67194648466962591, guid: 18780059112e1493685069e3f9a283f1,
     type: 3}
@@ -401,7 +400,6 @@ MonoBehaviour:
     header: Audio
   timeBetweenFootStep: 0.5
   timeBetweenShot: 0.5
-  IsPlaying: 0
 --- !u!143 &7240231795236859624
 CharacterController:
   m_ObjectHideFlags: 0
