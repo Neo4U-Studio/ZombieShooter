@@ -21,6 +21,7 @@ namespace ZombieShooter
         public static Action ON_END_GAME;
 
         [SerializeField] PlayerController playerControl;
+        [SerializeField] ZombieShooterUI mainUI;
 
         public eGameState CurrentState { get; private set; }
         
@@ -55,6 +56,8 @@ namespace ZombieShooter
             RegisterEvent();
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
             playerControl.Initialize();
+            mainUI.Initialize(playerControl);
+            ZombieShooterStats.Instance?.RefreshValue();
             EnterState(eGameState.ReadToStart);
         }
 
@@ -67,6 +70,7 @@ namespace ZombieShooter
         {
             CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
             playerControl.IsPlaying = true;
+            mainUI.ToggleUI(true);
             EnterState(eGameState.Playing);
         }
 

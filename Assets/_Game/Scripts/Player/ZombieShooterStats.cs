@@ -14,7 +14,7 @@ namespace ZombieShooter
         public static bool IsWin { get; private set; }
         public static int NumberKilledZombie { get; private set; }
 
-        int maxKillAmount = 10;
+        // int maxKillAmount = 10;
 
         private void Awake() {
             RefreshValue();
@@ -25,7 +25,7 @@ namespace ZombieShooter
             UnregisterEvent();
         }
 
-        private void RefreshValue()
+        public void RefreshValue()
         {
             GameOver = false;
             IsWin = false;
@@ -34,29 +34,29 @@ namespace ZombieShooter
 
         private void RegisterEvent()
         {
-            ON_KILL_ZOMBIE += IncreaseZombieKilled;
-            ON_PLAYER_DEAD += HandlePlayerDead;
+            ON_KILL_ZOMBIE += OnIncreaseZombieKilled;
+            ON_PLAYER_DEAD += OnPlayerDead;
         }
 
         private void UnregisterEvent()
         {
-            ON_KILL_ZOMBIE -= IncreaseZombieKilled;
-            ON_PLAYER_DEAD -= HandlePlayerDead;
+            ON_KILL_ZOMBIE -= OnIncreaseZombieKilled;
+            ON_PLAYER_DEAD -= OnPlayerDead;
         }
 
 #region Handle events
-        private void IncreaseZombieKilled()
+        private void OnIncreaseZombieKilled()
         {
             NumberKilledZombie++;
-            if (NumberKilledZombie >= maxKillAmount)
-            {
-                GameOver = true;
-                IsWin = true;
-            }
+            // if (NumberKilledZombie >= maxKillAmount)
+            // {
+            //     GameOver = true;
+            //     IsWin = true;
+            // }
             Debug.Log("-- Increase zombie kill " + NumberKilledZombie);
         }
 
-        private void HandlePlayerDead()
+        private void OnPlayerDead()
         {
             GameOver = true;
             Debug.Log("-- Player dead ");
