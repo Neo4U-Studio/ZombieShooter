@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 4
   RunSpeed: 8
-  JumpForce: 2
+  JumpForce: 300
   Gravity: -30
   ReloadTime: 3
   MaxHealth: 100

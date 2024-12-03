@@ -23,7 +23,11 @@ namespace ZombieShooter
         [SerializeField] ZSPlayerController playerControl;
         [SerializeField] ZombieShooterUI mainUI;
 
+        [SerializeField] List<ZSTargetPoint> missionList;
+
         public eGameState CurrentState { get; private set; }
+
+        private ZSTargetPoint currentMission = null;
         
         private void Awake()
         {
@@ -71,6 +75,7 @@ namespace ZombieShooter
             CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
             playerControl.IsPlaying = true;
             mainUI.ToggleUI(true);
+            TriggerNextTarget();
             EnterState(eGameState.Playing);
         }
 
@@ -91,11 +96,17 @@ namespace ZombieShooter
         private void RegisterEvent()
         {
             ON_END_GAME += EndGame;
+            missionList.ForEach(mission => {
+                mission.OnPlayerEnterTarget += CheckCompleteMission;
+            });
         }
 
         private void UnregisterEvent()
         {
             ON_END_GAME -= EndGame;
+            missionList.ForEach(mission => {
+                mission.OnPlayerEnterTarget -= CheckCompleteMission;
+            });
         }
 
 #region Game State
@@ -140,6 +151,50 @@ namespace ZombieShooter
                     }
                 break;
             }
+        }
+#endregion
+
+#region Mission
+        private void TriggerNextTarget()
+        {
+            if (missionList != null && missionList.Count > 0)
+            {
+                currentMission = null;
+                foreach (var mission in missionList)
+                {
+                    if (!mission.IsCompleted)
+                    {
+                        currentMission = mission;
+                        break;
+                    }
+                }
+
+                if (currentMission != null)
+                {
+                    currentMission.IsActive = true;
+                    mainUI.Compass.SetTarget(currentMission.gameObject);
+                    mainUI.Compass.ToggleCompass(true);
+                }
+                else
+                {
+                    mainUI.Compass.ToggleCompass(false);
+                    OnCompletedAllMission();
+                }
+            }
+        }
+
+        private void CheckCompleteMission(ZSTargetPoint mission)
+        {
+            if (currentMission != null && currentMission == mission)
+            {
+                currentMission.IsCompleted = true;
+                TriggerNextTarget();
+            }
+        }
+
+        private void OnCompletedAllMission()
+        {
+            // Victory
         }
 #endregion
     }
