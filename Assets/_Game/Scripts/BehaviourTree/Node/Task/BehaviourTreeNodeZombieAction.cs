@@ -5,7 +5,7 @@ using ZombieShooter;
 
 namespace ZSBehaviourTree
 {
-    public class BehaviourTreeNodeZombieWander : BehaviourTreeNodeTask
+    public class BehaviourTreeNodeZombieAction : BehaviourTreeNodeTask
     {
         public eZombieAction ZombieAction = eZombieAction.Idle;
         public string TargetKey = Utilities.PLAYER_TAG;
