@@ -47,13 +47,13 @@ namespace ZSBehaviourTree
 
         protected virtual void OnStart() {
             // Debug.Log($"--[ZS] Event Node Start {this.name}");
-            BehaviourTree.ON_NODE_START?.Invoke(this);
+            //BehaviourTree.ON_NODE_START?.Invoke(this);
         }
 
         // Remove this later
         protected virtual void OnStop() {
             // Debug.Log($"--[ZS] Event Node Stop {this.name}");
-            BehaviourTree.ON_NODE_STOP?.Invoke(this);
+            //BehaviourTree.ON_NODE_STOP?.Invoke(this);
         }
 
         protected virtual State OnUpdate() { return State.Failure; }

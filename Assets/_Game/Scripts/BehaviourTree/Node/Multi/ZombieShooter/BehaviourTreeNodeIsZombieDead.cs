@@ -29,7 +29,7 @@ namespace ZSBehaviourTree
 
         protected override void CheckResult()
         {
-            Result = zombie.Isdead();
+            Result = zombie.IsDead;
         }
 
         protected override State OnUpdate()

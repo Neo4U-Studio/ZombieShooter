@@ -56,4 +56,13 @@ namespace ZombieShooter
         Ammo_Normal = 10,
     }
 
+    [Serializable]
+    public enum eZombieAction
+    { 
+        Idle, 
+        Wander, 
+        Attack, 
+        Chase, 
+        Dead 
+    };
 }
