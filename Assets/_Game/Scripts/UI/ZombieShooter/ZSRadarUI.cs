@@ -37,6 +37,7 @@ namespace ZombieShooter
             if (!radObjects.ContainsKey(owner))
             {
                 Image image = Instantiate(img, ItemContainer);
+                image.gameObject.SetActive(true);
                 radObjects.Add(owner, image);
             }
         }
