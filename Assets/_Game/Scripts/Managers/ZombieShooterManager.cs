@@ -20,7 +20,7 @@ namespace ZombieShooter
         public static ZombieShooterManager Instance;
         public static Action ON_END_GAME;
 
-        [SerializeField] PlayerController playerControl;
+        [SerializeField] ZSPlayerController playerControl;
         [SerializeField] ZombieShooterUI mainUI;
 
         public eGameState CurrentState { get; private set; }
@@ -57,7 +57,7 @@ namespace ZombieShooter
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
             playerControl.Initialize();
             mainUI.Initialize(playerControl);
-            ZombieShooterStats.Instance?.RefreshValue();
+            ZSGameStats.Instance?.RefreshValue();
             EnterState(eGameState.ReadToStart);
         }
 
@@ -81,7 +81,7 @@ namespace ZombieShooter
 
         private void OnEndGame()
         {
-            if (ZombieShooterStats.IsWin)
+            if (ZSGameStats.IsWin)
             {
                 playerControl.HandleWin();
             }
@@ -134,7 +134,7 @@ namespace ZombieShooter
                     }
                 break;
                 case eGameState.Playing:
-                    if (ZombieShooterStats.GameOver)
+                    if (ZSGameStats.GameOver)
                     {
                         EndGame();
                     }

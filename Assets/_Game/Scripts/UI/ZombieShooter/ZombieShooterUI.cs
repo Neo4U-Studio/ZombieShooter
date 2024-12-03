@@ -12,13 +12,13 @@ namespace ZombieShooter
         [SerializeField] ZSCompassUI compassUI;
         [SerializeField] ZSCrosshairUI crosshairUI;
 
-        public ZSStatusUI PlayStatus => statusUI;
+        public ZSStatusUI PlayerStatus => statusUI;
         public ZSCompassUI Compass => compassUI;
         public ZSCrosshairUI Crosshair => crosshairUI;
 
-        private PlayerController playControl = null;
+        private ZSPlayerController playControl = null;
 
-        public void Initialize(PlayerController player)
+        public void Initialize(ZSPlayerController player)
         {
             playControl = player;
             radarUI.SetPlayer(playControl.transform);

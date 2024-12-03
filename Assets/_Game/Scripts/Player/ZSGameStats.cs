@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ZombieShooter
 {
-    public class ZombieShooterStats : MonoSingleton<ZombieShooterStats>
+    public class ZSGameStats : MonoSingleton<ZSGameStats>
     {
         public static Action ON_KILL_ZOMBIE;
         public static Action ON_PLAYER_DEAD;

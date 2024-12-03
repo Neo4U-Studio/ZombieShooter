@@ -28,12 +28,17 @@ namespace ZombieShooter
         {
             healthMax = maxValue;
             healthCurrent = healthMax;
-            healthBar.value = 1f;
+            UpdateHealthGUI();
         }
 
         public void UpdateHealth(int value)
         {
             healthCurrent = Mathf.Clamp(value, 0, healthMax);
+            UpdateHealthGUI();
+        }
+
+        private void UpdateHealthGUI()
+        {
             healthBar.value = healthCurrent / (float)healthMax;
             healthText.text = $"{Mathf.CeilToInt(healthCurrent)}/{healthMax}";
         }
@@ -42,12 +47,17 @@ namespace ZombieShooter
         {
             energyMax = maxValue;
             energyCurrent = energyMax;
-            energyBar.value = 1f;
+            UpdateEnergyGUI();
         }
 
         public void UpdateEnergy(int value)
         {
             energyCurrent = Mathf.Clamp(value, 0, energyMax);
+            UpdateEnergyGUI();
+        }
+
+        private void UpdateEnergyGUI()
+        {
             energyBar.value = energyCurrent / (float)energyMax;
             energyText.text = $"{Mathf.CeilToInt(energyCurrent)}/{energyMax}";
         }

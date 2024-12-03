@@ -7,7 +7,18 @@ using DG.Tweening;
 
 namespace ZombieShooter
 {
-    public class PlayerController : MonoBehaviour
+    public enum ePlayerBehaviour
+    {
+        Grounded,
+        Moving,
+        Running,
+        Shooting,
+        Reloading
+    }
+
+    public class PlayerBehaviourDict : Dictionary<ePlayerBehaviour, bool> { }
+
+    public class ZSPlayerController : MonoBehaviour
     {
         // public static readonly int HashAnimatorIdle = Animator.StringToHash("Idle");
         public static readonly int HashAnimatorRun = Animator.StringToHash("Run");
@@ -25,13 +36,13 @@ namespace ZombieShooter
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
         // [SerializeField] private Transform shotDirection;
-        [SerializeField] private Inventory inventory;
+        [SerializeField] private ZSPlayerStatus status;
         [SerializeField] private GameObject stevePrefab;
 
 #if UNITY_EDITOR
         public GameHeader headerEditor1 = new GameHeader() { header = "Configs" };
 #endif
-        [SerializeField] private ShooterConfig config;
+        [SerializeField] private ZSPlayerConfig config;
 
 #if UNITY_EDITOR
         public GameHeader headerEditor2 = new GameHeader() { header = "Params" };
@@ -62,11 +73,9 @@ namespace ZombieShooter
         private float xCamRotation = 0f; // Vertical rotation of the camera
         private float yCamRotation = 0f; // Horizontal rotation of the camera
         private Vector3 velocity;
+        float currentSpeed;
 
-        private bool isReloading = false;
-        private bool isGrounded;
-        private bool isRunning = false;
-        private bool isShooting = false;
+        private PlayerBehaviourDict behaviourDict;
 
         private bool activeLockCursor;
         private bool isCursorLocked = false;
@@ -88,13 +97,16 @@ namespace ZombieShooter
         {
             playerCam = CameraManager.Instance.GetVirtualCamera(eVirtualCamera.PLAYER);
             mainCamera = CameraManager.Instance.GetOverlayCamera(eOverlayCamera.MAIN);
+            behaviourDict = new PlayerBehaviourDict () {
+                {ePlayerBehaviour.Grounded, false},
+                {ePlayerBehaviour.Moving, false},
+                {ePlayerBehaviour.Running, false},
+                {ePlayerBehaviour.Shooting, false},
+                {ePlayerBehaviour.Reloading, false},
+            };
             IsPlaying = false;
             isCursorLocked = true;
-            isGrounded = false;
-            isRunning = false;
-            isShooting = false;
-            isReloading = false;
-            inventory.Initialize(config);
+            status.Initialize(config);
             FillAmmo();
             ResetAudioTimer();
             // ToggleCursorLock(true);
@@ -108,6 +120,7 @@ namespace ZombieShooter
                 UpdateLockCursor();
                 UpdateGravity();
                 UpdateMovement();
+                UpdateEnergy();
                 UpdateCamera();
                 UpdateBehaviour();
                 UpdateSoundLoop();
@@ -118,17 +131,17 @@ namespace ZombieShooter
         private void CheckOnGround()
         {
             var newCheck = IsGrounded();
-            if (isGrounded != newCheck)
+            if (behaviourDict[ePlayerBehaviour.Grounded] != newCheck)
             {
-                isGrounded = newCheck;
-                if (isGrounded && roundSoundCountdown <= 0f)
+                behaviourDict[ePlayerBehaviour.Grounded] = newCheck;
+                if (behaviourDict[ePlayerBehaviour.Grounded] && roundSoundCountdown <= 0f)
                 {
                     roundSoundCountdown = timeBetweenOnGround;
                     PlaySound(SoundID.SFX_ZS_PLAYER_LAND);
                 }
             }
 
-            if (!isGrounded)
+            if (!behaviourDict[ePlayerBehaviour.Grounded])
             {
                 if (roundSoundCountdown > 0f)
                 {
@@ -143,13 +156,13 @@ namespace ZombieShooter
 
         private void UpdateGravity()
         {
-            if (isGrounded && velocity.y < 0f)
+            if (behaviourDict[ePlayerBehaviour.Grounded] && velocity.y < 0f)
             {
                 velocity.y = -2f;
             }
 
             // Jump
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) && behaviourDict[ePlayerBehaviour.Grounded])
             {
                 // Debug.Log("-- Press space");
                 PlaySound(SoundID.SFX_ZS_PLAYER_JUMP);
@@ -166,7 +179,34 @@ namespace ZombieShooter
             moveFB = Input.GetAxis("Vertical");
 
             Vector3 move = this.transform.right * moveLR + this.transform.forward * moveFB;
-            charController.Move(move * config.Speed * Time.deltaTime);
+            charController.Move(move * currentSpeed * Time.deltaTime);
+
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                ToggleRunning(true);
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                ToggleRunning(false);
+            }
+        }
+
+        private void UpdateEnergy()
+        {
+            if (behaviourDict[ePlayerBehaviour.Running])
+            {
+                currentSpeed = config.RunSpeed;
+                status.DecreaseEnergy(Time.deltaTime * config.DecreaseEnergySpeed);
+                if (status.Energy <= 0f)
+                {
+                    ToggleRunning(false);
+                }
+            }
+            else
+            {
+                currentSpeed = config.WalkSpeed;
+                status.IncreaseEnergy(Time.deltaTime * config.IncreaseEnergySpeed);
+            }
         }
 
         private void UpdateCamera()
@@ -195,11 +235,7 @@ namespace ZombieShooter
             {
                 if (Input.GetKeyDown(KeyCode.LeftAlt))
                 {
-                    isCursorLocked = false;
-                }
-                else if (Input.GetKeyUp(KeyCode.LeftAlt))
-                {
-                    isCursorLocked = true;
+                    isCursorLocked = !isCursorLocked;
                 }
 
                 if (isCursorLocked)
@@ -232,7 +268,7 @@ namespace ZombieShooter
             {
                 ToggleShooting(false);
             }
-            if (isShooting && !IsShootingAvailable()) // Out of ammo
+            if (behaviourDict[ePlayerBehaviour.Shooting] && !IsShootingAvailable()) // Out of ammo
             {
                 PlaySound(SoundID.SFX_ZS_PLAYER_EMPTY_AMMO);
                 ToggleShooting(false);
@@ -241,7 +277,7 @@ namespace ZombieShooter
             // Reload
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (!isReloading)
+                if (!behaviourDict[ePlayerBehaviour.Reloading])
                 {
                     HandleReload();
                 }
@@ -250,11 +286,11 @@ namespace ZombieShooter
             // Running
             if (Mathf.Abs(moveLR) > 0f || Mathf.Abs(moveFB) > 0f)
             {
-                ToggleRunning(true);
+                ToggleMoving(true);
             }
             else
             {
-                ToggleRunning(false);
+                ToggleMoving(false);
             }
         }
 
@@ -280,6 +316,7 @@ namespace ZombieShooter
                 PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
                 currentAmmo--;
             }
+            ZombieShooterUI.Instance.SetGunClipValue(currentAmmo, config.AmmoClip);
         }
 
         private void HandleDeath()
@@ -291,22 +328,24 @@ namespace ZombieShooter
 
         private void HandleReload()
         {
-            if (inventory.TryFillAmmoClip(ref currentAmmo, config.AmmoClip))
+            if (status.TryFillAmmoClip(ref currentAmmo, config.AmmoClip))
             {
-                isReloading = true;
+                behaviourDict[ePlayerBehaviour.Reloading] = true;
                 animator?.SetTrigger(HashAnimatorReload);
                 PlaySound(SoundID.SFX_ZS_PLAYER_RELOAD);
                 ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState(), 0.1f);
                 DOVirtual.DelayedCall(config.ReloadTime, () => {
-                    isReloading = false;
+                    behaviourDict[ePlayerBehaviour.Reloading] = false;
                     ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
                 });
             }
+            ZombieShooterUI.Instance.SetGunClipValue(currentAmmo, config.AmmoClip);
         }
 
         private void FillAmmo()
         {
             currentAmmo = config.AmmoClip;
+            ZombieShooterUI.Instance.SetGunClipValue(currentAmmo, config.AmmoClip);
         }
 
         private void HandleShootZombie()
@@ -319,7 +358,7 @@ namespace ZombieShooter
                 GameObject hitObj = hitInfo.collider.gameObject;
                 if (hitObj.CompareTag("Zombie"))
                 {
-                    ZombieShooterStats.ON_KILL_ZOMBIE?.Invoke();
+                    ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
                     if (Random.Range(0, 10) < 5)
                     {
                         var rdPrefab = hitObj.GetComponent<ZombieController>().ragdoll;
@@ -338,10 +377,10 @@ namespace ZombieShooter
 
         public void HandleZombieHit(float amount)
         {
-            if (inventory.Health <= 0) return;
+            if (status.Health <= 0) return;
             PlaySound(SoundID.SFX_ZS_ZOMBIE_SPLAT);
-            inventory.DecreaseHealth(Mathf.CeilToInt(amount));
-            if (inventory.Health <= 0) // Dead
+            status.DecreaseHealth(Mathf.CeilToInt(amount));
+            if (status.Health <= 0) // Dead
             {
                 IsPlaying = false;
                 Vector3 pos = new Vector3(this.transform.position.x,
@@ -351,7 +390,7 @@ namespace ZombieShooter
                 steve.GetComponent<Animator>().SetTrigger(HashAnimatorDead);
                 modelContainer.gameObject.SetActive(false);
                 ActiveGameOverCamera();
-                ZombieShooterStats.ON_PLAYER_DEAD?.Invoke();
+                ZSGameStats.ON_PLAYER_DEAD?.Invoke();
             }
         }
 
@@ -391,7 +430,7 @@ namespace ZombieShooter
 
         private bool IsShootingAvailable()
         {
-            return currentAmmo > 0 && !isReloading;
+            return currentAmmo > 0 && !behaviourDict[ePlayerBehaviour.Reloading];
         }
 
         public void ToggleCursorLock(bool toggle)
@@ -413,7 +452,7 @@ namespace ZombieShooter
                 return;
             }
 
-            isShooting = toggle;
+            behaviourDict[ePlayerBehaviour.Shooting] = toggle;
             animator?.SetBool(HashAnimatorFire, toggle);
             if (!toggle)
             {
@@ -422,9 +461,9 @@ namespace ZombieShooter
             ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
         }
 
-        private void ToggleRunning(bool toggle)
+        private void ToggleMoving(bool toggle)
         {
-            isRunning = toggle;
+            behaviourDict[ePlayerBehaviour.Moving] = toggle;
             animator?.SetBool(HashAnimatorRun, toggle);
             if (!toggle)
             {
@@ -433,17 +472,22 @@ namespace ZombieShooter
             ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
         }
 
+        private void ToggleRunning(bool toggle)
+        {
+            behaviourDict[ePlayerBehaviour.Running] = toggle;
+        }
+
         private eCrosshairState GetCurrentCrosshairState()
         {
-            if (isReloading)
+            if (behaviourDict[ePlayerBehaviour.Reloading])
             {
                 return eCrosshairState.RELOAD;
             }
-            else if (isShooting)
+            else if (behaviourDict[ePlayerBehaviour.Shooting])
             {
                 return eCrosshairState.SHOOT;
             }
-            else if (isRunning)
+            else if (behaviourDict[ePlayerBehaviour.Moving])
             {
                 return eCrosshairState.RUN;
             }
@@ -461,14 +505,14 @@ namespace ZombieShooter
                     var medKit = item as MedKitItem;
                     if (medKit)
                     {
-                        inventory.IncreaseHealth(medKit.Value);
+                        status.IncreaseHealth(medKit.Value);
                     }
                 break;
                 case eItemType.Ammo_Normal:
                     var ammo = item as AmmoItem;
                     if (ammo)
                     {
-                        inventory.IncreaseAmmo(ammo.Value);
+                        status.IncreaseAmmo(ammo.Value);
                     }
                 break;
             }
@@ -510,7 +554,7 @@ namespace ZombieShooter
 
         private void UpdateSoundLoop()
         {
-            if (isShooting)
+            if (behaviourDict[ePlayerBehaviour.Shooting])
             {
                 if (currentTimeBetweenShot <= 0)
                 {
@@ -523,7 +567,7 @@ namespace ZombieShooter
                 }
             }
 
-            if (isRunning && isGrounded)
+            if (behaviourDict[ePlayerBehaviour.Moving] && behaviourDict[ePlayerBehaviour.Grounded])
             {
                 if (currentTimeBetweenFootStep <= 0)
                 {

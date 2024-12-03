@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4283190bb4866904b9fbad9f37469125, type: 3}
   m_Name: Shooter Config
   m_EditorClassIdentifier: 
-  Speed: 10
+  WalkSpeed: 4
+  RunSpeed: 8
   JumpForce: 2
   Gravity: -30
   ReloadTime: 3
-  MaxAmmo: 50
   MaxHealth: 100
+  MaxEnergy: 100
+  IncreaseEnergySpeed: 10
+  DecreaseEnergySpeed: 20
+  MaxAmmo: 50
   AmmoClip: 10

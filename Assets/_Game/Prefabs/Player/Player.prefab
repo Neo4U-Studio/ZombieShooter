@@ -385,7 +385,7 @@ MonoBehaviour:
   playerBack: {fileID: 1228504419793898200}
   animator: {fileID: 4933874636724087652}
   charController: {fileID: 7240231795236859624}
-  inventory: {fileID: 3581277808838033192}
+  status: {fileID: 3581277808838033192}
   stevePrefab: {fileID: 67194648466962591, guid: 18780059112e1493685069e3f9a283f1,
     type: 3}
   headerEditor1:
