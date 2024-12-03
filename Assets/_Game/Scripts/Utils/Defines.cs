@@ -11,6 +11,7 @@ namespace ZombieShooter
         public static string GROUND_TAG = "Ground";
         public static string PLAYER_TAG = "Player";
         public static string ITEM_TAG = "Item";
+        public static string ZOMBIE_TAG = "Zombie";
 
         public static IEnumerator DelayAction(float delayTime = 1f, Action onComplete = null)
         {

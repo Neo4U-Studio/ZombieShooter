@@ -30,14 +30,15 @@ namespace ZSBehaviourTree
             return false;
         }
 
-        public virtual void CheckResult()
+        protected virtual void CheckResult()
         {
             // Init result in subclass
-            // Result = true;
+            Result = true;
         }
 
         protected override State OnUpdate()
         {
+            CheckResult();
             switch (children.Count)
             {
                 case 1:

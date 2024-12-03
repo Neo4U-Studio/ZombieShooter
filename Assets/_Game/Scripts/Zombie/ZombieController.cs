@@ -81,6 +81,11 @@ namespace ZombieShooter
             }
         }
 
+        public bool Isdead()
+        {
+            return state == STATE.DEAD;
+        }
+
 
         // Update is called once per frame
         void Update()
