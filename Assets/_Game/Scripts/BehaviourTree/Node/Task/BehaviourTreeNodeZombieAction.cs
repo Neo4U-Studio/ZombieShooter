@@ -13,6 +13,7 @@ namespace ZSBehaviourTree
         private string ZombieKey = Utilities.ZOMBIE_TAG;
 
         private ZombieController zombie = null;
+        private ZSPlayerController player = null;
         private GameObject target = null;
 
         protected override void OnStart()
@@ -27,10 +28,19 @@ namespace ZSBehaviourTree
             }
             if (!target)
             {
-                var TargetData = GetData(TargetKey) as GameObject;
-                if (TargetData != null)
+                var targetData = GetData(TargetKey);
+                if (targetData != null)
                 {
-                    target = TargetData;
+                    switch (targetData)
+                    {
+                        case ZSPlayerController:
+                            player = targetData as ZSPlayerController;
+                            target = player.gameObject;
+                            break;
+                        case GameObject:
+                            target = targetData as GameObject;
+                            break;
+                    }
                 }
             }
             base.OnStart();

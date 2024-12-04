@@ -11,20 +11,24 @@ namespace ZombieShooter
         [SerializeField] protected BehaviourTreeRunner treeRunner;
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float runningSpeed;
+        [SerializeField] protected float dectectRange = 15; // Range detect target
+        [SerializeField] protected float attackRange = 4;  // Range attack target
         [SerializeField] protected float damageAmount = 5;
         
         public GameObject ragdoll;
 
         public bool IsDead { get; private set; }
+        public eZombieType Type => GetZombieType();
 
-        protected GameObject target;
+        protected ZSPlayerController target;
         protected Animator anim;
         protected NavMeshAgent agent;
         protected BehaviourTree behaviourTree;
 
         private float distanceToTarget = 2f;
 
-        // Start is called before the first frame update
+        protected abstract eZombieType GetZombieType();
+
         protected virtual void Awake() {
             IsDead = false;
             anim = this.GetComponent<Animator>();
@@ -32,7 +36,7 @@ namespace ZombieShooter
         }
 
         protected virtual void Start() {
-            target = ZombieShooterManager.Instance.Player.gameObject;
+            target = ZombieShooterManager.Instance.Player;
             if (treeRunner)
             {
                 treeRunner.RunTree(AssignBehaviourTreeData);
@@ -44,6 +48,8 @@ namespace ZombieShooter
             behaviourTree = tree;
             behaviourTree.BindData(Utilities.PLAYER_TAG, target);
             behaviourTree.BindData(Utilities.ZOMBIE_TAG, this);
+            behaviourTree.BindData(Utilities.ZOMBIE_DETECT_RANGE_KEY, dectectRange);
+            behaviourTree.BindData(Utilities.ZOMBIE_ATTACK_RANGE_KEY, attackRange);
         }
 
         public void KillZombie()
@@ -56,7 +62,7 @@ namespace ZombieShooter
         {
             if (target != null)
             {
-                target.GetComponent<ZSPlayerController>().HandleZombieHit(damageAmount);
+                target.HandleZombieHit(damageAmount);
                 // PlaySplatAudio();
             }
         }

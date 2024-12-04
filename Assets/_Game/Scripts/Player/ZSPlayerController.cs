@@ -69,6 +69,8 @@ namespace ZombieShooter
                 ToggleCursorLock(value);
             }
         }
+
+        public bool IsDead => status.Health <= 0;
         
         private float xCamRotation = 0f; // Vertical rotation of the camera
         private float yCamRotation = 0f; // Horizontal rotation of the camera

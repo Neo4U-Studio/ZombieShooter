@@ -62,6 +62,7 @@ MonoBehaviour:
   - {fileID: 1337805866806473043}
   Result: 1
   TargetKey: Player
+  CheckRangeKey: Attack_Range
   Range: 4
 --- !u!114 &-8331565578861214693
 MonoBehaviour:
@@ -122,25 +123,6 @@ MonoBehaviour:
   parent: {fileID: 2698428220543208895}
   ZombieAction: 0
   TargetKey: Player
---- !u!114 &-5177504477252772663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9599412416dd7b04bb4cf3914a250d63, type: 3}
-  m_Name: BehaviourTreeNodeWait
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: b9868486cfcf2224d82a1f84c0f2aa3c
-  positionView: {x: 799.52, y: 635.2}
-  description: Delay call next action
-  parent: {fileID: -1994342178620728137}
-  duration: 4
 --- !u!114 &-4985913950692816136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +205,7 @@ MonoBehaviour:
   children:
   - {fileID: 7840908959508441438}
   - {fileID: -4985913950692816136}
-  - {fileID: -5177504477252772663}
+  - {fileID: 7914148908079494366}
 --- !u!114 &-1478482155762082348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +229,7 @@ MonoBehaviour:
   - {fileID: -1994342178620728137}
   Result: 1
   TargetKey: Player
+  CheckRangeKey: Detect_Range
   Range: 20
 --- !u!114 &-710941406019736104
 MonoBehaviour:
@@ -309,7 +292,6 @@ MonoBehaviour:
   - {fileID: -8631166371337817026}
   - {fileID: 7980856898204047561}
   - {fileID: -8141007117389123970}
-  - {fileID: -5177504477252772663}
   - {fileID: -1994342178620728137}
   - {fileID: -4985913950692816136}
   - {fileID: 8994697393459152171}
@@ -326,6 +308,7 @@ MonoBehaviour:
   - {fileID: 7840908959508441438}
   - {fileID: -2391658820656652544}
   - {fileID: -9030640143944548667}
+  - {fileID: 7914148908079494366}
 --- !u!114 &835719062407018468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +427,25 @@ MonoBehaviour:
   positionView: {x: 309.92004, y: 631.2}
   description: 
   parent: {fileID: -1994342178620728137}
+--- !u!114 &7914148908079494366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b119ef54c4e3d8d469a351e88405c17e, type: 3}
+  m_Name: BehaviourTreeNodeWaitRandom
+  m_EditorClassIdentifier: 
+  isStarted: 0
+  state: 0
+  guid: 4d5b56a765cc76941a32a94aa9b6a430
+  positionView: {x: 798.3999, y: 632}
+  description: Delay call next action
+  parent: {fileID: -1994342178620728137}
+  duration: {x: 2, y: 6}
 --- !u!114 &7980856898204047561
 MonoBehaviour:
   m_ObjectHideFlags: 0

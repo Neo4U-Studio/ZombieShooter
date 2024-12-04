@@ -8,6 +8,9 @@ namespace ZombieShooter
 {
     public class ZombieNormalController : ZombieController
     {
-
+        protected override eZombieType GetZombieType()
+        {
+            return eZombieType.Zombie_Normal;
+        }
     }
 }

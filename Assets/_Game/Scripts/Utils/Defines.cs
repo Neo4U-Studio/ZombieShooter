@@ -13,6 +13,9 @@ namespace ZombieShooter
         public static string ITEM_TAG = "Item";
         public static string ZOMBIE_TAG = "Zombie";
 
+        public static string ZOMBIE_DETECT_RANGE_KEY = "Detect_Range";
+        public static string ZOMBIE_ATTACK_RANGE_KEY = "Attack_Range";
+
         public static IEnumerator DelayAction(float delayTime = 1f, Action onComplete = null)
         {
             yield return DelayUtils.Wait(delayTime);
@@ -55,6 +58,14 @@ namespace ZombieShooter
         MedKit,
         Ammo_Normal = 10,
     }
+
+    [Serializable]
+    public enum eZombieType
+    { 
+        Zombie_Normal, 
+        Zombie_Shooting, 
+        Zombie_Boss,
+    };
 
     [Serializable]
     public enum eZombieAction
