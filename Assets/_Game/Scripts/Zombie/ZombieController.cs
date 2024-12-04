@@ -137,7 +137,11 @@ namespace ZombieShooter
         public void TriggerAttack(GameObject target)
         {
             anim.SetBool("isAttacking", true);
-            this.transform.LookAt(target.transform.position);
+
+            // this.transform.LookAt(target.transform);
+            Vector3 lookDirection = target.transform.position - transform.position;
+            lookDirection.y = 0; // Prevent rotation on the Y-axis
+            transform.rotation = Quaternion.LookRotation(lookDirection);
         }
 
         public void TriggerDead()
