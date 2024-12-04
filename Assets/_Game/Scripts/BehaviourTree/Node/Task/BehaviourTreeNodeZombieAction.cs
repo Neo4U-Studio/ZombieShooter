@@ -44,6 +44,7 @@ namespace ZSBehaviourTree
                 switch (ZombieAction)
                 {
                     case eZombieAction.Idle:
+                        zombie.ResetAgent();
                         zombie.TriggerIdle();
                         break;
                     case eZombieAction.Wander:

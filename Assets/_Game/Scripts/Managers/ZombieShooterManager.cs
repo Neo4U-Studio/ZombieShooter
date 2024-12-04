@@ -26,6 +26,7 @@ namespace ZombieShooter
         [SerializeField] List<ZSTargetPoint> missionList;
 
         public eGameState CurrentState { get; private set; }
+        public ZSPlayerController Player => playerControl;
 
         private ZSTargetPoint currentMission = null;
         
@@ -59,8 +60,8 @@ namespace ZombieShooter
         {
             RegisterEvent();
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
-            playerControl.Initialize();
-            mainUI.Initialize(playerControl);
+            Player.Initialize();
+            mainUI.Initialize(Player);
             ZSGameStats.Instance?.RefreshValue();
             EnterState(eGameState.ReadToStart);
         }
@@ -73,7 +74,7 @@ namespace ZombieShooter
         private void OnStartGame()
         {
             CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
-            playerControl.IsPlaying = true;
+            Player.IsPlaying = true;
             mainUI.ToggleUI(true);
             TriggerNextTarget();
             EnterState(eGameState.Playing);
@@ -88,7 +89,7 @@ namespace ZombieShooter
         {
             if (ZSGameStats.IsWin)
             {
-                playerControl.HandleWin();
+                Player.HandleWin();
             }
             UnregisterEvent();
         }

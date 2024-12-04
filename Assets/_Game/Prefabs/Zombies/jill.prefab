@@ -4568,6 +4568,7 @@ GameObject:
   - component: {fileID: 926430651781387560}
   - component: {fileID: 1123755394}
   - component: {fileID: 759870651343233805}
+  - component: {fileID: 8785848544335051940}
   m_Layer: 8
   m_Name: jill
   m_TagString: Zombie
@@ -4625,10 +4626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec9c05e03277468cac8631ea3ac0fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeRunner: {fileID: 8785848544335051940}
   target: {fileID: 0}
   walkingSpeed: 0.8
   runningSpeed: 1.6
   damageAmount: 3
+  distanceToTarget: 2
   ragdoll: {fileID: 6999991228770104778, guid: cd78e3604c7aa454790a57387c5aa1b8, type: 3}
 --- !u!195 &906151853
 NavMeshAgent:
@@ -4814,3 +4817,16 @@ MonoBehaviour:
   firstPlay: 0
   randomMin: 5
   randomMax: 10
+--- !u!114 &8785848544335051940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9153167617879130721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f331c7a7e7f42547910a837c7388b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 5a789f740db28664ca2a859d46182016, type: 2}

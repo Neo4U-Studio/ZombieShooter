@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using ZSBehaviourTree;
 
 namespace ZombieShooter
 {
     public class ZombieController : MonoBehaviour
     {
+        [SerializeField] public BehaviourTreeRunner treeRunner;
         public GameObject target;
         // public AudioSource[] splats;
         public float walkingSpeed;
         public float runningSpeed;
         public float damageAmount = 5;
+        public float distanceToTarget = 2f;
         public GameObject ragdoll;
 
         public bool IsDead { get; private set; }
 
         Animator anim;
         NavMeshAgent agent;
+        BehaviourTree behaviourTree;
 
         // Start is called before the first frame update
         private void Awake() {
@@ -26,7 +30,20 @@ namespace ZombieShooter
             agent = this.GetComponent<NavMeshAgent>();
         }
 
-        
+        private void Start() {
+            target = ZombieShooterManager.Instance.Player.gameObject;
+            if (treeRunner)
+            {
+                treeRunner.RunTree(AssignBehaviourTreeData);
+            }
+        }
+
+        private void AssignBehaviourTreeData(BehaviourTree tree)
+        {
+            behaviourTree = tree;
+            behaviourTree.BindData(Utilities.PLAYER_TAG, target);
+            behaviourTree.BindData(Utilities.ZOMBIE_TAG, this);
+        }
 
         float DistanceToPlayer()
         {
@@ -111,7 +128,7 @@ namespace ZombieShooter
         public void TriggerChase(GameObject target)
         {
             agent.SetDestination(target.transform.position);
-            agent.stoppingDistance = 5;
+            agent.stoppingDistance = distanceToTarget;
             // TurnOffTriggers();
             agent.speed = runningSpeed;
             anim.SetBool("isRunning", true);

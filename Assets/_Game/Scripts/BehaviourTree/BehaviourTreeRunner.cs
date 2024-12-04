@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace ZSBehaviourTree
 {
-    public class BehaviourTreeTreeRunner : MonoBehaviour
+    public class BehaviourTreeRunner : MonoBehaviour
     {
-        [HideInInspector] public BehaviourTree tree;
+        [SerializeField] public BehaviourTree tree;
 
         private bool isTreeStarted = false;
 

@@ -114,7 +114,7 @@ public class BehaviourTreeEditor : EditorWindow
             BehaviourTree tree = Selection.activeObject as BehaviourTree;
             if (!tree) {
                 if (Selection.activeGameObject) {
-                    BehaviourTreeTreeRunner runner = Selection.activeGameObject.GetComponent<BehaviourTreeTreeRunner>();
+                    BehaviourTreeRunner runner = Selection.activeGameObject.GetComponent<BehaviourTreeRunner>();
                     if (runner) {
                         tree = runner.tree;
                     }

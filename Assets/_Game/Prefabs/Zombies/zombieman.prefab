@@ -1779,6 +1779,7 @@ GameObject:
   - component: {fileID: 7138133221636463585}
   - component: {fileID: 1640319439}
   - component: {fileID: 3803453349777984592}
+  - component: {fileID: 1012523180012931645}
   m_Layer: 8
   m_Name: zombieman
   m_TagString: Zombie
@@ -1836,10 +1837,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec9c05e03277468cac8631ea3ac0fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeRunner: {fileID: 1012523180012931645}
   target: {fileID: 0}
   walkingSpeed: 1
   runningSpeed: 2
   damageAmount: 5
+  distanceToTarget: 2
   ragdoll: {fileID: 5782305297640324356, guid: 036b001c520844bdc98d98145574aa4c, type: 3}
 --- !u!195 &978496025
 NavMeshAgent:
@@ -2025,6 +2028,19 @@ MonoBehaviour:
   firstPlay: 0
   randomMin: 5
   randomMax: 10
+--- !u!114 &1012523180012931645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176861845160572960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f331c7a7e7f42547910a837c7388b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tree: {fileID: 11400000, guid: 5a789f740db28664ca2a859d46182016, type: 2}
 --- !u!1 &5215620285009353330
 GameObject:
   m_ObjectHideFlags: 0
