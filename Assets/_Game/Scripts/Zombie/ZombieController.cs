@@ -26,13 +26,14 @@ namespace ZombieShooter
 #if UNITY_EDITOR
         public GameHeader headerEditor2 = new GameHeader() { header = "Params" };
 #endif
+        [SerializeField] protected int health = 20;
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float runningSpeed;
         [SerializeField] protected float dectectRange = 15; // Range detect target
         [SerializeField] protected float attackRange = 4;  // Range attack target
         [SerializeField] protected float damageAmount = 5;
 
-        public bool IsDead { get; private set; }
+        public bool IsDead => currentHealth <= 0;
         public eZombieType Type => GetZombieType();
 
         protected ZSPlayerController target;
@@ -41,6 +42,7 @@ namespace ZombieShooter
         protected BehaviourTree behaviourTree;
         protected MakeRadarObject radar;
         protected float currentDamageAmount = 0;
+        protected int currentHealth = 20;
 
         private float distanceToTarget = 2f;
 
@@ -70,7 +72,7 @@ namespace ZombieShooter
             ToggleZombieCollider(true);
             target = ZombieShooterManager.Instance.Player;
             agent.enabled = true;
-            IsDead = false;
+            ResetHealth();
             if (treeRunner)
             {
                 treeRunner.RunTree(AssignBehaviourTreeData);
@@ -103,26 +105,45 @@ namespace ZombieShooter
             behaviourTree.BindData(Utilities.ZOMBIE_ATTACK_RANGE_KEY, attackRange);
         }
 
-        public virtual void KillZombie(Vector3 shootDirection)
+        public virtual void DamageToZombie(int damageAmount, Vector3 knockDirection, float force = 0f, bool useRagdoll = true)
         {
-            ToggleRadar(false);
-            if (ragdollPrefab & (UnityEngine.Random.Range(0, 10) < 5))
+            DecreaseHealth(damageAmount);
+            if (IsDead)
             {
-                var newRD = Instantiate(ragdollPrefab, this.transform.position, this.transform.rotation);
-                newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shootDirection * 10000f);
-                TurnOffTriggers();
-                ResetAgent();
-                TriggerDead(false);
-                DestroyZombie();
-                DOVirtual.DelayedCall(5f, () => Sink.StartSink(newRD, 2, 5));
+                ToggleRadar(false);
+                if (ragdollPrefab && useRagdoll && IsAllowUseRagdoll())
+                {
+                    var newRD = Instantiate(ragdollPrefab, this.transform.position, this.transform.rotation);
+                    newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(knockDirection * force);
+                    TurnOffTriggers();
+                    ResetAgent();
+                    TriggerDead(false);
+                    DestroyZombie();
+                    DOVirtual.DelayedCall(5f, () => Sink.StartSink(newRD, 2, 5));
+                }
+                else
+                {
+                    TurnOffTriggers();
+                    ResetAgent();
+                    TriggerDead(true);
+                    Sink.StartSink(this.gameObject, 2, 10);
+                }
             }
-            else
-            {
-                TurnOffTriggers();
-                ResetAgent();
-                TriggerDead(true);
-                Sink.StartSink(this.gameObject, 2, 10);
-            }
+        }
+
+        protected void ResetHealth()
+        {
+            currentHealth = health;
+        }
+
+        protected void DecreaseHealth(int amount)
+        {
+            currentHealth = Mathf.Clamp(currentHealth - amount, 0, health);
+        }
+
+        protected virtual bool IsAllowUseRagdoll()
+        {
+            return true;
         }
 
         public void DestroyZombie()
@@ -225,7 +246,7 @@ namespace ZombieShooter
             {
                 anim.SetBool(HashAnimatorDead, true);
             }
-            IsDead = true;
+            currentHealth = 0;
         }
 
         public void ResetAgent()

@@ -30,6 +30,11 @@ namespace ZombieShooter
             return eZombieType.Zombie_Boss;
         }
 
+        protected override bool IsAllowUseRagdoll()
+        {
+            return false;
+        }
+
         protected override void AssignBehaviourTreeData(BehaviourTree tree)
         {
             base.AssignBehaviourTreeData(tree);

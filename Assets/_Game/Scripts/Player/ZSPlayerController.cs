@@ -371,7 +371,7 @@ namespace ZombieShooter
                     PlayZombieBloodVfx(hitInfo);
                     ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
                     var zombie = hitObj.GetComponent<ZombieController>();
-                    zombie.KillZombie(shotDirection);
+                    zombie.DamageToZombie(20, shotDirection, 10000, true);
                 }
             }
         }

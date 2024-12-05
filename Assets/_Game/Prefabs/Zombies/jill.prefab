@@ -4631,6 +4631,7 @@ MonoBehaviour:
     type: 3}
   headerEditor2:
     header: Params
+  health: 30
   walkingSpeed: 0.8
   runningSpeed: 1.6
   dectectRange: 15
