@@ -5,6 +5,7 @@ using UnityEngine;
 public enum PopupType
 {
     NONE = -1,
-    POPUP_QUESTION = 0,
-    POPUP_LOADING_SCREEN
+    POPUP_LOADING_SCREEN = 0,
+    POPUP_VICTORY,
+    POPUP_LOSE,
 }

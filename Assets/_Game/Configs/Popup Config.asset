@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Popup Config
   m_EditorClassIdentifier: 
   popupInfos:
-  - type: 0
-    prefabPath: 
   - type: 1
-    prefabPath: 
+    prefabPath: UIPrefabs/VictoryPopup
+  - type: 2
+    prefabPath: UIPrefabs/LosePopup
