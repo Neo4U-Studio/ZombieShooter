@@ -59,7 +59,14 @@ namespace ZombieShooter
     {
         Empty = 0,
         MedKit,
-        Ammo_Normal = 10,
+        Ammo,
+    }
+
+    [Serializable]
+    public enum eWeaponType
+    {
+        Riffle = 0,
+        Launcher
     }
 
     [Serializable]

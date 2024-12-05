@@ -9,6 +9,9 @@ namespace ZombieShooter
 {
 	public class ProjectileController : MonoBehaviour
 	{
+#if UNITY_EDITOR
+        public GameHeader headerEditor = new GameHeader() { header = "General" };
+#endif
 		[SerializeField] float speed = 20f;
 		
 		[Tooltip("From 0% to 100%")]
@@ -33,12 +36,24 @@ namespace ZombieShooter
 
 		public void Fire(Vector3 target, Action<GameObject> onHitObject = null)
 		{
-			rb.isKinematic = false;
 			this.transform.LookAt(target);
 			this.onHitObject = onHitObject;
+			ResetBullet();
+			CalculateOffset();
+			SetBulletVelocity(target);
+			isMoving = true;
+		}
+
+		protected virtual void ResetBullet()
+		{
+			rb.isKinematic = false;
 			this.currentMovingTime = 0f;
 			this.currentSpeed = speed;
 			this.collided = false;
+		}
+
+		protected virtual void CalculateOffset()
+		{
 			if (accuracy != 100) {
 				accuracy = 1 - (accuracy / 100);
 
@@ -58,8 +73,10 @@ namespace ZombieShooter
 					}
 				}
 			}
-			SetBulletVelocity(target);
-			isMoving = true;
+			else
+			{
+				offset = Vector3.zero;
+			}
 		}
 
 		protected virtual void SetBulletVelocity(Vector3 target)
@@ -68,7 +85,7 @@ namespace ZombieShooter
 			rb.velocity = (direction + offset).normalized * currentSpeed;
 		}
 
-		private void Update() {
+		protected virtual void Update() {
 			if (isMoving)
 			{
 				currentMovingTime += Time.deltaTime;
@@ -79,35 +96,46 @@ namespace ZombieShooter
 			}
 		}
 
-		private void OnCollisionEnter (Collision co)
+		private void OnCollisionEnter (Collision collision)
 		{
-			if (co.gameObject.tag != "Bullet" && !collided)
+			if (collision.gameObject.tag != "Bullet" && !collided)
 			{
-				Debug.Log("-- Bullet hit " + co.gameObject.tag);
+				// Debug.Log("-- Bullet hit " + co.gameObject.tag);
 				collided = true;			
 				currentSpeed = 0;
 				rb.isKinematic = true;
 
-				ContactPoint contact = co.contacts[0];
-				Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
-				Vector3 pos = contact.point;
-
-				if (hitVfxPrefab != null) {
-					var hitVFX = Instantiate(hitVfxPrefab, pos, rot);
-					var ps = hitVFX.GetComponent<ParticleSystem>();
-					if (ps == null)
-					{
-						var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-						Destroy(hitVFX, psChild.main.duration);
-					} 
-					else
-					{
-						Destroy(hitVFX, ps.main.duration);
-					}
-				}
+				TriggerBulletEffect();
+				TriggerHitVfx(collision);
 
 				DestroyProjectile(false);
-				onHitObject?.Invoke(co.gameObject);
+				onHitObject?.Invoke(collision.gameObject);
+			}
+		}
+
+		protected virtual void TriggerBulletEffect()
+		{
+			// Init in sub class
+		}
+
+		protected virtual void TriggerHitVfx(Collision collision)
+		{
+			ContactPoint contact = collision.contacts[0];
+			Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
+			Vector3 pos = contact.point;
+
+			if (hitVfxPrefab != null) {
+				var hitVFX = Instantiate(hitVfxPrefab, pos, rot);
+				var ps = hitVFX.GetComponent<ParticleSystem>();
+				if (ps == null)
+				{
+					var psChild = hitVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+					Destroy(hitVFX, psChild.main.duration);
+				} 
+				else
+				{
+					Destroy(hitVFX, ps.main.duration);
+				}
 			}
 		}
 

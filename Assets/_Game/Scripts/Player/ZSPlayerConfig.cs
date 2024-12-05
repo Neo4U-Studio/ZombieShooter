@@ -21,7 +21,7 @@ namespace ZombieShooter
         public float DecreaseEnergySpeed = 20;
 
         // Inventory
-        public int MaxAmmo = 50;
-        public int AmmoClip = 10;
+        // public int MaxAmmo = 50;
+        // public int AmmoClip = 10;
     }
 }

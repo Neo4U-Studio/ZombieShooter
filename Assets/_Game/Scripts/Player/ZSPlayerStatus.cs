@@ -6,8 +6,8 @@ namespace ZombieShooter
 {
     public class ZSPlayerStatus : MonoBehaviour
     {
-        int maxAmmo = 50;
-        public int Ammo { get; private set; }
+        // int maxAmmo = 50;
+        // public int Ammo { get; private set; }
 
         int maxHealth = 100;
         public int Health { get; private set; }
@@ -18,9 +18,9 @@ namespace ZombieShooter
 
         public void Initialize(ZSPlayerConfig playerConfig)
         {
-            maxAmmo = playerConfig.MaxAmmo;
-            Ammo = maxAmmo;
-            ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
+            // maxAmmo = playerConfig.MaxAmmo;
+            // Ammo = maxAmmo;
+            // ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
 
             maxHealth = playerConfig.MaxHealth;
             Health = maxHealth;
@@ -31,51 +31,51 @@ namespace ZombieShooter
             ZombieShooterUI.Instance?.PlayerStatus.SetupEnergy(maxEnergy);
         }
 
-        public void IncreaseAmmo(int value)
-        {
-            Ammo += value;
-            Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
-            ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
-            // Debug.Log("--Increase ammo " + Ammo);
-        }
+        // public void IncreaseAmmo(int value)
+        // {
+        //     Ammo += value;
+        //     Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
+        //     ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
+        //     // Debug.Log("--Increase ammo " + Ammo);
+        // }
 
-        public void DecreaseAmmo(int value)
-        {
-            Ammo -= value;
-            Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
-            ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
-            // Debug.Log("--Decrease ammo " + Ammo);
-        }
+        // public void DecreaseAmmo(int value)
+        // {
+        //     Ammo -= value;
+        //     Ammo = Mathf.Clamp(Ammo, 0, maxAmmo);
+        //     ZombieShooterUI.Instance?.PlayerStatus.SetAmmo(Ammo);
+        //     // Debug.Log("--Decrease ammo " + Ammo);
+        // }
 
-        public void ConsumeAmmo()
-        {
-            DecreaseAmmo(1);
-        }
+        // public void ConsumeAmmo()
+        // {
+        //     DecreaseAmmo(1);
+        // }
 
-        public bool TryFillAmmoClip(ref int currentAmmo, int ammoClip)
-        {
-            if (currentAmmo >= ammoClip)
-            {
-                return false;
-            }
-            else if (Ammo <= 0)
-            {
-                return false;
-            }
-            else
-            {
-                int amount = ammoClip - currentAmmo;
-                amount = Mathf.Clamp(amount, 0, Ammo);
-                DecreaseAmmo(amount);
-                currentAmmo += amount;
-                return true;
-            }
-        }
+        // public bool TryFillAmmoClip(ref int currentAmmo, int ammoClip)
+        // {
+        //     if (currentAmmo >= ammoClip)
+        //     {
+        //         return false;
+        //     }
+        //     else if (Ammo <= 0)
+        //     {
+        //         return false;
+        //     }
+        //     else
+        //     {
+        //         int amount = ammoClip - currentAmmo;
+        //         amount = Mathf.Clamp(amount, 0, Ammo);
+        //         DecreaseAmmo(amount);
+        //         currentAmmo += amount;
+        //         return true;
+        //     }
+        // }
 
-        public void FillAmmo()
-        {
-            Ammo = maxAmmo;
-        }
+        // public void FillAmmo()
+        // {
+        //     Ammo = maxAmmo;
+        // }
 
         public void IncreaseHealth(int value)
         {

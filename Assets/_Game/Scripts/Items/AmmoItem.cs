@@ -7,8 +7,13 @@ namespace ZombieShooter
 {
     public class AmmoItem : ShooterItem
     {
+        [SerializeField] private eWeaponType ammoType;
+
         public int Value => Mathf.FloorToInt(this.value);
-        protected override eItemType GetItemType() { return eItemType.Ammo_Normal; }
+        public eWeaponType AmmoType => ammoType;
+
+
+        protected override eItemType GetItemType() { return eItemType.Ammo; }
 
         public override void PlayItemConsumeSound()
         {
