@@ -1,0 +1,192 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3079047097080333036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178882800763091377}
+  - component: {fileID: 3909849106735172490}
+  m_Layer: 0
+  m_Name: ZombieShooterPoolMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1178882800763091377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079047097080333036}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7926025770735679519}
+  - {fileID: 8128823582583421049}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3909849106735172490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3079047097080333036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0836288e8414d14498f0fb4c52ae7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7900715461850351214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7926025770735679519}
+  - component: {fileID: 1977918918475278960}
+  m_Layer: 0
+  m_Name: ZombiePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7926025770735679519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900715461850351214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178882800763091377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1977918918475278960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900715461850351214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3910cbc4a1c5f46498fb6f58ad4fa6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoolList:
+  - Name: zombiegirl
+    Prefab: {fileID: 8649283112028866171, guid: 7912ec467aa9147a59e49b3925ad126e,
+      type: 3}
+    InitSize: 30
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: zombieman
+    Prefab: {fileID: 5176861845160572960, guid: 6a1d6fe89cd7e4fe486e4cabf09b8d3d,
+      type: 3}
+    InitSize: 30
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: jill
+    Prefab: {fileID: 9153167617879130721, guid: b7dd32307aa7f43bf98270b4b8b91c33,
+      type: 3}
+    InitSize: 30
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: boss
+    Prefab: {fileID: 1099347172983380646, guid: d5b7cf80f1fab4ea0bd49a0e878214fe,
+      type: 3}
+    InitSize: 2
+    HasMaxSize: 1
+    MaxSize: 20
+--- !u!1 &8676700529115992186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8128823582583421049}
+  - component: {fileID: 6288628107958390688}
+  m_Layer: 0
+  m_Name: VfxPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8128823582583421049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676700529115992186}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1178882800763091377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6288628107958390688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676700529115992186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3910cbc4a1c5f46498fb6f58ad4fa6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoolList:
+  - Name: Vfx_Player_Shoot
+    Prefab: {fileID: 8849545086507837023, guid: 174abde3bdef9e344bce8c15f930514c,
+      type: 3}
+    InitSize: 10
+    HasMaxSize: 1
+    MaxSize: 20
+  - Name: vfx_Launcher_Bullet
+    Prefab: {fileID: 6322684346280968154, guid: 615d357d912a9bb42b5d62859615a06f,
+      type: 3}
+    InitSize: 10
+    HasMaxSize: 1
+    MaxSize: 20
+  - Name: Vfx_Blood
+    Prefab: {fileID: 2698834479959398977, guid: 2d9f17a3bd22b412cb1f1c926e916d20,
+      type: 3}
+    InitSize: 5
+    HasMaxSize: 1
+    MaxSize: 10
+  - Name: vfx_Zombie_Archer_Bullet
+    Prefab: {fileID: 6322684346280968154, guid: d8d67ca5dc64e0848a0f5d16f092d3c8,
+      type: 3}
+    InitSize: 50
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: vfx_Zombie_Electric_Bullet
+    Prefab: {fileID: 6391256467865145080, guid: 0b5d4a451dc71d74088dae832f75efc9,
+      type: 3}
+    InitSize: 20
+    HasMaxSize: 0
+    MaxSize: 0
