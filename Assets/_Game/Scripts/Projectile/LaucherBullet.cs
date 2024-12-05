@@ -55,9 +55,8 @@ namespace ZombieShooter
 
         protected override void TriggerHitVfx(Collision collision)
 		{
-			Vector3 pos = collision.transform.position;
 			if (hitVfxPrefab != null) {
-				var hitVFX = Instantiate(hitVfxPrefab, pos, Quaternion.identity);
+				var hitVFX = Instantiate(hitVfxPrefab, this.transform.position, Quaternion.identity);
 				var ps = hitVFX.GetComponent<ParticleSystem>();
 				if (ps == null)
 				{
