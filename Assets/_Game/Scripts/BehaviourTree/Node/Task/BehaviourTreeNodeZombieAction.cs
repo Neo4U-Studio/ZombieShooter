@@ -61,30 +61,81 @@ namespace ZSBehaviourTree
                         zombie.TriggerWander();
                         break;
                     case eZombieAction.Chase:
-                        if (target)
-                        {
-                            zombie.TriggerChase(target);
-                            return State.Success;
-                        }
-                        else
-                        {
-                            return State.Failure;
-                        }
+                        return HandleChase();
                     case eZombieAction.Attack:
-                        if (target)
-                        {
-                            zombie.TriggerAttack(target);
-                            return State.Success;
-                        }
-                        else
-                        {
-                            return State.Failure;
-                        }
+                        return HandleAttack();
                     case eZombieAction.Dead:
                         zombie.TriggerDead();
                         break;
+                    case eZombieAction.WanderRun:
+                        zombie.TriggerWanderRun();
+                        break;
+                    case eZombieAction.Shoot:
+                        return HandleShoot();
+                    case eZombieAction.Dash:
+                        return HandleDash();
                 }
                 return State.Success;
+            }
+            else
+            {
+                return State.Failure;
+            }
+        }
+
+        private State HandleChase()
+        {
+            if (target)
+            {
+                zombie.TriggerChase(target);
+                return State.Success;
+            }
+            else
+            {
+                return State.Failure;
+            }
+        }
+
+        private State HandleAttack()
+        {
+            if (target)
+            {
+                zombie.TriggerAttack(target);
+                return State.Success;
+            }
+            else
+            {
+                return State.Failure;
+            }
+        }
+
+        private State HandleShoot()
+        {
+            if (target)
+            {
+                var boss = zombie as ZombieBossController;
+                if (boss)
+                {
+                    boss.TriggerShootAttack(target);
+                }
+                return State.Failure;
+            }
+            else
+            {
+                return State.Failure;
+            }
+        }
+
+        private State HandleDash()
+        {
+            if (target)
+            {
+                var boss = zombie as ZombieBossController;
+                if (boss)
+                {
+                    boss.TriggerDash();
+                }
+                return State.Failure;
             }
             else
             {

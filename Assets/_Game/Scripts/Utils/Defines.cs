@@ -17,6 +17,7 @@ namespace ZombieShooter
 
         public static string ZOMBIE_DETECT_RANGE_KEY = "Detect_Range";
         public static string ZOMBIE_ATTACK_RANGE_KEY = "Attack_Range";
+        public static string ZOMBIE_SHOOT_RANGE_KEY = "Shoot_Range";
 
         public static IEnumerator DelayAction(float delayTime = 1f, Action onComplete = null)
         {
@@ -76,6 +77,9 @@ namespace ZombieShooter
         Wander, 
         Attack, 
         Chase, 
-        Dead 
+        Dead,
+        WanderRun,
+        Shoot,
+        Dash
     };
 }

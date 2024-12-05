@@ -11,6 +11,11 @@ namespace ZombieShooter
 {
     public abstract class ZombieController : MonoBehaviour
     {
+        public static readonly int HashAnimatorWalk = Animator.StringToHash("isWalking");
+        public static readonly int HashAnimatorAttack = Animator.StringToHash("isAttacking");
+        public static readonly int HashAnimatorRun = Animator.StringToHash("isRunning");
+        public static readonly int HashAnimatorDead = Animator.StringToHash("isDead");
+
 #if UNITY_EDITOR
         public GameHeader headerEditor = new GameHeader() { header = "Components" };
 #endif
@@ -35,6 +40,7 @@ namespace ZombieShooter
         protected NavMeshAgent agent;
         protected BehaviourTree behaviourTree;
         protected MakeRadarObject radar;
+        protected float currentDamageAmount = 0;
 
         private float distanceToTarget = 2f;
 
@@ -130,7 +136,7 @@ namespace ZombieShooter
         {
             if (target != null)
             {
-                target.HandleZombieHit(damageAmount);
+                target.HandleZombieHit(currentDamageAmount);
                 // PlaySplatAudio();
             }
         }
@@ -147,10 +153,10 @@ namespace ZombieShooter
 
         public virtual void TurnOffTriggers()
         {
-            anim.SetBool("isWalking", false);
-            anim.SetBool("isAttacking", false);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("isDead", false);
+            anim.SetBool(HashAnimatorWalk, false);
+            anim.SetBool(HashAnimatorAttack, false);
+            anim.SetBool(HashAnimatorRun, false);
+            anim.SetBool(HashAnimatorDead, false);
         }
 
         public virtual void TriggerIdle()
@@ -170,7 +176,23 @@ namespace ZombieShooter
                 agent.stoppingDistance = 0;
                 // TurnOffTriggers();
                 agent.speed = walkingSpeed;
-                anim.SetBool("isWalking", true);
+                anim.SetBool(HashAnimatorWalk, true);
+            }
+        }
+
+        public virtual void TriggerWanderRun()
+        {
+            if (!agent.hasPath)
+            {
+                float newX = this.transform.position.x + Random.Range(-6, 6);
+                float newZ = this.transform.position.z + Random.Range(-6, 6);
+                float newY = Terrain.activeTerrain.SampleHeight(new Vector3(newX, 0, newZ));
+                Vector3 dest = new Vector3(newX, newY, newZ);
+                agent.SetDestination(dest);
+                agent.stoppingDistance = 0;
+                // TurnOffTriggers();
+                agent.speed = runningSpeed;
+                anim.SetBool(HashAnimatorRun, true);
             }
         }
 
@@ -180,14 +202,15 @@ namespace ZombieShooter
             agent.stoppingDistance = distanceToTarget;
             // TurnOffTriggers();
             agent.speed = runningSpeed;
-            anim.SetBool("isRunning", true);
+            anim.SetBool(HashAnimatorRun, true);
         }
 
-        public virtual void TriggerAttack(GameObject target)
+        public virtual void TriggerAttack(GameObject target) // Normal attack
         {
-            anim.SetBool("isAttacking", true);
+            anim.SetBool(HashAnimatorAttack, true);
 
             // this.transform.LookAt(target.transform);
+            currentDamageAmount = damageAmount;
             Vector3 lookDirection = target.transform.position - transform.position;
             lookDirection.y = 0; // Prevent rotation on the Y-axis
             transform.rotation = Quaternion.LookRotation(lookDirection);
@@ -197,7 +220,7 @@ namespace ZombieShooter
         {
             if (playAnim)
             {
-                anim.SetBool("isDead", true);
+                anim.SetBool(HashAnimatorDead, true);
             }
             IsDead = true;
         }
