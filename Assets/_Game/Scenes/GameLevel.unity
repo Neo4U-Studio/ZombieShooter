@@ -16499,6 +16499,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1136288762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1136288763}
+  - component: {fileID: 1136288764}
+  m_Layer: 0
+  m_Name: ZombiePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136288763
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136288762}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1869916543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1136288764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136288762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3910cbc4a1c5f46498fb6f58ad4fa6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoolList:
+  - Name: zombiegirl
+    Prefab: {fileID: 8649283112028866171, guid: 7912ec467aa9147a59e49b3925ad126e,
+      type: 3}
+    InitSize: 20
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: zombieman
+    Prefab: {fileID: 5176861845160572960, guid: 6a1d6fe89cd7e4fe486e4cabf09b8d3d,
+      type: 3}
+    InitSize: 20
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: jill
+    Prefab: {fileID: 9153167617879130721, guid: b7dd32307aa7f43bf98270b4b8b91c33,
+      type: 3}
+    InitSize: 20
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: boss
+    Prefab: {fileID: 1099347172983380646, guid: d5b7cf80f1fab4ea0bd49a0e878214fe,
+      type: 3}
+    InitSize: 2
+    HasMaxSize: 1
+    MaxSize: 20
 --- !u!1001 &1139171847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17898,6 +17967,7 @@ Transform:
   - {fileID: 1315959937}
   - {fileID: 9061978741613669614}
   - {fileID: 143332118}
+  - {fileID: 1869916543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243371986
@@ -25607,6 +25677,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6929293770039458368}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1869916542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869916543}
+  - component: {fileID: 1869916544}
+  m_Layer: 0
+  m_Name: ZombieShooterPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869916543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869916542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1136288763}
+  m_Father: {fileID: 1240885773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1869916544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869916542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0836288e8414d14498f0fb4c52ae7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1872076281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400018, guid: ad9b118c957ec734fb74fb0f8565c57b,
