@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676881431901543497}
-  - component: {fileID: 9095166336996552639}
   - component: {fileID: 6731458686815977266}
+  - component: {fileID: 7283343187766463696}
   m_Layer: 9
-  m_Name: MissionTarget
+  m_Name: MissionTarget_Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,22 +34,6 @@ Transform:
   - {fileID: 1743428677464455329}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9095166336996552639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3384976551616147255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3fd58efd8eff6344a88eae73b7519e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionRadius: 5
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!135 &6731458686815977266
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -71,6 +55,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7283343187766463696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384976551616147255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d956178ca28f5d448aa2558edfb6f833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectionRadius: 5
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &8548614301128422720
 PrefabInstance:
   m_ObjectHideFlags: 0

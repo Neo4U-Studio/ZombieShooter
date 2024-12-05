@@ -105,7 +105,7 @@ namespace ZombieShooter
         {
             ON_END_GAME += EndGame;
             missionList.ForEach(mission => {
-                mission.OnPlayerEnterTarget += CheckCompleteMission;
+                mission.OnPlayerCompleteMission += CheckCompleteMission;
             });
         }
 
@@ -113,7 +113,7 @@ namespace ZombieShooter
         {
             ON_END_GAME -= EndGame;
             missionList.ForEach(mission => {
-                mission.OnPlayerEnterTarget -= CheckCompleteMission;
+                mission.OnPlayerCompleteMission -= CheckCompleteMission;
             });
         }
 

@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using Pooling;
+using System.Linq;
 
 namespace ZombieShooter
 {
@@ -22,7 +23,10 @@ namespace ZombieShooter
         [SerializeField] LayerMask detectionLayer;
         [SerializeField] bool SpawnOnStart = true;
 
+        public bool IsSpawnerClear => spawned && (zombieList.Count <= 0 || zombieList.All(zombie => zombie.IsDead));
+
         private bool spawned = false;
+        private List<ZombieController> zombieList = new List<ZombieController>();
 
         void Start()
         {
@@ -32,6 +36,7 @@ namespace ZombieShooter
 
         void SpawnAll()
         {
+            zombieList.Clear();
             foreach (var zombie in listSpawnZombie)
             {
                 for (int i = 0; i < zombie.Number; i++)
@@ -42,7 +47,10 @@ namespace ZombieShooter
                     if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
                     {
                         var zombieObj = zombie.Prefab.Spawn(hit.position, Quaternion.identity);
-                        zombieObj.GetComponent<ZombieController>().StartZombie();
+                        var zombieControl = zombieObj.GetComponent<ZombieController>();
+                        zombieControl.OnZombieDead += RemoveZombieFromList;
+                        zombieControl.StartZombie();
+                        zombieList.Add(zombieControl);
                         // Instantiate(zombiePrefab, hit.position, Quaternion.identity);
                     }
                     else
@@ -77,6 +85,15 @@ namespace ZombieShooter
                 }
             }
             return false;
+        }
+
+        private void RemoveZombieFromList(ZombieController zombie)
+        {
+            if (zombieList.Contains(zombie))
+            {
+                zombie.OnZombieDead -= RemoveZombieFromList;
+                zombieList.Remove(zombie);
+            }
         }
     }
 }

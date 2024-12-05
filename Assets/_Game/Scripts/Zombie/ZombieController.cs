@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using ZSBehaviourTree;
+using System;
 
 namespace ZombieShooter
 {
@@ -35,6 +36,7 @@ namespace ZombieShooter
 
         public bool IsDead => currentHealth <= 0;
         public eZombieType Type => GetZombieType();
+        public Action<ZombieController> OnZombieDead;
 
         protected ZSPlayerController target;
         protected Animator anim;
@@ -190,8 +192,8 @@ namespace ZombieShooter
         {
             if (!agent.hasPath)
             {
-                float newX = this.transform.position.x + Random.Range(-5, 5);
-                float newZ = this.transform.position.z + Random.Range(-5, 5);
+                float newX = this.transform.position.x + UnityEngine.Random.Range(-5, 5);
+                float newZ = this.transform.position.z + UnityEngine.Random.Range(-5, 5);
                 float newY = Terrain.activeTerrain.SampleHeight(new Vector3(newX, 0, newZ));
                 Vector3 dest = new Vector3(newX, newY, newZ);
                 agent.SetDestination(dest);
@@ -207,8 +209,8 @@ namespace ZombieShooter
             // Debug.Log("-- Trigger run");
             if (!agent.hasPath)
             {
-                float newX = this.transform.position.x + Random.Range(-6, 6);
-                float newZ = this.transform.position.z + Random.Range(-6, 6);
+                float newX = this.transform.position.x + UnityEngine.Random.Range(-6, 6);
+                float newZ = this.transform.position.z + UnityEngine.Random.Range(-6, 6);
                 float newY = Terrain.activeTerrain.SampleHeight(new Vector3(newX, 0, newZ));
                 Vector3 dest = new Vector3(newX, newY, newZ);
                 agent.SetDestination(dest);
@@ -247,6 +249,7 @@ namespace ZombieShooter
                 anim.SetBool(HashAnimatorDead, true);
             }
             currentHealth = 0;
+            OnZombieDead?.Invoke(this);
         }
 
         public void ResetAgent()
