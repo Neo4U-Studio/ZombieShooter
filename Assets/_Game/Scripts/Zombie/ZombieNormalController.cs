@@ -12,5 +12,14 @@ namespace ZombieShooter
         {
             return eZombieType.Zombie_Normal;
         }
+
+        public override void DamagePlayer()
+        {
+            if (DistanceToPlayer() <= attackRange)
+            {
+                base.DamagePlayer();
+            }
+        }
+
     }
 }

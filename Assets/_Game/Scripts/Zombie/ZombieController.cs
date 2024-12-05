@@ -67,6 +67,11 @@ namespace ZombieShooter
             }
         }
 
+        protected float DistanceToPlayer()
+        {
+            return target && !target.IsDead ? Vector3.Distance(target.transform.position, this.transform.position) : Mathf.Infinity;
+        }
+
         public virtual void TurnOffTriggers()
         {
             anim.SetBool("isWalking", false);
