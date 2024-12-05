@@ -15,6 +15,12 @@ MonoBehaviour:
   soundType: 3
   path: SoundData/ZombieShooter
   SoundMappingList:
+  - name: MUSIC_THEME_GAME
+    Id: 2
+    Data: {fileID: 11400000, guid: 9d361a7d795734940aa5015a969ce40e, type: 2}
+  - name: MUSIC_THEME_BOSS
+    Id: 3
+    Data: {fileID: 11400000, guid: ffd05e9a146572b4ba92587225d26819, type: 2}
   - name: SFX_ZS_PLAYER_FOOTSTEP
     Id: 200
     Data: {fileID: 11400000, guid: 23f31aa1dd8d2d140b79d73cad8cb26b, type: 2}

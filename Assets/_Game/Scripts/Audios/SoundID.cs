@@ -9,7 +9,9 @@ namespace AudioPlayer
     public enum SoundID
     {
         NONE = 0,
-        MUSIC_THEME_SCARY,
+        MUSIC_THEME_MAINMENU,
+        MUSIC_THEME_GAME,
+        MUSIC_THEME_BOSS,
         MUSIC_VICTORY,
 
         // Player
@@ -36,5 +38,11 @@ namespace AudioPlayer
         SFX_ZS_ENV_WIND_LIGHT,
         SFX_ZS_ENV_WIND_SPOOKY,
         SFX_ZS_ENV_WIND_HARD,
+
+        // Sfx
+        SFX_MENU_BUTTON_CLICK = 500,
+        SFX_MENU_BUTTON_OVER,
+        SFX_MENU_BUTTON_START,
+        SFX_MENU_BUTTON_CANCEL,
     }
 }

@@ -15,6 +15,15 @@ MonoBehaviour:
   soundType: 2
   path: SoundData/SFX
   SoundMappingList:
-  - name: NONE
-    Id: 0
-    Data: {fileID: 11400000, guid: 9a34885714508c6498fc110dfaffeb4e, type: 2}
+  - name: SFX_MENU_BUTTON_CLICK
+    Id: 500
+    Data: {fileID: 11400000, guid: 07b461de9908aea42a48b9b2c4e2d70f, type: 2}
+  - name: SFX_MENU_BUTTON_OVER
+    Id: 501
+    Data: {fileID: 11400000, guid: 814a4a8eafe785e459149a5186dfaaf9, type: 2}
+  - name: SFX_MENU_BUTTON_START
+    Id: 502
+    Data: {fileID: 11400000, guid: 88bb918f3b0fe1c4191dfd180c84b52f, type: 2}
+  - name: SFX_MENU_BUTTON_CANCEL
+    Id: 503
+    Data: {fileID: 11400000, guid: 14f691ed03cbfb24ab82b41a00da9be5, type: 2}

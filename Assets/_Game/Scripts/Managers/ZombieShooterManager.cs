@@ -31,6 +31,8 @@ namespace ZombieShooter
         private ZombieShooterUI mainUI;
 
         public bool IsWin { get; private set; }
+
+        private AudioSource themeMusic = null;
         
         private void Awake()
         {
@@ -51,17 +53,15 @@ namespace ZombieShooter
 
         private void OnDestroy()
         {
+            StopCurrentMusic();
             Instance = null;
-        }
-
-        private void Update() {
-            UpdateState();
         }
 
         private void Initialize()
         {
             RegisterEvent();
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
+            PlayThemeMusic();
             var scene = UIManager.Instance.PushMenu(MenuType.ZOMBIE_SHOOTER_MAIN);
             if (scene is ZombieShooterUI)
             {
@@ -96,6 +96,7 @@ namespace ZombieShooter
         {
             if (IsWin)
             {
+                PlayVictoryMusic();
                 UIEvents.UI_SHOW_POPUP?.Invoke(PopupType.POPUP_VICTORY, null);
             }
             else
@@ -145,25 +146,6 @@ namespace ZombieShooter
                 break;
             }
         }
-
-        private void UpdateState()
-        {
-            switch (CurrentState)
-            {
-                // case eGameState.ReadToStart:
-                //     if (Input.GetKeyDown(KeyCode.Mouse0))
-                //     {
-                //         StartGame();
-                //     }
-                // break;
-                case eGameState.Playing:
-                    if (ZSGameStats.GameOver)
-                    {
-                        EndGame();
-                    }
-                break;
-            }
-        }
 #endregion
 
 #region Mission
@@ -209,6 +191,35 @@ namespace ZombieShooter
             playerControl.HandleWin();
             IsWin = true;
             EndGame();
+        }
+#endregion
+
+#region Sfx
+        public void PlayThemeMusic()
+        {
+            StopCurrentMusic();
+            themeMusic = SoundManager.Instance.PlayMusic(SoundID.MUSIC_THEME_GAME);
+        }
+
+        public void PlayVictoryMusic()
+        {
+            StopCurrentMusic();
+            themeMusic = SoundManager.Instance.PlayMusic(SoundID.MUSIC_VICTORY);
+        }
+
+        public void PlayBossThemeMusic()
+        {
+            StopCurrentMusic();
+            themeMusic = SoundManager.Instance.PlayMusic(SoundID.MUSIC_THEME_BOSS);
+        }
+
+        private void StopCurrentMusic()
+        {
+            if (themeMusic != null)
+            {
+                themeMusic.Stop();
+                themeMusic = null;
+            }
         }
 #endregion
     }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6b868b6ada597f4195137651713a00c, type: 3}
-  m_Name: MUSIC_VICTORY
+  m_Name: SFX_MENU_BUTTON_START
   m_EditorClassIdentifier: 
-  Id: 4
+  Id: 502
   Clips:
-  - {fileID: 8300000, guid: ded9b040697bd9a4796d52133cf2082e, type: 3}
-  IsLoop: 1
+  - {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
+  IsLoop: 0
   IsPitch: 0
   IsAlone: 0
   IsContinues: 0

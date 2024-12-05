@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioPlayer;
 
 public class VictoryPopup : PopupScene
 {
@@ -16,6 +17,7 @@ public class VictoryPopup : PopupScene
 
     public void OnReturnMainMenu()
     {
+        SoundManager.Instance?.PauseSFX(SoundID.SFX_MENU_BUTTON_CLICK);
         UIManager.Instance?.ClosePopup(this, () => {
             GameManager.Instance?.LoadMainMenu();
         });

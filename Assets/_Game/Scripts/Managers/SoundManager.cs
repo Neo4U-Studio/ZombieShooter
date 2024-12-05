@@ -294,8 +294,9 @@ namespace AudioPlayer
         {
             var audioSource = this.PlaySound(soundID, volume);
             if (audioSource != null)
+            {
                 audioSource.outputAudioMixerGroup = this.Music_MixerGroup;
-
+            }
             return audioSource;
         }
 
