@@ -426,7 +426,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusUI: {fileID: 7130133413667048872}
-  gunClipUI: {fileID: 6172402451485606165}
+  gunClipUIPrefab: {fileID: 4539274977418417235, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
+    type: 3}
+  gunClipUIContainer: {fileID: 1372356500267178902}
   radarUI: {fileID: 1524748594598297353}
   compassUI: {fileID: 7293289618033517979}
   crosshairUI: {fileID: 8224984805235574985}
@@ -1755,7 +1757,7 @@ PrefabInstance:
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
@@ -1765,7 +1767,7 @@ PrefabInstance:
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
@@ -1815,12 +1817,12 @@ PrefabInstance:
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 860.00006
       objectReference: {fileID: 0}
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -94
       objectReference: {fileID: 0}
     - target: {fileID: 3029331151778147051, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
         type: 3}
@@ -1842,6 +1844,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunSlotUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8767048565997325375, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1853,18 +1860,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7734503383462368582}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6172402451485606165 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4539274977418417235, guid: 4fbefd32f64f5184891b2ac72a18c8cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 7734503383462368582}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40ff3e36549fe140b76d750e2e6a3d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7777202095903318414
 PrefabInstance:
   m_ObjectHideFlags: 0

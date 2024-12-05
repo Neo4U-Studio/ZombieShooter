@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headerEditor:
     header: General
+  iconUI: {fileID: 21300000, guid: 8e6e6f26427c69c44a64c88e6f9c5d5a, type: 3}
   maxAmmo: 10
   maxClipAmmo: 5
   fireRate: 1

@@ -13,6 +13,8 @@ namespace ZombieShooter
 #if UNITY_EDITOR
         public GameHeader headerEditor = new GameHeader() { header = "General" };
 #endif
+        [SerializeField] protected Sprite iconUI;
+
         [Tooltip("Set -1 for infinity ammo")]
         [SerializeField] protected int maxAmmo = 50;
         [SerializeField] protected int maxClipAmmo = 50;
@@ -30,8 +32,11 @@ namespace ZombieShooter
 
         protected abstract eWeaponType GetWeaponType();
 
+        protected ZSGunClipUI uiSlot = null;
+
         public virtual void Initialize(Transform shotContainer)
         {
+            uiSlot = ZombieShooterUI.Instance?.CreateGunClipUI();
             this.shotContainer = shotContainer;
             IsShooting = false;
             FillAmmo();
@@ -41,6 +46,8 @@ namespace ZombieShooter
         {
             remainingAmmo = maxAmmo;
             currentAmmoInClip = maxClipAmmo;
+            uiSlot?.SetAmmo(currentAmmoInClip, maxClipAmmo);
+            uiSlot?.SetRemainingAmmo(remainingAmmo);
         }
 
         public void IncreaseAmmo(int value)
@@ -49,6 +56,7 @@ namespace ZombieShooter
             {
                 remainingAmmo = Mathf.Clamp(remainingAmmo + value, 0, maxAmmo);
             }
+            uiSlot?.SetRemainingAmmo(remainingAmmo);
         }
 
         public void DecreaseAmmo(int value)
@@ -57,6 +65,7 @@ namespace ZombieShooter
             {
                 remainingAmmo = Mathf.Clamp(remainingAmmo - value, 0, maxAmmo);
             }
+            uiSlot?.SetRemainingAmmo(remainingAmmo);
         }
 
         public void ConsumeAmmo()
@@ -65,6 +74,7 @@ namespace ZombieShooter
             {
                 currentAmmoInClip--;
             }
+            uiSlot?.SetAmmo(currentAmmoInClip, maxClipAmmo);
         }
 
         public bool TryFillAmmoClip()
@@ -89,6 +99,7 @@ namespace ZombieShooter
                     DecreaseAmmo(amount);
                     currentAmmoInClip += amount;
                 }
+                uiSlot?.SetAmmo(currentAmmoInClip, maxClipAmmo);
                 return true;
             }
         }

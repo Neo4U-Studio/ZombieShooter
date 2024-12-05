@@ -7,7 +7,8 @@ namespace ZombieShooter
     public class ZombieShooterUI : MonoSingleton<ZombieShooterUI>
     {
         [SerializeField] ZSStatusUI statusUI;
-        [SerializeField] ZSGunClipUI gunClipUI;
+        [SerializeField] ZSGunClipUI gunClipUIPrefab;
+        [SerializeField] Transform gunClipUIContainer;
         [SerializeField] ZSRadarUI radarUI;
         [SerializeField] ZSCompassUI compassUI;
         [SerializeField] ZSCrosshairUI crosshairUI;
@@ -20,6 +21,7 @@ namespace ZombieShooter
 
         public void Initialize(ZSPlayerController player)
         {
+            ClearGunClipSlots();
             playControl = player;
             radarUI.SetPlayer(playControl.transform);
             compassUI.SetPlayer(playControl.gameObject);
@@ -33,9 +35,18 @@ namespace ZombieShooter
             crosshairUI.ToggleCrosshair(toggle);
         }
 
-        public void SetGunClipValue(int ammo, int clip)
+        public ZSGunClipUI CreateGunClipUI()
         {
-            gunClipUI.SetAmmo(ammo, clip);
+            Debug.Log("-- Create gun clip");
+            return Instantiate(gunClipUIPrefab, gunClipUIContainer);
+        }
+
+        private void ClearGunClipSlots()
+        {
+            for (int i = gunClipUIContainer.childCount - 1; i >= 0; i--)
+            {
+                Destroy(gunClipUIContainer.GetChild(i).gameObject);
+            }
         }
     }
 }
