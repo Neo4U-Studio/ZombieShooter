@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace ZombieShooter
 {
-    public class ZombieShooterUI : MonoSingleton<ZombieShooterUI>
+    public class ZombieShooterUI : MenuScene
     {
+        public static ZombieShooterUI Instance;
+
         [SerializeField] ZSStatusUI statusUI;
         [SerializeField] ZSGunClipUI gunClipUIPrefab;
         [SerializeField] Transform gunClipUIContainer;
@@ -18,6 +20,16 @@ namespace ZombieShooter
         public ZSCrosshairUI Crosshair => crosshairUI;
 
         private ZSPlayerController playControl = null;
+
+        public override void Awake() {
+            Instance = this;
+            base.Awake();
+        }
+
+        public override MenuType GetMenuType()
+        {
+            return MenuType.ZOMBIE_SHOOTER_MAIN;
+        }
 
         public void Initialize(ZSPlayerController player)
         {

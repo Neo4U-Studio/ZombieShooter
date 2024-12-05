@@ -30359,25 +30359,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShootingScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 3813308222583588944, guid: bfcc04a29bdc3684c82c9a01f411f504,
+    - target: {fileID: 2149448009497705581, guid: bfcc04a29bdc3684c82c9a01f411f504,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3813308222583588944, guid: bfcc04a29bdc3684c82c9a01f411f504,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3813308222583588944, guid: bfcc04a29bdc3684c82c9a01f411f504,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4247384571493791885, guid: bfcc04a29bdc3684c82c9a01f411f504,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 4247384571493791885, guid: bfcc04a29bdc3684c82c9a01f411f504,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4709676113722752941, guid: bfcc04a29bdc3684c82c9a01f411f504,
         type: 3}

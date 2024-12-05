@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using AudioPlayer;
+using UnityEditor;
 using UnityEngine;
 
 namespace ZombieShooter
@@ -21,7 +22,7 @@ namespace ZombieShooter
         public static Action ON_END_GAME;
 
         [SerializeField] ZSPlayerController playerControl;
-        [SerializeField] ZombieShooterUI mainUI;
+        // [SerializeField] ZombieShooterUI mainUI;
 
         [SerializeField] List<ZSTargetPoint> missionList;
 
@@ -29,6 +30,7 @@ namespace ZombieShooter
         public ZSPlayerController Player => playerControl;
 
         private ZSTargetPoint currentMission = null;
+        private ZombieShooterUI mainUI;
         
         private void Awake()
         {
@@ -60,8 +62,13 @@ namespace ZombieShooter
         {
             RegisterEvent();
             SoundManager.Instance?.LoadSoundMap(SoundType.ZOMBIE_SHOOTER);
+            var scene = UIManager.Instance.PushMenu(MenuType.ZOMBIE_SHOOTER_MAIN);
+            if (scene is ZombieShooterUI)
+            {
+                mainUI = scene as ZombieShooterUI;
+                mainUI.Initialize(Player);
+            }
             Player.Initialize();
-            mainUI.Initialize(Player);
             ZSGameStats.Instance?.RefreshValue();
             EnterState(eGameState.ReadToStart);
         }

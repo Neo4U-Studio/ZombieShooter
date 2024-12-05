@@ -274,11 +274,11 @@ namespace ZombieShooter
 
         private void UpdateBehaviour()
         {
-            // Aiming
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                animator?.SetBool(HashAnimatorAim, !animator.GetBool(HashAnimatorAim));
-            }
+            // // Aiming
+            // if (Input.GetKeyDown(KeyCode.T))
+            // {
+            //     animator?.SetBool(HashAnimatorAim, !animator.GetBool(HashAnimatorAim));
+            // }
             
             // Shooting
             if (Input.GetKeyDown(KeyCode.Mouse0))

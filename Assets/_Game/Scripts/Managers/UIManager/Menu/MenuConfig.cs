@@ -8,7 +8,7 @@ public class MenuConfig : ScriptableObject
     [SerializeField] public List<MenuInfo> menuInfos;
 
     [NaughtyAttributes.Button]
-    public void CheckPopupPrefabPaths()
+    public void CheckMenuPrefabPaths()
     {
         for (int i = menuInfos.Count - 1; i >= 0; i--)
         {

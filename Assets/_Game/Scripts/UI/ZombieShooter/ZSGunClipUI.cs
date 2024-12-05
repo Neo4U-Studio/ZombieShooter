@@ -7,6 +7,8 @@ namespace ZombieShooter
 {
     public class ZSGunClipUI : MonoBehaviour
     {
+        [SerializeField] GameObject normalBG;
+        [SerializeField] GameObject selectedBG;
         [SerializeField] Image icon;
         [SerializeField] Text ammoText;
         [SerializeField] Text ammoMaxText;
@@ -48,6 +50,12 @@ namespace ZombieShooter
             {
                 return lowColor;
             }
+        }
+
+        public void ToggleSelect(bool toggle)
+        {
+            normalBG.SetActive(!toggle);
+            selectedBG.SetActive(toggle);
         }
     }
 }

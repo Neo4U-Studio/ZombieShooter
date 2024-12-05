@@ -98,16 +98,6 @@ public abstract class MenuScene : MonoBehaviour
         isInAnimation = false;
     }
 
-    public virtual void OnBackPressed()
-    {
-        // AudioPlayer.SoundManager.Instance.PlaySound(AudioPlayer.SoundID.UI_BACK);
-        // UIManager.Instance.PopMenu();
-    }
-
-    public virtual void playSoundOnBackOnly(){
-        // AudioPlayer.SoundManager.Instance.PlaySound(AudioPlayer.SoundID.UI_BACK);
-    }
-
     public virtual void OnMenuPressed() { }
 
     public virtual void OnGamePaused() { }

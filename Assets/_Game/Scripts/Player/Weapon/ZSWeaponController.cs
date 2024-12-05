@@ -40,6 +40,8 @@ namespace ZombieShooter
             this.shotContainer = shotContainer;
             IsShooting = false;
             FillAmmo();
+            uiSlot?.SetIcon(iconUI);
+            uiSlot?.ToggleSelect(false);
         }
 
         public virtual void FillAmmo()
@@ -117,11 +119,12 @@ namespace ZombieShooter
         public virtual void OnWeaponSwitched()
         {
             IsShooting = false;
+            uiSlot?.ToggleSelect(false);
         }
 
         public virtual void OnWeaponActive()
         {
-            
+            uiSlot?.ToggleSelect(true);
         }
 
         private void Update() {
