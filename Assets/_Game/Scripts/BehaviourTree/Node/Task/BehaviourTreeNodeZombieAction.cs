@@ -117,6 +117,7 @@ namespace ZSBehaviourTree
                 if (boss)
                 {
                     boss.TriggerShootAttack(target);
+                    return State.Success;
                 }
                 return State.Failure;
             }
@@ -134,6 +135,7 @@ namespace ZSBehaviourTree
                 if (boss)
                 {
                     boss.TriggerDash();
+                    return State.Success;
                 }
                 return State.Failure;
             }

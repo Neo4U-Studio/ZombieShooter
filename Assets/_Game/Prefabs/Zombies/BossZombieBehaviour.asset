@@ -41,6 +41,8 @@ MonoBehaviour:
   parent: {fileID: -2391658820656652544}
   children:
   - {fileID: -8190541450593852485}
+  - {fileID: 7562297050942524267}
+  - {fileID: 5087442665447141650}
   - {fileID: 2454971649531023812}
 --- !u!114 &-8565666409271388045
 MonoBehaviour:
@@ -65,8 +67,8 @@ MonoBehaviour:
   - {fileID: 1337805866806473043}
   Result: 1
   TargetKey: Player
-  CheckRangeKey: Attack_Range
-  Range: 4
+  CheckRangeKey: Shoot_Range
+  Range: 15
 --- !u!114 &-8331565578861214693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +103,7 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: fa5ea9c70da30a745871331324199e09
-  positionView: {x: -731.2, y: 1016.80005}
+  positionView: {x: -1164.6298, y: 1020.4167}
   description: Attack
   parent: {fileID: -8571464157153247968}
   ZombieAction: 2
@@ -142,7 +144,7 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: c87bbd54ff12fe144be78bb2cdeb5059
-  positionView: {x: -285.3469, y: 1013.2166}
+  positionView: {x: -296.79364, y: 1018.66016}
   description: Shoot
   parent: {fileID: 8766343385366911931}
   ZombieAction: 6
@@ -162,10 +164,10 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: 84652382b73c8524cae2a38c4d1fcec7
-  positionView: {x: 133.853, y: 1011.61664}
+  positionView: {x: 335.20627, y: 1019.4602}
   description: Run
   parent: {fileID: 8766343385366911931}
-  ZombieAction: 0
+  ZombieAction: 5
   TargetKey: Player
 --- !u!114 &-2391658820656652544
 MonoBehaviour:
@@ -229,10 +231,11 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: 30f337592fe2b814b83d6b5d5d8b4a00
-  positionView: {x: -76.54684, y: 762.81665}
+  positionView: {x: -61.983376, y: 762.0835}
   description: 
   parent: {fileID: -2283910481064781746}
   children:
+  - {fileID: 2052277457376782152}
   - {fileID: 8766343385366911931}
   - {fileID: 790521508209398511}
 --- !u!114 &-1994342178620728137
@@ -324,6 +327,10 @@ MonoBehaviour:
   - {fileID: 789579070428045312}
   - {fileID: 940708903063409437}
   - {fileID: 4707092296725006319}
+  - {fileID: 7562297050942524267}
+  - {fileID: 5087442665447141650}
+  - {fileID: 8563056140166949825}
+  - {fileID: 2052277457376782152}
 --- !u!114 &789579070428045312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +365,7 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: 8d3a9daefbd826c4b8d800793834e1ea
-  positionView: {x: 151.20007, y: 892}
+  positionView: {x: 275.2, y: 891.6801}
   description: 
   parent: {fileID: -2056685272640221398}
   duration: 2
@@ -400,6 +407,24 @@ MonoBehaviour:
   parent: {fileID: -8565666409271388045}
   ZombieAction: 3
   TargetKey: Player
+--- !u!114 &2052277457376782152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7671bf3ab29134a4e8873e931f050942, type: 3}
+  m_Name: BehaviourTreeNodeZombieResetPath
+  m_EditorClassIdentifier: 
+  isStarted: 0
+  state: 0
+  guid: 31172b764959ea64fba70514d71bb46f
+  positionView: {x: -148.39998, y: 889.556}
+  description: 
+  parent: {fileID: -2056685272640221398}
 --- !u!114 &2319427284462742594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,10 +498,50 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: 8941aab5f07ffba488db25fb201d8a1c
-  positionView: {x: 348.3977, y: 1013.2001}
+  positionView: {x: 550.4064, y: 1019.4602}
   description: Chase
   parent: {fileID: 8766343385366911931}
   ZombieAction: 3
+  TargetKey: Player
+--- !u!114 &5087442665447141650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2040bfca4114364b905f8ecb38fffbc, type: 3}
+  m_Name: BehaviourTreeNodeZombieAction
+  m_EditorClassIdentifier: 
+  isStarted: 0
+  state: 0
+  guid: 43933e2fe3b820d49888349b81584a6e
+  positionView: {x: -732.41693, y: 1019.65}
+  description: Attack
+  parent: {fileID: -8571464157153247968}
+  ZombieAction: 2
+  TargetKey: Player
+--- !u!114 &7562297050942524267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2040bfca4114364b905f8ecb38fffbc, type: 3}
+  m_Name: BehaviourTreeNodeZombieAction
+  m_EditorClassIdentifier: 
+  isStarted: 0
+  state: 0
+  guid: 3a5255b20135f424b94f52cfea5b4eaf
+  positionView: {x: -944.73315, y: 1020.8}
+  description: Attack
+  parent: {fileID: -8571464157153247968}
+  ZombieAction: 2
   TargetKey: Player
 --- !u!114 &7840908959508441438
 MonoBehaviour:
@@ -537,6 +602,26 @@ MonoBehaviour:
   - {fileID: 2319427284462742594}
   - {fileID: -8631166371337817026}
   Result: 1
+--- !u!114 &8563056140166949825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2040bfca4114364b905f8ecb38fffbc, type: 3}
+  m_Name: BehaviourTreeNodeZombieAction
+  m_EditorClassIdentifier: 
+  isStarted: 0
+  state: 0
+  guid: 77b58d6782fb8f646903d772896a1f93
+  positionView: {x: -87.99366, y: 1018.66016}
+  description: Shoot
+  parent: {fileID: 8766343385366911931}
+  ZombieAction: 6
+  TargetKey: Player
 --- !u!114 &8766343385366911931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,11 +637,12 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: cfc81ddc544377d42a82a16b73172a5d
-  positionView: {x: -77.347, y: 881.2167}
+  positionView: {x: 68.000015, y: 890.64014}
   description: 
   parent: {fileID: -2056685272640221398}
   children:
   - {fileID: -4115732431441232950}
+  - {fileID: 8563056140166949825}
   - {fileID: 9104401295339226561}
   - {fileID: -3166423405528075126}
   - {fileID: 4707092296725006319}
@@ -595,8 +681,8 @@ MonoBehaviour:
   isStarted: 0
   state: 0
   guid: 89654529072107f43a8a5eeb4196e765
-  positionView: {x: -76.54684, y: 1014.01666}
+  positionView: {x: 124.006294, y: 1018.66016}
   description: Dash
   parent: {fileID: 8766343385366911931}
-  ZombieAction: 0
+  ZombieAction: 7
   TargetKey: Player

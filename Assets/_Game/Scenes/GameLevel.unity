@@ -4600,7 +4600,7 @@ PrefabInstance:
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -159.8097
+      value: -128.96
       objectReference: {fileID: 0}
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
@@ -4660,7 +4660,7 @@ PrefabInstance:
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: SpawnOnStart
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
@@ -4669,9 +4669,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
-      propertyPath: listSpawnZombie.Array.data[0].Number
-      value: 5
+      propertyPath: listSpawnZombie.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Prefab
+      value: 
+      objectReference: {fileID: 1099347172983380646, guid: d5b7cf80f1fab4ea0bd49a0e878214fe,
+        type: 3}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: listSpawnZombie.Array.data[1].Number
@@ -4679,12 +4690,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: listSpawnZombie.Array.data[2].Number
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[2].Prefab
+      value: 
+      objectReference: {fileID: 9153167617879130721, guid: b7dd32307aa7f43bf98270b4b8b91c33,
+        type: 3}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[2].SpawnRadius
       value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21898,6 +21925,12 @@ MonoBehaviour:
     Prefab: {fileID: 6322684346280968154, guid: d8d67ca5dc64e0848a0f5d16f092d3c8,
       type: 3}
     InitSize: 50
+    HasMaxSize: 0
+    MaxSize: 0
+  - Name: vfx_Projectile_Electric
+    Prefab: {fileID: 6391256467865145080, guid: 0b5d4a451dc71d74088dae832f75efc9,
+      type: 3}
+    InitSize: 20
     HasMaxSize: 0
     MaxSize: 0
 --- !u!1001 &1507478988

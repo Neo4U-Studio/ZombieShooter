@@ -59,20 +59,24 @@ namespace ZombieShooter
 
         public override void TriggerAttack(GameObject target) // Normal attack
         {
+            // Debug.Log("-- Trigger attack");
             attackType = eZombieBossAttack.Normal;
             base.TriggerAttack(target);
         }
 
         public void TriggerShootAttack(GameObject target) // Shoot attack
         {
+            // Debug.Log("-- Trigger shoot");
             attackType = eZombieBossAttack.Shoot;
             base.TriggerAttack(target);
         }
 
         public void TriggerDash()
         {
+            // Debug.Log("-- Trigger dashh111");
             if (target)
             {
+                // Debug.Log("-- Trigger dashh2222");
                 Vector3 randomPoint = GetRandomPointInDirection(this.transform,
                     target.transform.position - this.transform.position, 5, 10);
                 NavMeshHit hit;

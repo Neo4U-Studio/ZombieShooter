@@ -567,15 +567,16 @@ MonoBehaviour:
     type: 3}
   headerEditor2:
     header: Params
-  walkingSpeed: 3
-  runningSpeed: 6
+  walkingSpeed: 2
+  runningSpeed: 4
   dectectRange: 20
   attackRange: 4
   damageAmount: 15
   headerEditor5:
     header: Boss
   shootRange: 12
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6391256467865145080, guid: 0b5d4a451dc71d74088dae832f75efc9,
+    type: 3}
   numberOfShootBullet: 3
   timeBetweenShoot: 0.2
   shotDamageAmount: 10

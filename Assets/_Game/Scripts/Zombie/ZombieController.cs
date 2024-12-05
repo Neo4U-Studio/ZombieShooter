@@ -161,6 +161,7 @@ namespace ZombieShooter
 
         public virtual void TriggerIdle()
         {
+            // Debug.Log("-- Trigger idle");
             TurnOffTriggers();
         }
 
@@ -182,6 +183,7 @@ namespace ZombieShooter
 
         public virtual void TriggerWanderRun()
         {
+            // Debug.Log("-- Trigger run");
             if (!agent.hasPath)
             {
                 float newX = this.transform.position.x + Random.Range(-6, 6);
@@ -198,6 +200,7 @@ namespace ZombieShooter
 
         public virtual void TriggerChase(GameObject target)
         {
+            // Debug.Log("-- Trigger chase");
             agent.SetDestination(target.transform.position);
             agent.stoppingDistance = distanceToTarget;
             // TurnOffTriggers();
