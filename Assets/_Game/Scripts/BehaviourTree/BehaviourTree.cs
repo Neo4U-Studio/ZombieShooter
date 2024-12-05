@@ -25,7 +25,6 @@ namespace ZSBehaviourTree
         {
             if (RootNode != null)
             {
-                RegisterCallback();
                 TreeState = RootNode.Update();
             }
         }
@@ -42,34 +41,6 @@ namespace ZSBehaviourTree
             }
             return TreeState;
         }
-
-        public void EndEvent()
-        {
-            UnregisterCallback();
-        }
-
-        private void RegisterCallback()
-        {
-            ON_NODE_START += OnNodeStarted;
-            ON_NODE_STOP += OnNodeEnded;
-        }
-
-        private void UnregisterCallback()
-        {
-            ON_NODE_START -= OnNodeStarted;
-            ON_NODE_STOP -= OnNodeEnded;
-        }
-
-        private void OnNodeStarted(BehaviourTreeNode node)
-        {
-            OnNodeStart?.Invoke(node);
-        }
-
-        private void OnNodeEnded(BehaviourTreeNode node)
-        {
-            OnNodeStop?.Invoke(node);
-        }
-
 #if UNITY_EDITOR
         public BehaviourTreeNode CreateNode(System.Type type)
         {

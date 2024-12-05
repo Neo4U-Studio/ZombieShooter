@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using Pooling;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using ZSBehaviourTree;
@@ -9,13 +12,13 @@ namespace ZombieShooter
     public abstract class ZombieController : MonoBehaviour
     {
         [SerializeField] protected BehaviourTreeRunner treeRunner;
+        [SerializeField] protected Sink sinkZombie;
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float runningSpeed;
         [SerializeField] protected float dectectRange = 15; // Range detect target
         [SerializeField] protected float attackRange = 4;  // Range attack target
         [SerializeField] protected float damageAmount = 5;
-        
-        public GameObject ragdoll;
+        [SerializeField] protected GameObject ragdollPrefab;
 
         public bool IsDead { get; private set; }
         public eZombieType Type => GetZombieType();
@@ -24,22 +27,57 @@ namespace ZombieShooter
         protected Animator anim;
         protected NavMeshAgent agent;
         protected BehaviourTree behaviourTree;
+        protected MakeRadarObject radar;
 
         private float distanceToTarget = 2f;
 
         protected abstract eZombieType GetZombieType();
 
         protected virtual void Awake() {
-            IsDead = false;
             anim = this.GetComponent<Animator>();
-            agent = this.GetComponent<NavMeshAgent>();
+            radar = this.GetComponent<MakeRadarObject>();
+            // agent = this.AddComponent<NavMeshAgent>();
         }
 
-        protected virtual void Start() {
+        // protected virtual void Start() {
+        //     target = ZombieShooterManager.Instance.Player;
+        //     if (treeRunner)
+        //     {
+        //         treeRunner.RunTree(AssignBehaviourTreeData);
+        //     }
+        // }
+
+        public void StartZombie()
+        {
+            if (!agent)
+            {
+                agent = this.AddComponent<NavMeshAgent>();
+            }
+            ToggleRadar (true);
+            ToggleZombieCollider(true);
             target = ZombieShooterManager.Instance.Player;
+            agent.enabled = true;
+            IsDead = false;
             if (treeRunner)
             {
                 treeRunner.RunTree(AssignBehaviourTreeData);
+            }
+        }
+
+        public void ToggleZombieCollider(bool toggle)
+        {
+            Collider[] colList = this.transform.GetComponentsInChildren<Collider>();
+            foreach (Collider c in colList)
+            {
+                c.enabled = toggle;
+            }
+        }
+
+        public void ToggleRadar(bool toggle)
+        {
+            if (radar)
+            {
+                radar.enabled = toggle;
             }
         }
 
@@ -52,10 +90,33 @@ namespace ZombieShooter
             behaviourTree.BindData(Utilities.ZOMBIE_ATTACK_RANGE_KEY, attackRange);
         }
 
-        public void KillZombie()
+        public virtual void KillZombie(Vector3 shootDirection)
         {
-            TurnOffTriggers();
-            TriggerDead();
+            ToggleRadar(false);
+            if (ragdollPrefab & (UnityEngine.Random.Range(0, 10) < 5))
+            {
+                var newRD = Instantiate(ragdollPrefab, this.transform.position, this.transform.rotation);
+                newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shootDirection * 10000f);
+                TurnOffTriggers();
+                ResetAgent();
+                TriggerDead(false);
+                DestroyZombie();
+                DOVirtual.DelayedCall(5f, () => Sink.StartSink(newRD, 2, 5));
+            }
+            else
+            {
+                TurnOffTriggers();
+                ResetAgent();
+                TriggerDead(true);
+                Sink.StartSink(this.gameObject, 2, 10);
+            }
+        }
+
+        public void DestroyZombie()
+        {
+            Debug.Log("-- Destroy zombie");
+            this.agent.enabled = false;
+            this.gameObject.Despawn();
         }
 
         public virtual void DamagePlayer()
@@ -120,9 +181,12 @@ namespace ZombieShooter
             transform.rotation = Quaternion.LookRotation(lookDirection);
         }
 
-        public virtual void TriggerDead()
+        public virtual void TriggerDead(bool playAnim = true)
         {
-            anim.SetBool("isDead", true);
+            if (playAnim)
+            {
+                anim.SetBool("isDead", true);
+            }
             IsDead = true;
         }
 

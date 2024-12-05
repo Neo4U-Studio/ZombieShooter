@@ -12,6 +12,7 @@ namespace ZombieShooter
         public static string PLAYER_TAG = "Player";
         public static string ITEM_TAG = "Item";
         public static string ZOMBIE_TAG = "Zombie";
+        public static string RAGDOLL_TAG = "Ragdoll";
 
         public static string ZOMBIE_DETECT_RANGE_KEY = "Detect_Range";
         public static string ZOMBIE_ATTACK_RANGE_KEY = "Attack_Range";

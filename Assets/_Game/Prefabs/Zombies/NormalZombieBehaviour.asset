@@ -103,26 +103,6 @@ MonoBehaviour:
   parent: {fileID: -2391658820656652544}
   ZombieAction: 2
   TargetKey: Player
---- !u!114 &-8141007117389123970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2040bfca4114364b905f8ecb38fffbc, type: 3}
-  m_Name: BehaviourTreeNodeZombieAction
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: ed3d1f19aefe4fe489d3fe37375d9839
-  positionView: {x: -1039.4019, y: 626.3027}
-  description: Idle
-  parent: {fileID: 2698428220543208895}
-  ZombieAction: 0
-  TargetKey: Player
 --- !u!114 &-4985913950692816136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,25 +124,6 @@ MonoBehaviour:
   children:
   - {fileID: 8994697393459152171}
   - {fileID: 3443769524417630763}
---- !u!114 &-3119392545101719037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9599412416dd7b04bb4cf3914a250d63, type: 3}
-  m_Name: BehaviourTreeNodeWait
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: c6292cce9763d4b4b872a4090a16e1bc
-  positionView: {x: -1194.6018, y: 496.70264}
-  description: 
-  parent: {fileID: 835719062407018468}
-  duration: 1
 --- !u!114 &-2391658820656652544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,47 +192,6 @@ MonoBehaviour:
   TargetKey: Player
   CheckRangeKey: Detect_Range
   Range: 20
---- !u!114 &-710941406019736104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2040bfca4114364b905f8ecb38fffbc, type: 3}
-  m_Name: BehaviourTreeNodeZombieAction
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: ce5928609c28cd448a98b13554fa0b44
-  positionView: {x: -812.2017, y: 625.5027}
-  description: Wander
-  parent: {fileID: 2698428220543208895}
-  ZombieAction: 1
-  TargetKey: Player
---- !u!114 &-173744444964771226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15071f6c508672c448550963a6d57e83, type: 3}
-  m_Name: BehaviourTreeNodeRepeat
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: bf5380dfe728bbb4ab143b40490aedf2
-  positionView: {x: -763.40173, y: 257.50272}
-  description: 
-  parent: {fileID: 0}
-  child: {fileID: 835719062407018468}
-  restartOnSuccess: 1
-  restartOnFailure: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +211,6 @@ MonoBehaviour:
   - {fileID: -1478482155762082348}
   - {fileID: -8631166371337817026}
   - {fileID: 7980856898204047561}
-  - {fileID: -8141007117389123970}
   - {fileID: -1994342178620728137}
   - {fileID: -4985913950692816136}
   - {fileID: 8994697393459152171}
@@ -299,37 +218,11 @@ MonoBehaviour:
   - {fileID: -8565666409271388045}
   - {fileID: -8190541450593852485}
   - {fileID: 1337805866806473043}
-  - {fileID: -173744444964771226}
-  - {fileID: 835719062407018468}
-  - {fileID: -3119392545101719037}
-  - {fileID: 2698428220543208895}
-  - {fileID: -710941406019736104}
   - {fileID: 2319427284462742594}
   - {fileID: 7840908959508441438}
   - {fileID: -2391658820656652544}
   - {fileID: -9030640143944548667}
   - {fileID: 7914148908079494366}
---- !u!114 &835719062407018468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 570c2159fb1c19540ab9d83b582d824d, type: 3}
-  m_Name: BehaviourTreeNodeSequencer
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: 28710ac90f5ae1f43b55a01e786230fe
-  positionView: {x: -763.40173, y: 369.50272}
-  description: 
-  parent: {fileID: -173744444964771226}
-  children:
-  - {fileID: -3119392545101719037}
-  - {fileID: 2698428220543208895}
 --- !u!114 &1337805866806473043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,27 +261,6 @@ MonoBehaviour:
   positionView: {x: -231.22543, y: 252.8}
   description: 
   parent: {fileID: 7980856898204047561}
---- !u!114 &2698428220543208895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b19525073ce6284a9de3c8635e00866, type: 3}
-  m_Name: BehaviourTreeNodeRandomSelector
-  m_EditorClassIdentifier: 
-  isStarted: 0
-  state: 0
-  guid: 0bec2529e9b1a3d408105751d3cfe79c
-  positionView: {x: -924.2018, y: 497.50262}
-  description: 
-  parent: {fileID: 835719062407018468}
-  children:
-  - {fileID: -8141007117389123970}
-  - {fileID: -710941406019736104}
 --- !u!114 &3443769524417630763
 MonoBehaviour:
   m_ObjectHideFlags: 0

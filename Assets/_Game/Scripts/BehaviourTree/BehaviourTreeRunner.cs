@@ -43,7 +43,6 @@ namespace ZSBehaviourTree
         {
             if (tree != null && isTreeStarted)
             {
-                tree.EndEvent();
                 isTreeStarted = false;
             }
         }

@@ -2086,7 +2086,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5128965792438381747, guid: 25f90052c4a5dda4cab1f640e9e52d78,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1154380464}
   m_SourcePrefab: {fileID: 100100000, guid: 25f90052c4a5dda4cab1f640e9e52d78, type: 3}
 --- !u!4 &143332118 stripped
 Transform:
@@ -15071,6 +15075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1603392217280524541, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: number
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1603392217280524541, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: SpawnOnStart
       value: 0
       objectReference: {fileID: 0}
@@ -16559,7 +16568,7 @@ MonoBehaviour:
   - Name: jill
     Prefab: {fileID: 9153167617879130721, guid: b7dd32307aa7f43bf98270b4b8b91c33,
       type: 3}
-    InitSize: 20
+    InitSize: 5
     HasMaxSize: 0
     MaxSize: 0
   - Name: boss
@@ -16741,6 +16750,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1339975558735755154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1154380461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5128965792438381747, guid: 25f90052c4a5dda4cab1f640e9e52d78,
+    type: 3}
+  m_PrefabInstance: {fileID: 143332117}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1154380464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154380461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18e85197ccef4e4e956b3876a79b56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1174765510
 PrefabInstance:
   m_ObjectHideFlags: 0

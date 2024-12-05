@@ -361,18 +361,8 @@ namespace ZombieShooter
                 if (hitObj.CompareTag("Zombie"))
                 {
                     ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
-                    if (Random.Range(0, 10) < 5)
-                    {
-                        var rdPrefab = hitObj.GetComponent<ZombieController>().ragdoll;
-                        var newRD = Instantiate(rdPrefab, hitObj.transform.position, hitObj.transform.rotation);
-                        newRD.transform.Find("Hips").GetComponent<Rigidbody>().AddForce(shotDirection * 10000);
-                        Destroy(hitObj);
-                    }
-                    else
-                    {
-                        var zombie = hitObj.GetComponent<ZombieController>();
-                        zombie.KillZombie();
-                    }
+                    var zombie = hitObj.GetComponent<ZombieController>();
+                    zombie.KillZombie(shotDirection);
                 }
             }
         }

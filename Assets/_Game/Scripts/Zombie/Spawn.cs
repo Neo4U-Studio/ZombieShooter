@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using Pooling;
 
 namespace ZombieShooter
 {
@@ -32,7 +33,9 @@ namespace ZombieShooter
                 NavMeshHit hit;
                 if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
                 {
-                    Instantiate(zombiePrefab, hit.position, Quaternion.identity);
+                    var zombieObj = zombiePrefab.Spawn(hit.position, Quaternion.identity);
+                    zombieObj.GetComponent<ZombieController>().StartZombie();
+                    // Instantiate(zombiePrefab, hit.position, Quaternion.identity);
                 }
                 else
                     i--;

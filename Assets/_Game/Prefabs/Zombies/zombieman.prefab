@@ -1773,12 +1773,9 @@ GameObject:
   - component: {fileID: 8182110007186639411}
   - component: {fileID: 4858005932450810756}
   - component: {fileID: 4858005932450810757}
-  - component: {fileID: 978496025}
   - component: {fileID: 639642755773048186}
-  - component: {fileID: 153706530}
   - component: {fileID: 7138133221636463585}
   - component: {fileID: 1640319439}
-  - component: {fileID: 3803453349777984592}
   - component: {fileID: 1012523180012931645}
   m_Layer: 8
   m_Name: zombieman
@@ -1838,34 +1835,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeRunner: {fileID: 1012523180012931645}
-  target: {fileID: 0}
+  sinkZombie: {fileID: 0}
   walkingSpeed: 1
   runningSpeed: 2
+  dectectRange: 15
+  attackRange: 4
   damageAmount: 5
-  distanceToTarget: 2
-  ragdoll: {fileID: 5782305297640324356, guid: 036b001c520844bdc98d98145574aa4c, type: 3}
---- !u!195 &978496025
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176861845160572960}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 4
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  ragdollPrefab: {fileID: 5782305297640324356, guid: 036b001c520844bdc98d98145574aa4c,
+    type: 3}
 --- !u!136 &639642755773048186
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1889,19 +1866,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &153706530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176861845160572960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18e85197ccef4e4e956b3876a79b56d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 10
 --- !u!114 &7138133221636463585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2011,23 +1975,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3803453349777984592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176861845160572960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da6f69abad75a4eabac3501e5f1a5a6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sound: {fileID: 1640319439}
-  sound3D: 1
-  firstPlay: 0
-  randomMin: 5
-  randomMax: 10
 --- !u!114 &1012523180012931645
 MonoBehaviour:
   m_ObjectHideFlags: 0

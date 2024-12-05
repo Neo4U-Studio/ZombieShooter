@@ -2247,9 +2247,7 @@ GameObject:
   - component: {fileID: 5643912976069227624}
   - component: {fileID: 5542127211463571573}
   - component: {fileID: 5542127211463571574}
-  - component: {fileID: 1694201101}
   - component: {fileID: 8097673872537736613}
-  - component: {fileID: 1214500251}
   - component: {fileID: 7216461828901016710}
   - component: {fileID: 5359174377136145923}
   - component: {fileID: 4773317812670776796}
@@ -2314,34 +2312,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   treeRunner: {fileID: -6858373318477187978}
-  target: {fileID: 0}
+  sinkZombie: {fileID: 0}
   walkingSpeed: 1
   runningSpeed: 2
+  dectectRange: 15
+  attackRange: 4
   damageAmount: 9
-  distanceToTarget: 2
-  ragdoll: {fileID: 1541204302593932504, guid: 29635fd7ba813430b8b90eaa03d24a65, type: 3}
---- !u!195 &1694201101
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8649283112028866171}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  ragdollPrefab: {fileID: 1541204302593932504, guid: 29635fd7ba813430b8b90eaa03d24a65,
+    type: 3}
 --- !u!136 &8097673872537736613
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2365,19 +2343,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1214500251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8649283112028866171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18e85197ccef4e4e956b3876a79b56d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 10
 --- !u!114 &7216461828901016710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,7 +2459,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8649283112028866171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da6f69abad75a4eabac3501e5f1a5a6e, type: 3}
   m_Name: 
