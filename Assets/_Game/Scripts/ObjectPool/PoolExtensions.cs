@@ -18,6 +18,10 @@ namespace Pooling
         {
             return PoolManager.Spawn(obj, position, rotation, obj.transform.localScale);
         }
+        public static GameObject Spawn(this GameObject obj, Vector3 position, Quaternion rotation, Transform parent)
+        {
+            return PoolManager.Spawn(obj, position, rotation, obj.transform.localScale, parent);
+        }
         public static GameObject Spawn(this GameObject obj, Vector3 position, Vector3 scale)
         {
             return PoolManager.Spawn(obj, position, obj.transform.rotation, scale);

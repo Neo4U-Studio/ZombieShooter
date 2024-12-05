@@ -4,6 +4,7 @@ using Cinemachine;
 using UnityEngine;
 using AudioPlayer;
 using DG.Tweening;
+using Pooling;
 
 namespace ZombieShooter
 {
@@ -35,7 +36,7 @@ namespace ZombieShooter
         [SerializeField] private GameObject playerBack;
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController charController;
-        // [SerializeField] private Transform shotDirection;
+        [SerializeField] private Transform shotContainer;
         [SerializeField] private ZSPlayerStatus status;
         [SerializeField] private GameObject stevePrefab;
 
@@ -45,7 +46,12 @@ namespace ZombieShooter
         [SerializeField] private ZSPlayerConfig config;
 
 #if UNITY_EDITOR
-        public GameHeader headerEditor2 = new GameHeader() { header = "Params" };
+        public GameHeader headerEditor2 = new GameHeader() { header = "Vfx" };
+#endif
+        [SerializeField] private GameObject shootVfxPrefab;
+
+#if UNITY_EDITOR
+        public GameHeader headerEditor3 = new GameHeader() { header = "Params" };
 #endif
         
         [SerializeField] private float mouseXSensitivity = 5f;
@@ -53,7 +59,7 @@ namespace ZombieShooter
         [SerializeField] private float maxYAngle = 80f;
 
 #if UNITY_EDITOR
-        public GameHeader headerEditor3 = new GameHeader() { header = "Audio" };
+        public GameHeader headerEditor4 = new GameHeader() { header = "Audio" };
 #endif
         [SerializeField] private float timeBetweenFootStep = 0.5f;
         [SerializeField] private float timeBetweenShot = 0.5f;
@@ -314,6 +320,7 @@ namespace ZombieShooter
         {
             if (IsShootingAvailable())
             {
+                PlayShootVfx(shotContainer);
                 HandleShootZombie();
                 PlaySound(SoundID.SFX_ZS_PLAYER_SHOT);
                 currentAmmo--;
@@ -573,6 +580,17 @@ namespace ZombieShooter
             }
         }
 
+#endregion
+
+#region Vfx
+        private void PlayShootVfx(Transform parent)
+        {
+            if (shootVfxPrefab)
+            {
+                var vfx = shootVfxPrefab.Spawn(parent.position, parent.rotation, parent);
+                DOVirtual.DelayedCall(1f, () => vfx.Despawn());
+            }
+        }
 #endregion
     }
 }
