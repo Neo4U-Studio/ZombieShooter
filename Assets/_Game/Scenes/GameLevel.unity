@@ -1101,45 +1101,56 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Prefab
+      value: 
+      objectReference: {fileID: 1099347172983380646, guid: d5b7cf80f1fab4ea0bd49a0e878214fe,
+        type: 3}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 8649283112028866171, guid: 7912ec467aa9147a59e49b3925ad126e,
+        type: 3}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2795276860277395426, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 64324801}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f, type: 3}
---- !u!1 &64324800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2795276860277395426, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
-    type: 3}
-  m_PrefabInstance: {fileID: 64324799}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &64324801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64324800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 167198504d8074c72951d2be681fd210, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zombiePrefab: {fileID: 1099347172983380646, guid: d5b7cf80f1fab4ea0bd49a0e878214fe,
-    type: 3}
-  number: 1
-  spawnRadius: 4
-  detectionRadius: 50
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  SpawnOnStart: 0
 --- !u!4 &64324802 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
@@ -3181,6 +3192,16 @@ PrefabInstance:
       propertyPath: detectionRadius
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4589,7 +4610,7 @@ PrefabInstance:
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -41.629425
+      value: -36.08
       objectReference: {fileID: 0}
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
@@ -4638,8 +4659,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4737,8 +4783,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9202,8 +9263,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12306,8 +12382,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13433,8 +13524,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15026,7 +15132,7 @@ PrefabInstance:
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.987671
+      value: -12.04
       objectReference: {fileID: 0}
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
@@ -15036,7 +15142,7 @@ PrefabInstance:
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.21
+      value: 38.99
       objectReference: {fileID: 0}
     - target: {fileID: 937227776016474967, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
@@ -15107,6 +15213,11 @@ PrefabInstance:
         type: 3}
       propertyPath: detectionRadius
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15883,8 +15994,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16149,8 +16275,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16556,19 +16697,19 @@ MonoBehaviour:
   - Name: zombiegirl
     Prefab: {fileID: 8649283112028866171, guid: 7912ec467aa9147a59e49b3925ad126e,
       type: 3}
-    InitSize: 20
+    InitSize: 30
     HasMaxSize: 0
     MaxSize: 0
   - Name: zombieman
     Prefab: {fileID: 5176861845160572960, guid: 6a1d6fe89cd7e4fe486e4cabf09b8d3d,
       type: 3}
-    InitSize: 20
+    InitSize: 30
     HasMaxSize: 0
     MaxSize: 0
   - Name: jill
     Prefab: {fileID: 9153167617879130721, guid: b7dd32307aa7f43bf98270b4b8b91c33,
       type: 3}
-    InitSize: 5
+    InitSize: 30
     HasMaxSize: 0
     MaxSize: 0
   - Name: boss
@@ -17948,8 +18089,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19598,8 +19764,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20724,8 +20915,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
+      propertyPath: SpawnOnStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
       propertyPath: detectionRadius
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30748,11 +30964,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1603392217280524541, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
-        type: 3}
-      propertyPath: SpawnOnStart
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2795276860277395426, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: m_Name
@@ -30762,6 +30973,31 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnOnStart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: detectionRadius
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].Number
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Number
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[0].SpawnRadius
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].SpawnRadius
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

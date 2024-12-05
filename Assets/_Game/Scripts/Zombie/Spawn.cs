@@ -7,14 +7,20 @@ using Pooling;
 
 namespace ZombieShooter
 {
+    [System.Serializable]
+    public struct SpawnData
+    {
+        public GameObject Prefab;
+        public int Number;
+        public float SpawnRadius;
+    }
+
     public class Spawn : MonoBehaviour
     {
-        public GameObject zombiePrefab;
-        public int number;
-        public float spawnRadius;
-        public float detectionRadius = 5f;
-        public LayerMask detectionLayer;
-        public bool SpawnOnStart = true;
+        [SerializeField] List<SpawnData> listSpawnZombie;
+        [SerializeField] float detectionRadius;
+        [SerializeField] LayerMask detectionLayer;
+        [SerializeField] bool SpawnOnStart = true;
 
         private bool spawned = false;
 
@@ -26,20 +32,24 @@ namespace ZombieShooter
 
         void SpawnAll()
         {
-            for (int i = 0; i < number; i++)
+            foreach (var zombie in listSpawnZombie)
             {
-                Vector3 randomPoint = this.transform.position + Random.insideUnitSphere * spawnRadius;
-
-                NavMeshHit hit;
-                if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
+                for (int i = 0; i < zombie.Number; i++)
                 {
-                    var zombieObj = zombiePrefab.Spawn(hit.position, Quaternion.identity);
-                    zombieObj.GetComponent<ZombieController>().StartZombie();
-                    // Instantiate(zombiePrefab, hit.position, Quaternion.identity);
+                    Vector3 randomPoint = this.transform.position + Random.insideUnitSphere * zombie.SpawnRadius;
+
+                    NavMeshHit hit;
+                    if (NavMesh.SamplePosition(randomPoint, out hit, 10.0f, NavMesh.AllAreas))
+                    {
+                        var zombieObj = zombie.Prefab.Spawn(hit.position, Quaternion.identity);
+                        zombieObj.GetComponent<ZombieController>().StartZombie();
+                        // Instantiate(zombiePrefab, hit.position, Quaternion.identity);
+                    }
+                    else
+                        i--;
                 }
-                else
-                    i--;
             }
+            
             spawned = true;
             this.gameObject.SetActive(false);
         }
