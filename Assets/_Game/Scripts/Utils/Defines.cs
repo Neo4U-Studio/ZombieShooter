@@ -13,6 +13,7 @@ namespace ZombieShooter
         public static string ITEM_TAG = "Item";
         public static string ZOMBIE_TAG = "Zombie";
         public static string RAGDOLL_TAG = "Ragdoll";
+        public static string BULLET_TAG = "Bullet";
 
         public static string ZOMBIE_DETECT_RANGE_KEY = "Detect_Range";
         public static string ZOMBIE_ATTACK_RANGE_KEY = "Attack_Range";
@@ -64,7 +65,7 @@ namespace ZombieShooter
     public enum eZombieType
     { 
         Zombie_Normal, 
-        Zombie_Shooting, 
+        Zombie_Archer, 
         Zombie_Boss,
     };
 

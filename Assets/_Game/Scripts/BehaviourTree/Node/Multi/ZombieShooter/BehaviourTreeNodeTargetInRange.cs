@@ -67,12 +67,6 @@ namespace ZSBehaviourTree
             base.OnStart();
         }
 
-        protected override void OnStop()
-        {
-            zombie = null;
-            base.OnStop();
-        }
-
         protected override void CheckResult()
         {
             if (player && player.IsDead)

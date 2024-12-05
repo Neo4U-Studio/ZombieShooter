@@ -21888,6 +21888,18 @@ MonoBehaviour:
     InitSize: 5
     HasMaxSize: 1
     MaxSize: 10
+  - Name: Vfx_Blood
+    Prefab: {fileID: 2698834479959398977, guid: 2d9f17a3bd22b412cb1f1c926e916d20,
+      type: 3}
+    InitSize: 5
+    HasMaxSize: 1
+    MaxSize: 10
+  - Name: vfx_Zombie_Archer_Bullet
+    Prefab: {fileID: 6322684346280968154, guid: d8d67ca5dc64e0848a0f5d16f092d3c8,
+      type: 3}
+    InitSize: 50
+    HasMaxSize: 0
+    MaxSize: 0
 --- !u!1001 &1507478988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30637,6 +30649,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6702504090257750621, guid: bfcc04a29bdc3684c82c9a01f411f504,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702504090257750621, guid: bfcc04a29bdc3684c82c9a01f411f504,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702504090257750621, guid: bfcc04a29bdc3684c82c9a01f411f504,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.92
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31041,6 +31068,12 @@ PrefabInstance:
       propertyPath: listSpawnZombie.Array.data[1].Number
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
+        type: 3}
+      propertyPath: listSpawnZombie.Array.data[1].Prefab
+      value: 
+      objectReference: {fileID: 5176861845160572960, guid: 6a1d6fe89cd7e4fe486e4cabf09b8d3d,
+        type: 3}
     - target: {fileID: 2820953117604764147, guid: 8dcc48bbf02ca3c46a9e3bd1f7c7fc6f,
         type: 3}
       propertyPath: listSpawnZombie.Array.data[0].SpawnRadius

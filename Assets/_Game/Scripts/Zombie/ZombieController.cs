@@ -11,14 +11,21 @@ namespace ZombieShooter
 {
     public abstract class ZombieController : MonoBehaviour
     {
+#if UNITY_EDITOR
+        public GameHeader headerEditor = new GameHeader() { header = "Components" };
+#endif
         [SerializeField] protected BehaviourTreeRunner treeRunner;
-        [SerializeField] protected Sink sinkZombie;
+        
+        [SerializeField] protected GameObject ragdollPrefab;
+
+#if UNITY_EDITOR
+        public GameHeader headerEditor2 = new GameHeader() { header = "Params" };
+#endif
         [SerializeField] protected float walkingSpeed;
         [SerializeField] protected float runningSpeed;
         [SerializeField] protected float dectectRange = 15; // Range detect target
         [SerializeField] protected float attackRange = 4;  // Range attack target
         [SerializeField] protected float damageAmount = 5;
-        [SerializeField] protected GameObject ragdollPrefab;
 
         public bool IsDead { get; private set; }
         public eZombieType Type => GetZombieType();
@@ -114,7 +121,7 @@ namespace ZombieShooter
 
         public void DestroyZombie()
         {
-            Debug.Log("-- Destroy zombie");
+            // Debug.Log("-- Destroy zombie");
             this.agent.enabled = false;
             this.gameObject.Despawn();
         }
@@ -131,6 +138,11 @@ namespace ZombieShooter
         protected float DistanceToPlayer()
         {
             return target && !target.IsDead ? Vector3.Distance(target.transform.position, this.transform.position) : Mathf.Infinity;
+        }
+
+        public virtual bool CanAttack()
+        {
+            return true;
         }
 
         public virtual void TurnOffTriggers()

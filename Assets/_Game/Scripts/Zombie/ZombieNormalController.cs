@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using ZSBehaviourTree;
 
 namespace ZombieShooter
 {
@@ -20,6 +18,5 @@ namespace ZombieShooter
                 base.DamagePlayer();
             }
         }
-
     }
 }

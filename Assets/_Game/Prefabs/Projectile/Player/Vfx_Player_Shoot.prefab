@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4750890297030277994}
   - component: {fileID: 225584344066396065}
   - component: {fileID: 3693206881229326526}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4911,7 +4911,7 @@ GameObject:
   - component: {fileID: 1884004665468026721}
   - component: {fileID: 7257964547472803435}
   - component: {fileID: 344811119418796397}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9811,7 +9811,7 @@ GameObject:
   - component: {fileID: 9137407359628008865}
   - component: {fileID: 8256015265946830197}
   - component: {fileID: 7534184114887414765}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14709,7 +14709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6763713431234473620}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Vfx_Player_Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

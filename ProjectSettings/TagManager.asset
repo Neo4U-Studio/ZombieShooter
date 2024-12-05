@@ -10,6 +10,7 @@ TagManager:
   - Ragdoll
   - Home
   - Fire
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Zombie
   - SpawnPoint
   - Mission
-  - 
-  - 
+  - Bullet
+  - Vfx
   - 
   - 
   - 

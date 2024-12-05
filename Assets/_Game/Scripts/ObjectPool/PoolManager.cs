@@ -11,6 +11,8 @@ namespace Pooling
 
         private static Transform trans;
 
+        public static bool IsAvailable = false;
+
         private void Awake()
         {
             Init();
@@ -35,6 +37,7 @@ namespace Pooling
                     poolDict.Add(p.Prefab, p);
                 }
             }
+            IsAvailable = true;
         }
 
         private static GameObject SpawnNonPooledObject(GameObject prefab, Vector3 position, Quaternion rotation, Vector3 scale, Transform parent = null)
