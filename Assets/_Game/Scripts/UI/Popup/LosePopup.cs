@@ -9,6 +9,11 @@ public class LosePopup : PopupScene
         return PopupType.POPUP_LOSE;
     }
 
+    public override void OnStartOpenPopup()
+    {
+        this.gameObject.SetActive(true);
+    }
+
     public void OnReturnMainMenu()
     {
         UIManager.Instance?.ClosePopup(this, () => {

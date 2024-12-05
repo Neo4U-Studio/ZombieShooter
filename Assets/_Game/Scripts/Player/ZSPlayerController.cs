@@ -335,13 +335,6 @@ namespace ZombieShooter
 #endregion
 
 #region Handle Behaviour
-        private void HandleDeath()
-        {
-            PlaySound(SoundID.SFX_ZS_PLAYER_DEATH);
-            IsPlaying = false;
-            ZombieShooterManager.ON_END_GAME?.Invoke();
-        }
-
         private void HandleReload()
         {
             if (currentWeapon != null && currentWeapon.TryFillAmmoClip())
@@ -355,7 +348,6 @@ namespace ZombieShooter
                     ZombieShooterUI.Instance.Crosshair.SwitchCrosshairState(GetCurrentCrosshairState());
                 });
             }
-            // ZombieShooterUI.Instance.SetGunClipValue(currentAmmo, config.AmmoClip);
         }
 
         private void HandleSwitchWeapon()
@@ -385,30 +377,6 @@ namespace ZombieShooter
             }
         }
 
-        // private void FillAmmo()
-        // {
-        //     currentAmmo = config.AmmoClip;
-        //     ZombieShooterUI.Instance.SetGunClipValue(currentAmmo, config.AmmoClip);
-        // }
-
-        private void HandleShootZombie()
-        {
-            RaycastHit hitInfo;
-            var shotPosition = mainCamera.ViewportToWorldPoint(Vector3.one * 0.5f);
-            var shotDirection = mainCamera.transform.forward;
-            if (Physics.Raycast(shotPosition, shotDirection, out hitInfo, 200))
-            {
-                GameObject hitObj = hitInfo.collider.gameObject;
-                if (hitObj.CompareTag("Zombie"))
-                {
-                    PlayZombieBloodVfx(hitInfo);
-                    ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
-                    var zombie = hitObj.GetComponent<ZombieController>();
-                    zombie.DamageToZombie(20, shotDirection, 10000, true);
-                }
-            }
-        }
-
         public void HandleZombieHit(float amount)
         {
             if (status.Health <= 0) return;
@@ -416,22 +384,29 @@ namespace ZombieShooter
             status.DecreaseHealth(Mathf.CeilToInt(amount));
             if (status.Health <= 0) // Dead
             {
-                IsPlaying = false;
-                Vector3 pos = new Vector3(this.transform.position.x,
-                                            Terrain.activeTerrain.SampleHeight(this.transform.position),
-                                            this.transform.position.z);
-                GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation, this.transform);
-                steve.GetComponent<Animator>().SetTrigger(HashAnimatorDead);
-                modelContainer.gameObject.SetActive(false);
-                ActiveGameOverCamera();
-                ZSGameStats.ON_PLAYER_DEAD?.Invoke();
+                HandleDeath();
             }
+        }
+
+        private void HandleDeath()
+        {
+            PlaySound(SoundID.SFX_ZS_PLAYER_DEATH);
+            IsPlaying = false;
+            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER_GAMEOVER;
+            Vector3 pos = new Vector3(this.transform.position.x,
+                                        Terrain.activeTerrain.SampleHeight(this.transform.position),
+                                        this.transform.position.z);
+            GameObject steve = Instantiate(stevePrefab, pos, this.transform.rotation, this.transform);
+            steve.GetComponent<Animator>().SetTrigger(HashAnimatorDead);
+            modelContainer.gameObject.SetActive(false);
+            ActiveGameOverCamera();
+            ZombieShooterManager.ON_END_GAME?.Invoke();
         }
 
         public void HandleWin()
         {
             IsPlaying = false;
-            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER;
+            CameraManager.Instance.LiveVirtualCamera = eVirtualCamera.PLAYER_GAMEOVER;
             Vector3 pos = new Vector3(this.transform.position.x,
                                         Terrain.activeTerrain.SampleHeight(this.transform.position),
                                         this.transform.position.z);

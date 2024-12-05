@@ -22,8 +22,6 @@ namespace ZombieShooter
         public static Action ON_END_GAME;
 
         [SerializeField] ZSPlayerController playerControl;
-        // [SerializeField] ZombieShooterUI mainUI;
-
         [SerializeField] List<ZSTargetPoint> missionList;
 
         public eGameState CurrentState { get; private set; }
@@ -31,6 +29,8 @@ namespace ZombieShooter
 
         private ZSTargetPoint currentMission = null;
         private ZombieShooterUI mainUI;
+
+        public bool IsWin { get; private set; }
         
         private void Awake()
         {
@@ -69,7 +69,7 @@ namespace ZombieShooter
                 mainUI.Initialize(Player);
             }
             Player.Initialize();
-            ZSGameStats.Instance?.RefreshValue();
+            IsWin = false;
             EnterState(eGameState.ReadToStart);
         }
 
@@ -94,9 +94,13 @@ namespace ZombieShooter
 
         private void OnEndGame()
         {
-            if (ZSGameStats.IsWin)
+            if (IsWin)
             {
-                Player.HandleWin();
+                UIEvents.UI_SHOW_POPUP?.Invoke(PopupType.POPUP_VICTORY, null);
+            }
+            else
+            {
+                UIEvents.UI_SHOW_POPUP?.Invoke(PopupType.POPUP_LOSE, null);
             }
             UnregisterEvent();
         }
@@ -202,7 +206,9 @@ namespace ZombieShooter
 
         private void OnCompletedAllMission()
         {
-            // Victory
+            playerControl.HandleWin();
+            IsWin = true;
+            EndGame();
         }
 #endregion
     }

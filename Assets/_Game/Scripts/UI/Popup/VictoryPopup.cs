@@ -9,6 +9,11 @@ public class VictoryPopup : PopupScene
         return PopupType.POPUP_VICTORY;
     }
 
+    public override void OnStartOpenPopup()
+    {
+        this.gameObject.SetActive(true);
+    }
+
     public void OnReturnMainMenu()
     {
         UIManager.Instance?.ClosePopup(this, () => {
