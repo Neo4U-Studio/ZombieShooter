@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AudioPlayer;
 
 public class LosePopup : PopupScene
 {
@@ -16,8 +17,8 @@ public class LosePopup : PopupScene
 
     public void OnReturnMainMenu()
     {
-        UIManager.Instance?.ClosePopup(this, () => {
-            GameManager.Instance?.LoadMainMenu();
-        });
+        SoundManager.Instance?.PauseSFX(SoundID.SFX_MENU_BUTTON_CLICK);
+        UIManager.Instance?.ClosePopup(this, null);
+        GameManager.Instance?.LoadMainMenu();
     }
 }

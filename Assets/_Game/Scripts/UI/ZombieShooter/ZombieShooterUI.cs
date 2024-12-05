@@ -14,6 +14,7 @@ namespace ZombieShooter
         [SerializeField] ZSRadarUI radarUI;
         [SerializeField] ZSCompassUI compassUI;
         [SerializeField] ZSCrosshairUI crosshairUI;
+        [SerializeField] ZSBossHpUI bossHpUI;
 
         public ZSStatusUI PlayerStatus => statusUI;
         public ZSCompassUI Compass => compassUI;
@@ -38,6 +39,7 @@ namespace ZombieShooter
             radarUI.SetPlayer(playControl.transform);
             compassUI.SetPlayer(playControl.gameObject);
             crosshairUI.Initialize();
+            bossHpUI.ToggleBossHp(false);
         }
 
         public void ToggleUI(bool toggle)
@@ -45,6 +47,17 @@ namespace ZombieShooter
             radarUI.ToggleRadar(toggle);
             compassUI.ToggleCompass(toggle);
             crosshairUI.ToggleCrosshair(toggle);
+        }
+
+        public void ToggleBossHp(bool toggle)
+        {
+            bossHpUI.ToggleBossHp(toggle);
+            compassUI.ToggleCompass(!toggle);
+        }
+
+        public void UpdateBossHp(int value, int maxValue)
+        {
+            bossHpUI.UpdateHealth(value, maxValue);
         }
 
         public ZSGunClipUI CreateGunClipUI()

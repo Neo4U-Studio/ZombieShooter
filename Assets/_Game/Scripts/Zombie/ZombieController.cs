@@ -64,7 +64,7 @@ namespace ZombieShooter
         //     }
         // }
 
-        public void StartZombie()
+        public virtual void StartZombie()
         {
             if (!agent)
             {
@@ -81,7 +81,7 @@ namespace ZombieShooter
             }
         }
 
-        public void ToggleZombieCollider(bool toggle)
+        public virtual void ToggleZombieCollider(bool toggle)
         {
             Collider[] colList = this.transform.GetComponentsInChildren<Collider>();
             foreach (Collider c in colList)
@@ -90,7 +90,7 @@ namespace ZombieShooter
             }
         }
 
-        public void ToggleRadar(bool toggle)
+        public virtual void ToggleRadar(bool toggle)
         {
             if (radar)
             {

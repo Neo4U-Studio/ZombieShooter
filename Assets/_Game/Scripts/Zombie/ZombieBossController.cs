@@ -41,6 +41,27 @@ namespace ZombieShooter
             behaviourTree.BindData(Utilities.ZOMBIE_SHOOT_RANGE_KEY, shootRange);
         }
 
+        public override void StartZombie()
+        {
+            base.StartZombie();
+            ZombieShooterUI.Instance?.UpdateBossHp(currentHealth, health);
+        }
+
+        private void Update() {
+            if (ZombieShooterUI.Instance)
+            {
+                if (!IsDead && DistanceToPlayer() <= dectectRange)
+                {
+                    ZombieShooterUI.Instance.ToggleBossHp(true);
+                    ZombieShooterUI.Instance.UpdateBossHp(currentHealth, health);
+                }
+                else
+                {
+                    ZombieShooterUI.Instance.ToggleBossHp(false);
+                }
+            }
+        }
+
         public override void DamagePlayer()
         {
             if (target)
