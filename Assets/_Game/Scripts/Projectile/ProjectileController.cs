@@ -16,9 +16,7 @@ namespace ZombieShooter
 		[SerializeField] float accuracy;
 		[SerializeField] float timeToDestroy = 10f;
 		[SerializeField] GameObject hitVfxPrefab;
-		[SerializeField] List<GameObject> trails;
 
-		private float speedRandomness;
 		private Vector3 offset;
 		private bool collided;
 		private Rigidbody rb;
@@ -35,7 +33,7 @@ namespace ZombieShooter
 
 		public void Fire(Vector3 target, Action<GameObject> onHitObject = null)
 		{
-			GetComponent<Rigidbody>().isKinematic = false;
+			rb.isKinematic = false;
 			this.transform.LookAt(target);
 			this.onHitObject = onHitObject;
 			this.currentMovingTime = 0f;
@@ -60,7 +58,14 @@ namespace ZombieShooter
 					}
 				}
 			}
+			SetBulletVelocity(target);
 			isMoving = true;
+		}
+
+		protected virtual void SetBulletVelocity(Vector3 target)
+		{
+			var direction = (target - this.transform.position).normalized;
+			rb.velocity = (direction + offset).normalized * currentSpeed;
 		}
 
 		private void Update() {
@@ -74,17 +79,6 @@ namespace ZombieShooter
 			}
 		}
 
-		private void FixedUpdate () {	
-			if (isMoving && currentSpeed > 0 && rb != null)
-			{
-				rb.position += (transform.forward + offset) * (currentSpeed * Time.deltaTime);
-			}
-			else
-			{
-				DestroyProjectile(true);
-			}
-		}
-
 		private void OnCollisionEnter (Collision co)
 		{
 			if (co.gameObject.tag != "Bullet" && !collided)
@@ -92,7 +86,7 @@ namespace ZombieShooter
 				Debug.Log("-- Bullet hit " + co.gameObject.tag);
 				collided = true;			
 				currentSpeed = 0;
-				GetComponent<Rigidbody>().isKinematic = true;
+				rb.isKinematic = true;
 
 				ContactPoint contact = co.contacts[0];
 				Quaternion rot = Quaternion.FromToRotation (Vector3.up, contact.normal);
