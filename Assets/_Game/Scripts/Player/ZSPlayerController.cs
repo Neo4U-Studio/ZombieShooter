@@ -49,6 +49,7 @@ namespace ZombieShooter
         public GameHeader headerEditor2 = new GameHeader() { header = "Vfx" };
 #endif
         [SerializeField] private GameObject shootVfxPrefab;
+        [SerializeField] private GameObject bloodVfxPrefab;
 
 #if UNITY_EDITOR
         public GameHeader headerEditor3 = new GameHeader() { header = "Params" };
@@ -367,6 +368,7 @@ namespace ZombieShooter
                 GameObject hitObj = hitInfo.collider.gameObject;
                 if (hitObj.CompareTag("Zombie"))
                 {
+                    PlayZombieBloodVfx(hitInfo);
                     ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
                     var zombie = hitObj.GetComponent<ZombieController>();
                     zombie.KillZombie(shotDirection);
@@ -589,6 +591,16 @@ namespace ZombieShooter
             {
                 var vfx = shootVfxPrefab.Spawn(parent.position, parent.rotation, parent);
                 DOVirtual.DelayedCall(1f, () => vfx.Despawn());
+            }
+        }
+
+        private void PlayZombieBloodVfx(RaycastHit hitInfo)
+        {
+            if (bloodVfxPrefab)
+            {
+                GameObject blood = bloodVfxPrefab.Spawn(hitInfo.point, Quaternion.identity);
+                blood.transform.LookAt(this.transform.position);
+                DOVirtual.DelayedCall(1f, () => blood.Despawn());
             }
         }
 #endregion

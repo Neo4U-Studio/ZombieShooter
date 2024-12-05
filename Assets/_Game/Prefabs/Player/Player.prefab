@@ -235,6 +235,8 @@ MonoBehaviour:
     header: Params
   shootVfxPrefab: {fileID: 8849545086507837023, guid: 174abde3bdef9e344bce8c15f930514c,
     type: 3}
+  bloodVfxPrefab: {fileID: 2698834479959398977, guid: 2d9f17a3bd22b412cb1f1c926e916d20,
+    type: 3}
   headerEditor3:
     header: Audio
   mouseXSensitivity: 5

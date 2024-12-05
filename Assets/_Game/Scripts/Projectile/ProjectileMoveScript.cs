@@ -10,8 +10,8 @@ public class ProjectileMoveScript : MonoBehaviour {
 	public float fireRate;
 	public GameObject muzzlePrefab;
 	public GameObject hitPrefab;
-	public AudioClip shotSFX;
-	public AudioClip hitSFX;
+	// public AudioClip shotSFX;
+	// public AudioClip hitSFX;
 	public List<GameObject> trails;
 
 	private float speedRandomness;
@@ -43,21 +43,21 @@ public class ProjectileMoveScript : MonoBehaviour {
 			}
 		}
 			
-		if (muzzlePrefab != null) {
-			var muzzleVFX = Instantiate (muzzlePrefab, transform.position, Quaternion.identity);
-			muzzleVFX.transform.forward = gameObject.transform.forward + offset;
-			var ps = muzzleVFX.GetComponent<ParticleSystem>();
-			if (ps != null)
-				Destroy (muzzleVFX, ps.main.duration);
-			else {
-				var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
-				Destroy (muzzleVFX, psChild.main.duration);
-			}
-		}
+		// if (muzzlePrefab != null) {
+		// 	var muzzleVFX = Instantiate (muzzlePrefab, transform.position, Quaternion.identity);
+		// 	muzzleVFX.transform.forward = gameObject.transform.forward + offset;
+		// 	var ps = muzzleVFX.GetComponent<ParticleSystem>();
+		// 	if (ps != null)
+		// 		Destroy (muzzleVFX, ps.main.duration);
+		// 	else {
+		// 		var psChild = muzzleVFX.transform.GetChild(0).GetComponent<ParticleSystem>();
+		// 		Destroy (muzzleVFX, psChild.main.duration);
+		// 	}
+		// }
 
-		if (shotSFX != null && GetComponent<AudioSource>()) {
-			GetComponent<AudioSource> ().PlayOneShot (shotSFX);
-		}
+		// if (shotSFX != null && GetComponent<AudioSource>()) {
+		// 	GetComponent<AudioSource> ().PlayOneShot (shotSFX);
+		// }
 	}
 
 	void FixedUpdate () {	
@@ -69,9 +69,9 @@ public class ProjectileMoveScript : MonoBehaviour {
 		if (co.gameObject.tag != "Bullet" && !collided) {
 			collided = true;
 			
-			if (shotSFX != null && GetComponent<AudioSource>()) {
-				GetComponent<AudioSource> ().PlayOneShot (hitSFX);
-			}
+			// if (shotSFX != null && GetComponent<AudioSource>()) {
+			// 	GetComponent<AudioSource> ().PlayOneShot (hitSFX);
+			// }
 
 			if (trails.Count > 0) {
 				for (int i = 0; i < trails.Count; i++) {
