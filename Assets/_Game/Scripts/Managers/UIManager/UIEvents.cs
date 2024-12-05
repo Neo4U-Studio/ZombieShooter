@@ -14,10 +14,6 @@ public static class UIEvents
     public static Action UI_SHOW_LOADING;
     public static Action UI_HIDE_LOADING;
     public static Action<bool> UI_SET_BLOCK_INPUT;
-
     public static Action<Camera> UI_ATTACH_UI_CAMERA;
-
     public static Action UI_CLEAR_MENU_STACK;
-
-    public static Action<bool> UI_SET_CAN_SHOW_FORCE_DOWNLOAD_POPUP;
 }

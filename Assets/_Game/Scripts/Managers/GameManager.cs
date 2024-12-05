@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -87,5 +89,20 @@ public class GameManager : MonoBehaviour
     public GameObject GetTopPopupCanvas()
     {
         return this.topPopupCanvas;
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("GameLevel");
+    }
+
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("GameLevel");
     }
 }

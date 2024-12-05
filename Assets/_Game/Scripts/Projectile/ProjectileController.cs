@@ -90,7 +90,7 @@ namespace ZombieShooter
 				currentMovingTime += Time.deltaTime;
 				if (currentMovingTime >= timeToDestroy)
 				{
-					DestroyProjectile(false);
+					DestroyProjectile();
 				}
 			}
 		}
@@ -107,7 +107,7 @@ namespace ZombieShooter
 				TriggerBulletEffect();
 				TriggerHitVfx(collision);
 
-				DestroyProjectile(false);
+				DestroyProjectile(true);
 				onHitObject?.Invoke(collision.gameObject);
 			}
 		}

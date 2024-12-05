@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Menu Config
   m_EditorClassIdentifier: 
   menuInfos:
+  - type: 1
+    prefabPath: UIPrefabs/MainMenuScreen
   - type: 100
     prefabPath: UIPrefabs/ShootingScreen

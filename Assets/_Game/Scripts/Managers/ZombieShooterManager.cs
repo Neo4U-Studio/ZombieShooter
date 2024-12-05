@@ -128,7 +128,7 @@ namespace ZombieShooter
                     Initialize();
                 break;
                 case eGameState.ReadToStart:
-                    // Do nothing
+                    StartGame();
                 break;
                 case eGameState.Start:
                     OnStartGame();
@@ -146,12 +146,12 @@ namespace ZombieShooter
         {
             switch (CurrentState)
             {
-                case eGameState.ReadToStart:
-                    if (Input.GetKeyDown(KeyCode.Mouse0))
-                    {
-                        StartGame();
-                    }
-                break;
+                // case eGameState.ReadToStart:
+                //     if (Input.GetKeyDown(KeyCode.Mouse0))
+                //     {
+                //         StartGame();
+                //     }
+                // break;
                 case eGameState.Playing:
                     if (ZSGameStats.GameOver)
                     {
