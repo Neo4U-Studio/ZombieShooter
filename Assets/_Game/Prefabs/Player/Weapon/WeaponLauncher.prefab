@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4807492197220105596}
-  - component: {fileID: 1624645656737797330}
+  - component: {fileID: 7548786036043878689}
   m_Layer: 0
-  m_Name: WeaponRiffle
+  m_Name: WeaponLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1624645656737797330
+--- !u!114 &7548786036043878689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,19 +41,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105446434135942776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43fbdb325b6c2e45a2ba2f23106ca3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 50c73642a7e084d4487c8cab17166b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   headerEditor:
     header: General
-  maxAmmo: -1
-  maxClipAmmo: 25
-  fireRate: 0.2
-  damage: 5
+  maxAmmo: 10
+  maxClipAmmo: 5
+  fireRate: 1
+  damage: 30
   shootVfxPrefab: {fileID: 8849545086507837023, guid: 174abde3bdef9e344bce8c15f930514c,
     type: 3}
   IsShooting: 0
   headerEditor1:
-    header: Riffle
-  bloodVfxPrefab: {fileID: 2698834479959398977, guid: 2d9f17a3bd22b412cb1f1c926e916d20,
+    header: Launcher
+  bulletPrefab: {fileID: 6322684346280968154, guid: 615d357d912a9bb42b5d62859615a06f,
     type: 3}

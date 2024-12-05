@@ -305,7 +305,7 @@ namespace ZombieShooter
             }
 
             // Switch weapon
-            if (Input.GetKeyDown(KeyCode.T))
+            if (Input.GetKeyDown(KeyCode.T) && !behaviourDict[ePlayerBehaviour.Reloading] && !behaviourDict[ePlayerBehaviour.Shooting])
             {
                 HandleSwitchWeapon();
             }

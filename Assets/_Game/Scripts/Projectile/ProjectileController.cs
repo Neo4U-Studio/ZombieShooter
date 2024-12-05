@@ -16,18 +16,18 @@ namespace ZombieShooter
 		
 		[Tooltip("From 0% to 100%")]
 		[Range(0, 100)]
-		[SerializeField] float accuracy;
-		[SerializeField] float timeToDestroy = 10f;
-		[SerializeField] GameObject hitVfxPrefab;
+		[SerializeField] protected float accuracy;
+		[SerializeField] protected float timeToDestroy = 10f;
+		[SerializeField] protected GameObject hitVfxPrefab;
 
-		private Vector3 offset;
-		private bool collided;
-		private Rigidbody rb;
+		protected Vector3 offset;
+		protected bool collided;
+		protected Rigidbody rb;
 
-		private bool isMoving;
-		private Action<GameObject> onHitObject = null;
-		private float currentMovingTime;
-		private float currentSpeed;
+		protected bool isMoving;
+		protected Action<GameObject> onHitObject = null;
+		protected float currentMovingTime;
+		protected float currentSpeed;
 
 		private void Awake() {
 			isMoving = false;
@@ -40,7 +40,7 @@ namespace ZombieShooter
 			this.onHitObject = onHitObject;
 			ResetBullet();
 			CalculateOffset();
-			SetBulletVelocity(target);
+			SetBulletVelocity((target - this.transform.position).normalized);
 			isMoving = true;
 		}
 
@@ -79,9 +79,8 @@ namespace ZombieShooter
 			}
 		}
 
-		protected virtual void SetBulletVelocity(Vector3 target)
+		protected virtual void SetBulletVelocity(Vector3 direction)
 		{
-			var direction = (target - this.transform.position).normalized;
 			rb.velocity = (direction + offset).normalized * currentSpeed;
 		}
 

@@ -38,9 +38,9 @@ namespace ZombieShooter
                 if (hitObj.CompareTag(Utilities.ZOMBIE_TAG))
                 {
                     PlayZombieBloodVfx(hitInfo);
-                    ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
+                    // ZSGameStats.ON_KILL_ZOMBIE?.Invoke();
                     var zombie = hitObj.GetComponent<ZombieController>();
-                    zombie.DamageToZombie(damage, shotDirection, 10000, true);
+                    zombie.DamageToZombie(damage, shotDirection, 10000, UnityEngine.Random.Range(0, 10) <= 5);
                 }
             }
         }
