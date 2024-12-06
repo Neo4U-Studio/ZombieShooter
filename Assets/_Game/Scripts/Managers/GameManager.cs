@@ -70,10 +70,10 @@ public class GameManager : MonoBehaviour
 #endif
     }
 
-    private void OnDestroy()
-    {
-        Instance = null;
-    }
+    // private void OnDestroy()
+    // {
+    //     Instance = null;
+    // }
 
     protected void CreateManagers()
     {
