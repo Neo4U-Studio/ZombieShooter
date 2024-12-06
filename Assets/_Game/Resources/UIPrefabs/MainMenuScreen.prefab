@@ -411,7 +411,6 @@ GameObject:
   - component: {fileID: 2597387567692708659}
   - component: {fileID: 1271118737859500430}
   - component: {fileID: 2248810263517699763}
-  - component: {fileID: 1318009975191896568}
   m_Layer: 5
   m_Name: Sci-fi-Circle_Large1
   m_TagString: Untagged
@@ -476,20 +475,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1318009975191896568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2945836012891392633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f038eca21917e8a4b8b3fae275990700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canRotate: 1
-  speed: 20
 --- !u!1 &3932324249714610659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,7 +1314,6 @@ GameObject:
   - component: {fileID: 9168730229231039054}
   - component: {fileID: 14664658827203922}
   - component: {fileID: 7346871936117090859}
-  - component: {fileID: 1897197857283369531}
   m_Layer: 5
   m_Name: Sci-fi-Circle_Large2
   m_TagString: Untagged
@@ -1394,17 +1378,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1897197857283369531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7617115304898443648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f038eca21917e8a4b8b3fae275990700, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canRotate: 1
-  speed: -20
