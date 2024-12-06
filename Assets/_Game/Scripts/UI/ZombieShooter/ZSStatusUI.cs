@@ -13,8 +13,6 @@ namespace ZombieShooter
         [SerializeField] Slider energyBar;
         [SerializeField] Text energyText;
 
-        [SerializeField] Text ammoText;
-
         int healthMax;
         float healthCurrent;
 
@@ -60,12 +58,6 @@ namespace ZombieShooter
         {
             energyBar.value = energyCurrent / (float)energyMax;
             energyText.text = $"{Mathf.CeilToInt(energyCurrent)}/{energyMax}";
-        }
-
-        public void SetAmmo(int value)
-        {
-            ammoCurrent = value;
-            ammoText.text = ammoCurrent.ToString();
         }
     }
 }
