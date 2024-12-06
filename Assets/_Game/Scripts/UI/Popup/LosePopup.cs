@@ -18,7 +18,7 @@ public class LosePopup : PopupScene
     public void OnReturnMainMenu()
     {
         SoundManager.Instance?.PauseSFX(SoundID.SFX_MENU_BUTTON_CLICK);
-        UIManager.Instance?.ClosePopup(this, null);
         GameManager.Instance?.LoadMainMenu();
+        UIManager.Instance?.ClosePopup(this, null);
     }
 }
