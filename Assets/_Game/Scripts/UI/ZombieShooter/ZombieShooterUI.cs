@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Pooling;
+using DG.Tweening;
 
 namespace ZombieShooter
 {
@@ -15,6 +18,8 @@ namespace ZombieShooter
         [SerializeField] ZSCompassUI compassUI;
         [SerializeField] ZSCrosshairUI crosshairUI;
         [SerializeField] ZSBossHpUI bossHpUI;
+        [SerializeField] GameObject splatterPrefab;
+        [SerializeField] RectTransform splatterContainer;
 
         public ZSStatusUI PlayerStatus => statusUI;
         public ZSCompassUI Compass => compassUI;
@@ -72,6 +77,32 @@ namespace ZombieShooter
             {
                 Destroy(gunClipUIContainer.GetChild(i).gameObject);
             }
+        }
+
+        public void SpawnRandomSplatter()
+        {
+            Rect rect = splatterContainer.rect;
+            float randomX = Random.Range(rect.xMin, rect.xMax);
+            float randomY = Random.Range(rect.yMin, rect.yMax);
+            float randomScale = Random.Range(0.6f, 1.2f);
+            float randomFade = Random.Range(0.6f, 1f);
+            Vector2 randomPosition = new Vector2(randomX, randomY);
+            GameObject splatterObj = Instantiate(splatterPrefab, splatterContainer);
+
+            RectTransform splatterRect = splatterObj.transform as RectTransform;
+            splatterRect.anchoredPosition = randomPosition;
+            splatterRect.localScale = Vector3.one * 0.5f;
+
+            Image splatterImg = splatterObj.GetComponent<Image>();
+
+            Sequence sp = DOTween.Sequence();
+            sp.Append(splatterImg.DOFade(0f, 0f));
+            sp.Append(splatterImg.DOFade(randomFade, 0.1f));
+            sp.Join(splatterObj.transform.DOScale(randomScale, 0.1f));
+            sp.Append(splatterImg.DOFade(0f, 2f).SetDelay(0.1f));
+            sp.OnComplete(() => {
+                Destroy(splatterObj);
+            });
         }
     }
 }

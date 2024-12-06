@@ -382,6 +382,7 @@ namespace ZombieShooter
             if (status.Health <= 0) return;
             PlaySound(SoundID.SFX_ZS_ZOMBIE_SPLAT);
             status.DecreaseHealth(Mathf.CeilToInt(amount));
+            ZombieShooterUI.Instance.SpawnRandomSplatter();
             if (status.Health <= 0) // Dead
             {
                 HandleDeath();
