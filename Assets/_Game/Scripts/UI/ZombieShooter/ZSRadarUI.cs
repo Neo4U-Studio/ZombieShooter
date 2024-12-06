@@ -36,6 +36,7 @@ namespace ZombieShooter
         {
             if (!radObjects.ContainsKey(owner))
             {
+                // Debug.Log($"Register radar {owner.name} {img.name}");
                 Image image = Instantiate(img, ItemContainer);
                 image.gameObject.SetActive(true);
                 radObjects.Add(owner, image);
